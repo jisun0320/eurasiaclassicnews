@@ -75,15 +75,11 @@
     letter-spacing: .13em; text-transform: uppercase; padding-left: .13em; color: var(--ink);
   }
   .brandbar__mark:hover { color: var(--wine); }
-  .nav { display: flex; flex-wrap: wrap; align-items: center; }
+  .nav { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 4px; }
   .nav > a, .nav__top {
     font-family: var(--f-ui); font-size: 11px; letter-spacing: .14em;
     text-transform: uppercase; font-weight: 500; padding: 4px 11px;
     position: relative; color: var(--ink); background: none; border: 0;
-  }
-  .nav > *:not(:first-child)::before {
-    content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
-    width: 1px; height: 11px; background: var(--rule);
   }
   .nav a.is-active, .nav__item.is-active > .nav__top { color: var(--wine); font-weight: 600; }
   .nav__item { position: relative; }
@@ -327,7 +323,6 @@
   @media (max-width: 600px) {
     body { font-size: 16px; }
     .nav a, .nav__top { padding: 4px 8px; font-size: 10.5px; letter-spacing: .06em; }
-    .nav a + a::before { display: none; }
     .about-hero { padding: 48px 0 40px; }
   }
   @media (prefers-reduced-motion: reduce) { * { transition-duration: .001ms !important; } }

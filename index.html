@@ -127,15 +127,11 @@
 
   /* ---------- Primary nav ---------- */
   .nav { justify-content: center; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 12px 0; }
-  .nav { display: flex; flex-wrap: wrap; align-items: center; }
+  .nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2px 4px; }
   .nav > a, .nav__top {
     font-family: var(--f-ui); font-size: 11px; letter-spacing: .14em;
     text-transform: uppercase; font-weight: 500; padding: 4px 11px;
     position: relative; color: var(--ink); background: none; border: 0;
-  }
-  .nav > *:not(:first-child)::before {
-    content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
-    width: 1px; height: 11px; background: var(--rule);
   }
   .nav a.is-active, .nav__item.is-active > .nav__top { color: var(--wine); font-weight: 600; }
   .nav__item { position: relative; }
@@ -1316,9 +1312,8 @@
     .topbar__right { gap: 12px; }
     .masthead { padding: 32px 0 20px; }
     .masthead__brand { font-size: clamp(18px, 6.4vw, 30px); letter-spacing: 0.06em; padding-left: 0.06em; white-space: nowrap; }
-    .nav { padding: 10px 0; gap: 2px 0; }
+    .nav { padding: 10px 0; gap: 2px 2px; }
     .nav a, .nav__top { padding: 4px 8px; font-size: 10.5px; letter-spacing: 0.06em; }
-    .nav a + a::before { display: none; }
     .grid-3 { grid-template-columns: 1fr; }
     .foot { grid-template-columns: 1fr; }
     .section__head { grid-template-columns: 1fr; gap: 8px; }

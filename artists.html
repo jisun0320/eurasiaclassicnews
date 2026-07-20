@@ -74,15 +74,11 @@
     letter-spacing: .13em; text-transform: uppercase; padding-left: .13em; color: var(--ink);
   }
   .brandbar__mark:hover { color: var(--wine); }
-  .nav { display: flex; flex-wrap: wrap; align-items: center; }
+  .nav { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 4px; }
   .nav > a, .nav__top {
     font-family: var(--f-ui); font-size: 11px; letter-spacing: .14em;
     text-transform: uppercase; font-weight: 500; padding: 4px 11px;
     position: relative; color: var(--ink); background: none; border: 0;
-  }
-  .nav > *:not(:first-child)::before {
-    content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
-    width: 1px; height: 11px; background: var(--rule);
   }
   .nav a.is-active, .nav__item.is-active > .nav__top { color: var(--wine); font-weight: 600; }
   .nav__item { position: relative; }
@@ -230,7 +226,6 @@
     body { font-size: 16px; }
     .grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 26px 18px; }
     .nav a, .nav__top { padding: 4px 8px; font-size: 10.5px; letter-spacing: .06em; }
-    .nav a + a::before { display: none; }
     .sect__count { margin-left: 0; width: 100%; }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -434,8 +429,7 @@
         <div class="artist__frame">
           <img src="images/stuttgart-philharmonic-orchestra-8a98dda5.jpg" alt="Stuttgart Philharmonic Orchestra">
         </div>
-        <h3 class="artist__name">Stuttgart Philharmonic</h3>
-        <p class="artist__role">Founded 1924 · Stuttgart</p>
+        <h3 class="artist__name">Stuttgart Philharmonic Orchestra</h3>
       </div>
     </div>
   </section>
