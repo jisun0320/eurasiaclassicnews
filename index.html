@@ -96,12 +96,6 @@
     position: absolute; left: -10px; top: 50%; transform: translateY(-50%);
     width: 1px; height: 11px; background: var(--rule);
   }
-  .lang-toggle {
-    display: inline-flex; gap: 6px; align-items: center;
-    padding: 2px 8px; border: 1px solid var(--rule); border-radius: 999px;
-    font-size: 11px; letter-spacing: 0.14em;
-  }
-  .lang-toggle .active { color: var(--wine); font-weight: 600; }
 
   /* ---------- Masthead ---------- */
   .masthead {
@@ -1339,8 +1333,7 @@
     </div>
     <div class="topbar__right">
       <a href="#downbeat">Newsletter</a>
-      <a href="#">About</a>
-      <span class="lang-toggle"><span class="active">EN</span><span>·</span><span>KO</span></span>
+      <a href="ecn.html">About</a>
     </div>
   </div>
 
@@ -1542,7 +1535,7 @@
         <p class="interview-v2__attribution">Adrian Prabava &nbsp;·&nbsp; Conductor, Stuttgart Philharmonic</p>
         <p class="interview-v2__dek">She grew up between Daegu and Cologne, and it shows in how she plays — European line, Korean attack. Before a season that takes her across both continents, she talks about repertoire, nerves, and why she keeps returning to the concertos that first frightened her.</p>
         <div class="interview-v2__actions">
-          <a href="#interviews" class="btn-outline">Read the Full Interview →</a>
+          <a href="spotlight.html#sp-interviews" class="btn-outline">Read the Full Interview →</a>
           <button class="icon-btn-dark" aria-label="Save"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
           <button class="icon-btn-dark" aria-label="Share"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M9 7h8v8"/></svg><span>Share</span></button>
         </div>
@@ -1799,11 +1792,13 @@
     <div class="downbeat__eyebrow">ECN Weekly</div>
     <h2 class="downbeat__title">Notable performances from Europe's leading concert halls, delivered <em>every Friday</em>.</h2>
     <p class="downbeat__dek">Discover upcoming concerts, artist stories, interviews, and selected news from the international classical music scene.</p>
-    <form class="downbeat__form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed ✓';">
-      <input type="email" placeholder="jjartscompany@naver.com" aria-label="Email address" required>
+    <form class="downbeat__form" id="subscribe-form" action="https://formspree.io/f/xykrjwga" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required>
+      <input type="hidden" name="_subject" value="New ECN Weekly subscriber">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <button type="submit">Subscribe →</button>
     </form>
-    <p class="downbeat__note">Free · Every Friday · Unsubscribe anytime.</p>
+    <p class="downbeat__note" id="subscribe-note">Free · Every Friday · Unsubscribe anytime.</p>
   </section>
 
   <!-- ============ FOOTER ============ -->
@@ -1906,5 +1901,34 @@
   })();
 </script>
 
+<script>
+  (function () {
+    var form = document.getElementById('subscribe-form');
+    if (!form) return;
+    var note = document.getElementById('subscribe-note');
+    var btn = form.querySelector('button');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      btn.textContent = 'Sending…';
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (r) {
+        if (r.ok) {
+          form.reset();
+          btn.textContent = 'Subscribed ✓';
+          if (note) note.textContent = 'Thank you — please check your inbox to confirm.';
+        } else {
+          btn.textContent = 'Subscribe →';
+          if (note) note.textContent = 'Something went wrong. Please try again.';
+        }
+      }).catch(function () {
+        btn.textContent = 'Subscribe →';
+        if (note) note.textContent = 'Something went wrong. Please try again.';
+      });
+    });
+  })();
+</script>
 </body>
 </html>

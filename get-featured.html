@@ -361,7 +361,9 @@
     <div class="box" id="box-artist" role="tabpanel" aria-labelledby="tab-artist">
       <h3 class="box__title">Submit an <em>Artist</em></h3>
 
-      <form data-kind="artist">
+      <form data-kind="artist" action="https://formspree.io/f/xykrjwga" method="POST">
+        <input type="hidden" name="_subject" value="New Artist submission — ECN Get Featured">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <div class="fields">
           <div class="field">
             <label for="a-name">Name <span class="req">*</span></label>
@@ -402,7 +404,7 @@
           </div>
           <div class="field field--full">
             <label for="a-email">Your email <span class="req">*</span></label>
-            <input id="a-email" name="Contact email" type="email" placeholder="you@example.com" required>
+            <input id="a-email" name="email" type="email" placeholder="you@example.com" required>
           </div>
         </div>
 
@@ -417,7 +419,9 @@
     <div class="box" id="box-performance" role="tabpanel" aria-labelledby="tab-performance" hidden>
       <h3 class="box__title">Submit a <em>Performance</em></h3>
 
-      <form data-kind="performance">
+      <form data-kind="performance" action="https://formspree.io/f/xykrjwga" method="POST">
+        <input type="hidden" name="_subject" value="New Performance submission — ECN Get Featured">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <div class="fields">
           <div class="field field--full">
             <label for="p-title">Concert title <span class="req">*</span></label>
@@ -457,7 +461,7 @@
           </div>
           <div class="field">
             <label for="p-email">Your email <span class="req">*</span></label>
-            <input id="p-email" name="Contact email" type="email" placeholder="you@example.com" required>
+            <input id="p-email" name="email" type="email" placeholder="you@example.com" required>
           </div>
         </div>
 
@@ -493,28 +497,37 @@
       });
     });
 
-    // ---- build a mailto from whichever form was submitted ----
+    // ---- submit to Formspree (no email app needed) ----
     document.querySelectorAll('.forms form').forEach(function (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         if (!form.reportValidity()) return;
 
-        var kind = form.dataset.kind === 'artist' ? 'Artist Submission' : 'Performance Submission';
-        var lines = [];
+        var btn = form.querySelector('.submit');
+        var original = btn.textContent;
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
 
-        form.querySelectorAll('input, textarea, select').forEach(function (f) {
-          var label = f.getAttribute('name');
-          var val = (f.value || '').trim();
-          if (label && val) lines.push(label + ': ' + val);
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (r) {
+          if (r.ok) {
+            form.reset();
+            btn.textContent = 'Thank you — submitted ✓';
+            var note = form.querySelector('.box__note');
+            if (note) note.innerHTML = 'Thank you for your submission. We\u2019ve emailed you a confirmation, and our editors will be in touch.';
+          } else {
+            btn.textContent = original;
+            btn.disabled = false;
+            alert('Something went wrong. Please try again, or email jjartscompany@naver.com directly.');
+          }
+        }).catch(function () {
+          btn.textContent = original;
+          btn.disabled = false;
+          alert('Something went wrong. Please try again, or email jjartscompany@naver.com directly.');
         });
-
-        var first = form.querySelector('input[type="text"]');
-        var subject = '[ECN] ' + kind + (first && first.value ? ' — ' + first.value.trim() : '');
-        var body = lines.join('\n') + '\n\n— Sent from the ECN Get Featured form';
-
-        window.location.href = 'mailto:jjartscompany@naver.com'
-          + '?subject=' + encodeURIComponent(subject)
-          + '&body='    + encodeURIComponent(body);
       });
     });
   })();

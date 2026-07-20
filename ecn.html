@@ -131,16 +131,6 @@
   }
 
   /* ---------- Lang toggle ---------- */
-  .lang-switch {
-    display: inline-flex; border: 1px solid var(--rule); border-radius: 999px;
-    overflow: hidden; margin-top: 30px;
-  }
-  .lang-switch button {
-    background: transparent; border: 0; padding: 7px 20px;
-    font-family: var(--f-ui); font-size: 11px; font-weight: 600;
-    letter-spacing: .16em; color: var(--ink-soft); transition: .2s;
-  }
-  .lang-switch button.is-on { background: var(--wine); color: var(--paper); }
 
   /* ---------- Section ---------- */
   .sect {
@@ -416,37 +406,26 @@
     <div class="about-hero__logo" role="img" aria-label="Eurasia Classic News monogram">
       <svg viewBox="235 258 780 622" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="39" stroke-linecap="butt" stroke-linejoin="miter"><path d="M 487 294 L 262 294 L 262 665 L 455 665"/><path d="M 262 473 L 466 473"/><path d="M 692 504 A 184 184 0 1 0 746 812"/></g><path fill="currentColor" stroke="none" d="M 692 276 L 732 276 L 967 623 L 967 276 L 1007 276 L 1007 682 L 960 682 L 732 346 L 732 682 L 692 682 Z"/></svg>
     </div>
-    <h1 data-en="Eurasia Classic News" data-ko="유라시아 클래식 뉴스">Eurasia Classic News</h1>
-    <p data-en="One continent's tradition, another's players — and the concert hall where the two finally have to agree." data-ko="한 대륙의 전통과 다른 대륙의 연주자들, 그리고 그 둘이 마침내 합의해야만 하는 공연장.">One continent's tradition, another's players — and the concert hall where the two finally have to agree.</p>
-
-    <div class="lang-switch" role="group" aria-label="Language">
-      <button type="button" class="is-on" data-lang="en">EN</button>
-      <button type="button" data-lang="ko">한국어</button>
-    </div>
+    <h1>Eurasia Classic News</h1>
+    <p>One continent's tradition, another's players — and the concert hall where the two finally have to agree.</p>
   </header>
 
   <!-- ============ ABOUT ============ -->
   <section class="statement">
-    <div class="statement__label" data-en="About" data-ko="소개">About</div>
+    <div class="statement__label">About</div>
 
     <div class="statement__body" id="about-en" lang="en">
       <h2>Eurasia Classic News is a bilingual classical music publication connecting stories, artists, and audiences across <em>Europe and Asia</em>.</h2>
       <p>We cover the performers, ensembles, festivals, venues, and collaborations shaping contemporary concert life, with a particular focus on the exchange between Europe and Korea.</p>
       <p>Through reporting, interviews, and editorial features in English and Korean, ECN brings classical music stories beyond their place of origin and into a wider international conversation.</p>
     </div>
-
-    <div class="statement__body" id="about-ko" lang="ko" hidden>
-      <h2>유라시아 클래식 뉴스는 <em>유럽과 아시아</em>를 잇는 이중언어 클래식 음악 매체입니다.</h2>
-      <p>동시대 연주 현장을 만들어가는 연주자, 앙상블, 페스티벌, 공연장, 그리고 그들의 협업을 다룹니다. 특히 유럽과 한국 사이의 교류에 주목합니다.</p>
-      <p>영어와 한국어로 쓰인 취재, 인터뷰, 그리고 기획 기사를 통해, ECN은 클래식 음악의 이야기를 그것이 태어난 자리 너머 더 넓은 국제적 대화의 장으로 옮깁니다.</p>
-    </div>
   </section>
 
   <!-- ============ PERFORMANCE GALLERY ============ -->
   <section class="gallery">
     <div class="gallery__head">
-      <span class="gallery__label" data-en="On Stage" data-ko="무대에서">On Stage</span>
-      <h2 data-en="Concerts we have covered" data-ko="우리가 함께한 무대">Concerts we have covered</h2>
+      <span class="gallery__label">On Stage</span>
+      <h2>Concerts we have covered</h2>
     </div>
 
     <div class="strip" data-interval="4000">
@@ -481,13 +460,13 @@
 
   <!-- ============ CONTACT ============ -->
   <section class="statement statement--contact" id="contact">
-    <div class="statement__label" data-en="Contact" data-ko="문의">Contact</div>
+    <div class="statement__label">Contact</div>
     <div class="statement__body">
-      <h2 data-en="Concert listings, review requests, corrections." data-ko="공연 등록, 리뷰 요청, 정정 보도.">Concert listings, review requests, corrections.</h2>
-      <p data-en="We read everything. We attend what we can. We correct what we get wrong — publicly, and at the top of the article." data-ko="모든 메일을 읽습니다. 갈 수 있는 공연은 갑니다. 틀린 것은 정정합니다 — 공개적으로, 그리고 기사 맨 위에.">We read everything. We attend what we can. We correct what we get wrong — publicly, and at the top of the article.</p>
+      <h2>Concert listings, review requests, corrections.</h2>
+      <p>We read everything. We attend what we can. We correct what we get wrong — publicly, and at the top of the article.</p>
       <div class="contact">
-        <a class="btn btn--wine" href="mailto:jjartscompany@naver.com" data-en="Email the Editor" data-ko="편집장에게 메일">Email the Editor</a>
-        <a class="btn" href="articles.html" data-en="Read our Articles" data-ko="기사 보기">Read our Articles</a>
+        <a class="btn btn--wine" href="mailto:jjartscompany@naver.com">Email the Editor</a>
+        <a class="btn" href="articles.html">Read our Articles</a>
       </div>
     </div>
   </section>
@@ -499,36 +478,7 @@
 
 </div>
 
-<script>
-  (function () {
-    var buttons = document.querySelectorAll('.lang-switch button');
-    var pairs = [['about-en','about-ko']];
 
-    function setLang(lang) {
-      var ko = lang === 'ko';
-      document.documentElement.lang = lang;
-
-      pairs.forEach(function (p) {
-        var en = document.getElementById(p[0]);
-        var kr = document.getElementById(p[1]);
-        if (en) en.hidden = ko;
-        if (kr) kr.hidden = !ko;
-      });
-
-      document.querySelectorAll('[data-en][data-ko]').forEach(function (el) {
-        el.innerHTML = ko ? el.dataset.ko : el.dataset.en;
-      });
-
-      buttons.forEach(function (b) {
-        b.classList.toggle('is-on', b.dataset.lang === lang);
-      });
-    }
-
-    buttons.forEach(function (b) {
-      b.addEventListener('click', function () { setLang(b.dataset.lang); });
-    });
-  })();
-</script>
 
 <script>
   (function () {
