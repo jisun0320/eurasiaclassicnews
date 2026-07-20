@@ -338,11 +338,13 @@
     line-height: 1.8 !important;
   }
   .more-link {
-    display: inline-block;
+    display: table;
+    margin-bottom: 12px;
     font-family: var(--f-ui); font-size: 11px; font-weight: 600;
     letter-spacing: .18em; text-transform: uppercase; color: var(--wine);
     border-bottom: 1px solid var(--wine); padding-bottom: 3px;
   }
+  .more-link:last-child { margin-bottom: 0; }
   .more-link:hover { color: var(--ink); border-color: var(--ink); }
 
   @media (max-width: 700px) {
@@ -446,9 +448,9 @@
 
       <div class="more-card">
         <h3>IMK</h3>
-        <p>Our partner in Vienna.</p>
         <p class="more-meta">Verein für Internationale Musik-<br>und Kulturförderung · Wien</p>
         <a class="more-link" href="https://schwingungen.at/" target="_blank" rel="noopener">Visit IMK website →</a>
+        <a class="more-link" href="mailto:office@classicimk.com">office@classicimk.com</a>
       </div>
 
       <div class="more-card">

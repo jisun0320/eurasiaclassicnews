@@ -161,9 +161,9 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    padding: 40px 0 18px;
+    padding: 40px 0 16px;
     border-bottom: 2px solid var(--ink);
-    margin-bottom: 40px;
+    margin-bottom: 24px;
     gap: 20px;
     flex-wrap: wrap;
   }
@@ -754,10 +754,11 @@
   .foot {
     padding: 72px 0 40px;
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
-    gap: 48px 32px;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 48px 56px;
     border-top: 1px solid var(--rule);
   }
+  .foot__col--stack { display: flex; flex-direction: column; gap: 32px; }
   .foot__brand-icon {
     width: 58px; height: 46px; margin-bottom: 14px; color: var(--ink);
   }
@@ -1500,8 +1501,8 @@
           <a href="review.html" class="hero-v2__read">Read the full article →</a>
           <button class="icon-btn" aria-label="Save"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
           <div class="share-wrap">
-            <button class="icon-btn" id="share-btn" aria-label="Share" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M9 7h8v8"/></svg><span>Share</span></button>
-            <div class="share-menu" id="share-menu" role="menu" hidden>
+            <button class="icon-btn share-btn" aria-label="Share" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M9 7h8v8"/></svg><span>Share</span></button>
+            <div class="share-menu" role="menu" hidden>
               <a role="menuitem" href="#" data-share="facebook" target="_blank" rel="noopener">Facebook</a>
               <a role="menuitem" href="#" data-share="whatsapp" target="_blank" rel="noopener">WhatsApp</a>
               <button role="menuitem" type="button" data-share="copy">Copy link</button>
@@ -1566,7 +1567,14 @@
         <div class="interview-v2__actions">
           <a href="spotlight.html#sp-interviews" class="btn-outline">Read the Full Interview →</a>
           <button class="icon-btn-dark" aria-label="Save"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-          <button class="icon-btn-dark" aria-label="Share"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M9 7h8v8"/></svg><span>Share</span></button>
+          <div class="share-wrap">
+            <button class="icon-btn-dark share-btn" aria-label="Share" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M9 7h8v8"/></svg><span>Share</span></button>
+            <div class="share-menu" role="menu" hidden>
+              <a role="menuitem" href="#" data-share="facebook" target="_blank" rel="noopener">Facebook</a>
+              <a role="menuitem" href="#" data-share="whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+              <button role="menuitem" type="button" data-share="copy">Copy link</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1857,21 +1865,23 @@
       <p>News, reviews, and interviews on orchestras, concertos, and the conversations behind them.</p>
     </div>
 
-    <div class="foot__col">
-      <h5>Editorial</h5>
-      <ul>
-        <li><span class="foot__k">Contact</span></li>
-        <li><a href="mailto:eurasiaclassicnews@gmail.com">eurasiaclassicnews@gmail.com</a></li>
-      </ul>
-    </div>
+    <div class="foot__col foot__col--stack">
+      <div>
+        <h5>Editorial</h5>
+        <ul>
+          <li><span class="foot__k">Contact</span></li>
+          <li><a href="mailto:eurasiaclassicnews@gmail.com">eurasiaclassicnews@gmail.com</a></li>
+        </ul>
+      </div>
 
-    <div class="foot__col">
-      <h5>Published by IMK</h5>
-      <ul>
-        <li>Verein für Internationale Musik- und Kulturförderung</li>
-        <li><span class="foot__k">Wien</span></li>
-        <li><a href="https://schwingungen.at/" target="_blank" rel="noopener">schwingungen.at →</a></li>
-      </ul>
+      <div>
+        <h5>Published by IMK</h5>
+        <ul>
+          <li>Verein für Internationale Musik- und Kulturförderung</li>
+          <li><span class="foot__k">Wien</span></li>
+          <li><a href="https://schwingungen.at/" target="_blank" rel="noopener">schwingungen.at →</a></li>
+        </ul>
+      </div>
     </div>
 
     <div class="foot__base">
@@ -1967,24 +1977,11 @@
 </script>
 <script>
   (function () {
-    var btn = document.getElementById('share-btn');
-    var menu = document.getElementById('share-menu');
-    if (!btn || !menu) return;
+    var wraps = document.querySelectorAll('.share-wrap');
+    if (!wraps.length) return;
 
-    // What gets shared: the main article. Adjust title/url as needed.
-    var shareUrl = window.location.origin + window.location.pathname.replace(/index\.html$/, '') ;
+    var shareUrl = window.location.origin + window.location.pathname;
     var shareTitle = document.title;
-
-    function open() { menu.hidden = false; btn.setAttribute('aria-expanded', 'true'); }
-    function close() { menu.hidden = true; btn.setAttribute('aria-expanded', 'false'); }
-
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      menu.hidden ? open() : close();
-    });
-    document.addEventListener('click', function (e) {
-      if (!menu.hidden && !menu.contains(e.target) && e.target !== btn) close();
-    });
 
     function toast(msg) {
       var t = document.createElement('div');
@@ -1998,42 +1995,62 @@
       }, 1800);
     }
 
-    menu.querySelectorAll('[data-share]').forEach(function (el) {
-      el.addEventListener('click', function (e) {
-        var type = el.getAttribute('data-share');
-        var u = encodeURIComponent(shareUrl);
-        var t = encodeURIComponent(shareTitle);
+    function closeAll() {
+      wraps.forEach(function (w) {
+        var m = w.querySelector('.share-menu');
+        var b = w.querySelector('.share-btn');
+        if (m) m.hidden = true;
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+    }
 
-        if (type === 'facebook') {
-          el.href = 'https://www.facebook.com/sharer/sharer.php?u=' + u;
-        } else if (type === 'whatsapp') {
-          el.href = 'https://wa.me/?text=' + t + '%20' + u;
-        } else if (type === 'copy') {
-          e.preventDefault();
-          var link = shareUrl;
-          function fallback() {
-            var ta = document.createElement('textarea');
-            ta.value = link;
-            ta.style.position = 'fixed'; ta.style.opacity = '0';
-            document.body.appendChild(ta); ta.focus(); ta.select();
-            var ok = false;
-            try { ok = document.execCommand('copy'); } catch (err) {}
-            ta.remove();
-            toast(ok ? 'Link copied ✓' : link);
-          }
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(link).then(
-              function () { toast('Link copied ✓'); },
-              function () { fallback(); }
-            );
-          } else {
-            fallback();
-          }
-          close();
+    wraps.forEach(function (wrap) {
+      var btn = wrap.querySelector('.share-btn');
+      var menu = wrap.querySelector('.share-menu');
+      if (!btn || !menu) return;
+
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var isOpen = !menu.hidden;
+        closeAll();
+        if (!isOpen) {
+          menu.hidden = false;
+          btn.setAttribute('aria-expanded', 'true');
         }
-        if (type !== 'copy') close();
+      });
+
+      menu.querySelectorAll('[data-share]').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          var type = el.getAttribute('data-share');
+          var u = encodeURIComponent(shareUrl);
+          var t = encodeURIComponent(shareTitle);
+
+          if (type === 'facebook') {
+            el.href = 'https://www.facebook.com/sharer/sharer.php?u=' + u;
+          } else if (type === 'whatsapp') {
+            el.href = 'https://wa.me/?text=' + t + '%20' + u;
+          } else if (type === 'copy') {
+            e.preventDefault();
+            var link = shareUrl;
+            function fallback() {
+              var ta = document.createElement('textarea');
+              ta.value = link; ta.style.position = 'fixed'; ta.style.opacity = '0';
+              document.body.appendChild(ta); ta.focus(); ta.select();
+              var ok = false;
+              try { ok = document.execCommand('copy'); } catch (err) {}
+              ta.remove();
+              toast(ok ? 'Link copied ✓' : link);
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(link).then(function () { toast('Link copied ✓'); }, fallback);
+            } else { fallback(); }
+          }
+          closeAll();
+        });
       });
     });
+
+    document.addEventListener('click', function () { closeAll(); });
   })();
 </script>
 <script>
