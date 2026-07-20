@@ -273,11 +273,11 @@
   .row__tag::before { content: ""; width: 18px; height: 1px; background: var(--wine); }
   .row__title {
     font-family: var(--f-display);
-    font-variation-settings: "opsz" 60, "wght" 550;
-    font-size: clamp(21px, 2.3vw, 28px);
-    line-height: 1.16; letter-spacing: -.015em;
+    font-variation-settings: "opsz" 40, "wght" 560;
+    font-size: clamp(19px, 1.9vw, 24px);
+    line-height: 1.2; letter-spacing: -.01em;
     margin: 0 0 12px;
-    max-width: 30ch;
+    max-width: 34ch;
   }
   .row__title em { font-style: italic; color: var(--wine); }
   .row__byline {
@@ -310,9 +310,9 @@
   /* Lead row gets a little more weight */
   .row--lead .row__figure { aspect-ratio: 16 / 11; }
   .row--lead .row__title {
-    font-variation-settings: "opsz" 96, "wght" 650;
-    font-size: clamp(25px, 3.1vw, 38px);
-    line-height: 1.08;
+    font-variation-settings: "opsz" 40, "wght" 560;
+    font-size: clamp(19px, 1.9vw, 24px);
+    line-height: 1.2;
   }
   .row--lead .row__standfirst { font-size: 17px; }
 
@@ -364,7 +364,7 @@
     .row { grid-template-columns: 1fr; gap: 18px; padding: 28px 0; }
     .row__figure, .row--lead .row__figure { aspect-ratio: 16 / 10; }
     .row__title { max-width: none; }
-    .nav a { padding: 4px 10px; font-size: 10px; letter-spacing: .14em; }
+    .nav a, .nav__top { padding: 4px 8px; font-size: 10.5px; letter-spacing: .06em; }
     .nav a + a::before { display: none; }
     .find-head { padding: 32px 0 0; }
   }

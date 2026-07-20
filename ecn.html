@@ -227,7 +227,7 @@
     max-width: 44ch;
     text-wrap: pretty;
   }
-  .statement__body h2 em { font-style: italic; color: var(--wine); }
+  .statement__body h2 em { font-style: italic; color: var(--wine); white-space: nowrap; }
   .statement__body p {
     font-family: var(--f-body);
     font-size: clamp(17px, 1.55vw, 20px);
@@ -326,7 +326,7 @@
   }
   @media (max-width: 600px) {
     body { font-size: 16px; }
-    .nav a { padding: 4px 10px; font-size: 10px; letter-spacing: .14em; }
+    .nav a, .nav__top { padding: 4px 8px; font-size: 10.5px; letter-spacing: .06em; }
     .nav a + a::before { display: none; }
     .about-hero { padding: 48px 0 40px; }
   }

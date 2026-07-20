@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-  <meta name="naver-site-verification" content="ef2716a0f9b3f102f54433a57678e43bdb6dd7db" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Eurasia Classic News — a review of classical music. Orchestras, concertos, and interviews from Europe and Korea.">
 <meta name="theme-color" content="#6B1A28">
@@ -580,6 +579,31 @@
   /* ---------- Newsletter ---------- */
   /* ---------- Upcoming Concerts ---------- */
   .uc-wrap { margin-top: 4px; }
+  .uc-carousel { position: relative; overflow: hidden; }
+  .uc-slide { display: none; }
+  .uc-slide.is-on { display: block; animation: uc-fade 0.4s ease; }
+  @keyframes uc-fade { from { opacity: 0; transform: translateX(12px); } to { opacity: 1; transform: translateX(0); } }
+  .uc-controls {
+    display: flex; align-items: center; justify-content: center;
+    gap: 18px; margin-top: 22px;
+  }
+  .uc-arrow {
+    width: 38px; height: 38px; border-radius: 50%;
+    border: 1px solid var(--rule); background: transparent;
+    font-size: 20px; line-height: 1; color: var(--ink-mute);
+    cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .uc-arrow:hover { border-color: var(--wine); color: var(--wine); }
+  .uc-arrow:disabled { opacity: 0.3; cursor: default; }
+  .uc-arrow:disabled:hover { border-color: var(--rule); color: var(--ink-mute); }
+  .uc-dots { display: flex; gap: 8px; }
+  .uc-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    border: 0; background: var(--rule); cursor: pointer;
+    padding: 0; transition: background 0.2s;
+  }
+  .uc-dot.is-on { background: var(--wine); }
   .uc-list {
     list-style: none; margin: 0; padding: 0;
     display: grid;
@@ -643,8 +667,8 @@
   }
 
   .downbeat {
-    margin-top: 96px;
-    padding: 72px var(--gutter-x);
+    margin-top: 64px;
+    padding: 48px var(--gutter-x);
     background: var(--ink);
     color: var(--paper);
     text-align: center;
@@ -1084,8 +1108,8 @@
 
   /* ---------- Interview v2 (dark magazine spread) ---------- */
   .interview-v2 {
-    margin-top: 96px;
-    padding: clamp(48px, 7vw, 96px) var(--gutter-x);
+    margin-top: 64px;
+    padding: clamp(36px, 4.5vw, 60px) var(--gutter-x);
     background: #17110C;
     color: var(--paper);
     margin-left: calc(-1 * var(--gutter-x));
@@ -1215,13 +1239,14 @@
   /* ---------- Editor's note ---------- */
   .ed-note {
     margin-top: 72px;
-    padding: 34px clamp(20px, 3vw, 44px);
+    padding: 40px clamp(20px, 3vw, 44px);
     border-top: 2px solid var(--ink);
     border-bottom: 1px solid var(--rule);
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 10px 44px;
-    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
   }
   .ed-note__label {
     font-family: var(--f-ui); font-size: 10.5px; font-weight: 700;
@@ -1234,12 +1259,7 @@
     font-variation-settings: "opsz" 30, "wght" 380;
     font-style: italic; font-size: clamp(17px, 1.9vw, 21px);
     line-height: 1.5; color: var(--ink); margin: 0;
-    max-width: 62ch;
-  }
-  .ed-note__sig {
-    grid-column: 2;
-    font-family: var(--f-ui); font-size: 10.5px; letter-spacing: .18em;
-    text-transform: uppercase; color: var(--ink-soft);
+    max-width: 60ch;
   }
 
   /* ---------- In Brief ---------- */
@@ -1276,8 +1296,6 @@
   @media (max-width: 960px) {
     .briefs { grid-template-columns: 1fr 1fr; gap: 28px 0; }
     .brief:nth-child(odd) { padding-left: 0; border-left: 0; }
-    .ed-note { grid-template-columns: 1fr; gap: 14px; }
-    .ed-note__sig { grid-column: 1; }
     .hero { grid-template-columns: 1fr; }
     .hero-v2 { grid-template-columns: 1fr; gap: 56px; }
 
@@ -1296,8 +1314,8 @@
     .topbar__left { gap: 12px; }
     .topbar__right { gap: 12px; }
     .masthead { padding: 32px 0 20px; }
-    .nav { padding: 10px 0; gap: 0; }
-    .nav a { padding: 4px 12px; font-size: 10px; letter-spacing: 0.18em; }
+    .nav { padding: 10px 0; gap: 2px 0; }
+    .nav a, .nav__top { padding: 4px 8px; font-size: 10.5px; letter-spacing: 0.06em; }
     .nav a + a::before { display: none; }
     .grid-3 { grid-template-columns: 1fr; }
     .foot { grid-template-columns: 1fr; }
@@ -1348,6 +1366,20 @@
   .figcap .amp, .foot .amp, .art-byline .amp, .row__byline .amp {
     font-family: var(--f-ui);
     font-size: 1em;
+  }
+  /* ---------- Scroll reveal ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
   }
 </style>
 </head>
@@ -1470,7 +1502,6 @@
           <div class="share-wrap">
             <button class="icon-btn" id="share-btn" aria-label="Share" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M9 7h8v8"/></svg><span>Share</span></button>
             <div class="share-menu" id="share-menu" role="menu" hidden>
-              <a role="menuitem" href="#" data-share="email">Email</a>
               <a role="menuitem" href="#" data-share="facebook" target="_blank" rel="noopener">Facebook</a>
               <a role="menuitem" href="#" data-share="whatsapp" target="_blank" rel="noopener">WhatsApp</a>
               <button role="menuitem" type="button" data-share="copy">Copy link</button>
@@ -1496,60 +1527,13 @@
         </li>
 
         <li class="most-read__item">
-          <div class="most-read__thumb most-read__thumb--b" aria-hidden="true">
-            <svg viewBox="0 0 60 60" width="100%" height="100%">
-              <g fill="none" stroke="#F1ECE1" stroke-width="1.2" opacity="0.85">
-                <rect x="20" y="18" width="20" height="14" rx="1"/>
-                <line x1="30" y1="32" x2="30" y2="42"/>
-                <line x1="22" y1="42" x2="38" y2="42"/>
-                <circle cx="30" cy="22" r="1.5" fill="#F1ECE1"/>
-                <line x1="25" y1="26" x2="35" y2="26"/>
-              </g>
-            </svg>
-          </div>
+          <a class="most-read__thumb" href="review.html">
+            <img src="images/conductor-adrian-prabava-and-violinist-edwin-e-s-fad48ea9.jpg" alt="Stuttgart Philharmonic with Edwin E.S. Kim in Daejeon">
+          </a>
           <div>
             <span class="most-read__tag">Featured Stories</span>
-            <h4 class="most-read__title">Violinist Yuna Seo on Playing Between Two Homes</h4>
-            <p class="most-read__meta"><span>Feature &nbsp;·&nbsp; 12 min</span><span class="heart" aria-hidden="true">♡</span></p>
-          </div>
-        </li>
-
-        <li class="most-read__item">
-          <div class="most-read__thumb most-read__thumb--c" aria-hidden="true">
-            <svg viewBox="0 0 60 60" width="100%" height="100%">
-              <g fill="#F1ECE1" opacity="0.85">
-                <circle cx="20" cy="42" r="2.5"/>
-                <circle cx="28" cy="40" r="2.5"/>
-                <circle cx="36" cy="40" r="2.5"/>
-                <circle cx="44" cy="42" r="2.5"/>
-              </g>
-              <g fill="none" stroke="#F1ECE1" stroke-width="1" opacity="0.6">
-                <path d="M18 44 L46 44"/>
-                <path d="M22 20 L42 20 L38 32 L26 32 Z"/>
-              </g>
-            </svg>
-          </div>
-          <div>
-            <span class="most-read__tag">Interview</span>
-            <h4 class="most-read__title">A New Cello Concerto Travels From Vienna to Busan</h4>
-            <p class="most-read__meta"><span>Europe &nbsp;·&nbsp; 5 min</span><span class="heart" aria-hidden="true">♡</span></p>
-          </div>
-        </li>
-
-        <li class="most-read__item">
-          <div class="most-read__thumb most-read__thumb--d" aria-hidden="true">
-            <svg viewBox="0 0 60 60" width="100%" height="100%">
-              <g fill="none" stroke="#F1ECE1" stroke-width="1.2" opacity="0.85">
-                <path d="M14 42 L14 24 L46 24 L46 42 Z"/>
-                <path d="M18 24 L18 42 M22 24 L22 42 M26 24 L26 42 M30 24 L30 42 M34 24 L34 42 M38 24 L38 42 M42 24 L42 42"/>
-                <path d="M12 42 L48 42"/>
-              </g>
-            </svg>
-          </div>
-          <div>
-            <span class="most-read__tag">What to Read</span>
-            <h4 class="most-read__title">Aurora Philharmonic Names Its Youngest-Ever Chief</h4>
-            <p class="most-read__meta"><span>News &nbsp;·&nbsp; 3 min</span><span class="heart" aria-hidden="true">♡</span></p>
+            <h4 class="most-read__title"><a href="review.html">Why the Stuttgart Philharmonic Chose Edwin E.S. Kim for Its Korean Debut</a></h4>
+            <p class="most-read__meta"><span>Daejeon &nbsp;·&nbsp; 7 min</span><span class="heart" aria-hidden="true">♡</span></p>
           </div>
         </li>
 
@@ -1559,14 +1543,13 @@
   </section>
 
   <!-- ============ EDITOR'S NOTE ============ -->
-  <section class="ed-note" aria-label="From the editor">
+  <section class="ed-note reveal" aria-label="From the editor">
     <div class="ed-note__label">The Downbeat<span>·</span>From the Editor</div>
     <p class="ed-note__text">Every performance begins long before the curtain rises and continues long after the applause fades. ECN follows the artists, ideas, and institutions shaping today’s classical music scene — in Korea and beyond.</p>
-    <div class="ed-note__sig">— Ji Sun Lee, Editor</div>
   </section>
 
   <!-- ============ INTERVIEW (dark, v2) ============ -->
-  <section class="interview-v2" id="interviews">
+  <section class="interview-v2 reveal" id="interviews">
     <div class="interview-v2__inner">
 
       <figure class="interview-v2__figure">
@@ -1579,7 +1562,7 @@
           <span class="interview-v2__quote-mark">“</span>Edwin E.S. Kim is a musician who truly understands the essence of music. Beethoven's concerto demands far more than beauty of sound.<span class="interview-v2__quote-mark">”</span>
         </blockquote>
         <p class="interview-v2__attribution">Adrian Prabava &nbsp;·&nbsp; Conductor, Stuttgart Philharmonic</p>
-        <p class="interview-v2__dek">She grew up between Daegu and Cologne, and it shows in how she plays — European line, Korean attack. Before a season that takes her across both continents, she talks about repertoire, nerves, and why she keeps returning to the concertos that first frightened her.</p>
+        <p class="interview-v2__dek">Conductor Adrian Prabava on why the Stuttgart Philharmonic chose Edwin E.S. Kim for its Korean debut — and what Beethoven's Violin Concerto asks of a soloist beyond beauty of sound.</p>
         <div class="interview-v2__actions">
           <a href="spotlight.html#sp-interviews" class="btn-outline">Read the Full Interview →</a>
           <button class="icon-btn-dark" aria-label="Save"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
@@ -1591,7 +1574,7 @@
   </section>
 
   <!-- ============ OP. 01 — SPOTLIGHT ============ -->
-  <section class="section" id="spotlight">
+  <section class="section reveal" id="spotlight">
     <div class="section__head">
       <span class="section__op">Op. 01</span>
       <h2 class="section__title"><em>Spotlight</em></h2>
@@ -1603,7 +1586,7 @@
   </section>
 
   <!-- ============ OP. 02 — UPCOMING CONCERTS ============ -->
-  <section class="section" id="upcoming">
+  <section class="section reveal" id="upcoming">
     <div class="section__head">
       <span class="section__op">Op. 02</span>
       <h2 class="section__title">Upcoming <em>Concerts</em></h2>
@@ -1612,8 +1595,10 @@
     </div>
 
     <div class="uc-wrap">
-      <ol class="uc-list">
-          <li class="uc">
+      <div class="uc-carousel" id="uc-carousel">
+        <div class="uc-slide is-on" data-uc-slide="0">
+          <ol class="uc-list">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">28</span><span class="uc__mon">May</span></div>
             <div class="uc__body">
               <p class="uc__perf">Edwin E. S. Kim <span class="uc__inst">Violin</span></p>
@@ -1622,7 +1607,7 @@
             </div>
             
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">29</span><span class="uc__mon">May</span></div>
             <div class="uc__body">
               <p class="uc__perf">Kyung Sun Lee · Meehae Ryo · Soyeon Kang <span class="uc__inst">Trio</span></p>
@@ -1631,7 +1616,7 @@
             </div>
             
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">3</span><span class="uc__mon">Jun</span></div>
             <div class="uc__body">
               <p class="uc__perf">Yan Fang <span class="uc__inst">Piano</span></p>
@@ -1640,7 +1625,7 @@
             </div>
             <span class="uc__tag">MSM</span>
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">5</span><span class="uc__mon">Jun</span></div>
             <div class="uc__body">
               <p class="uc__perf">Martin Felsberger <span class="uc__inst">Trombone</span></p>
@@ -1649,7 +1634,7 @@
             </div>
             <span class="uc__tag">GMPU</span>
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">7</span><span class="uc__mon">Jun</span></div>
             <div class="uc__body">
               <p class="uc__perf">Charlotte Spruit <span class="uc__inst">Violin</span></p>
@@ -1658,7 +1643,7 @@
             </div>
             <span class="uc__tag">Kronberg Academy</span>
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">25</span><span class="uc__mon">Jun</span></div>
             <div class="uc__body">
               <p class="uc__perf">Maxim Vengerov · Sungmin Cho <span class="uc__inst">Violin</span></p>
@@ -1667,7 +1652,7 @@
             </div>
             
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">1</span><span class="uc__mon">Jul</span></div>
             <div class="uc__body">
               <p class="uc__perf">MDW Students <span class="uc__inst">Conductors</span></p>
@@ -1676,7 +1661,7 @@
             </div>
             <span class="uc__tag">MDW · DiplomKonzert</span>
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">18</span><span class="uc__mon">Jul</span></div>
             <div class="uc__body">
               <p class="uc__perf">Baylee Kilgore <span class="uc__inst">Soprano</span></p>
@@ -1685,7 +1670,7 @@
             </div>
             <span class="uc__tag">MSM</span>
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">18</span><span class="uc__mon">Jul</span></div>
             <div class="uc__body">
               <p class="uc__perf">Mirjam Schroeder <span class="uc__inst">Harp</span></p>
@@ -1694,7 +1679,7 @@
             </div>
             
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">7</span><span class="uc__mon">Aug</span></div>
             <div class="uc__body">
               <p class="uc__perf">Liang Wang <span class="uc__inst">Violin</span></p>
@@ -1703,7 +1688,11 @@
             </div>
             
           </li>
-          <li class="uc">
+          </ol>
+        </div>
+        <div class="uc-slide" data-uc-slide="1">
+          <ol class="uc-list">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">7</span><span class="uc__mon">Aug</span></div>
             <div class="uc__body">
               <p class="uc__perf">Meehae Ryo <span class="uc__inst">Cello</span></p>
@@ -1712,7 +1701,7 @@
             </div>
             
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">7</span><span class="uc__mon">Aug</span></div>
             <div class="uc__body">
               <p class="uc__perf">Chulhee Yoon <span class="uc__inst">Piano</span></p>
@@ -1721,7 +1710,7 @@
             </div>
             
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">1</span><span class="uc__mon">Sep</span></div>
             <div class="uc__body">
               <p class="uc__perf">Mikhail Gavrilov <span class="uc__inst">Violin</span></p>
@@ -1730,7 +1719,7 @@
             </div>
             <span class="uc__tag">MDW · Stephanie Hohl Competition Winner</span>
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">17</span><span class="uc__mon">Sep</span></div>
             <div class="uc__body">
               <p class="uc__perf">Edwin E. S. Kim <span class="uc__inst">Violin</span></p>
@@ -1739,7 +1728,7 @@
             </div>
             
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">17</span><span class="uc__mon">Sep</span></div>
             <div class="uc__body">
               <p class="uc__perf">Gregoria Nieto <span class="uc__inst">Cello</span></p>
@@ -1748,7 +1737,7 @@
             </div>
             
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">18</span><span class="uc__mon">Sep</span></div>
             <div class="uc__body">
               <p class="uc__perf">Fabiola Kim <span class="uc__inst">Violin</span></p>
@@ -1757,7 +1746,7 @@
             </div>
             
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">19</span><span class="uc__mon">Sep</span></div>
             <div class="uc__body">
               <p class="uc__perf">Fabiola Kim <span class="uc__inst">Violin</span></p>
@@ -1766,7 +1755,7 @@
             </div>
             
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">20</span><span class="uc__mon">Sep</span></div>
             <div class="uc__body">
               <p class="uc__perf">Fabiola Kim <span class="uc__inst">Violin</span></p>
@@ -1775,7 +1764,7 @@
             </div>
             
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">19</span><span class="uc__mon">Sep</span></div>
             <div class="uc__body">
               <p class="uc__perf">Cosima Regina Federle <span class="uc__inst">Cello</span></p>
@@ -1784,7 +1773,7 @@
             </div>
             <span class="uc__tag">Khatchaturian Competition Winner</span>
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">3</span><span class="uc__mon">Oct</span></div>
             <div class="uc__body">
               <p class="uc__perf">Itamar Cameli <span class="uc__inst">Piano</span></p>
@@ -1793,7 +1782,11 @@
             </div>
             <span class="uc__tag">Kronberg Academy</span>
           </li>
-          <li class="uc">
+          </ol>
+        </div>
+        <div class="uc-slide" data-uc-slide="2">
+          <ol class="uc-list">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">8</span><span class="uc__mon">Oct</span></div>
             <div class="uc__body">
               <p class="uc__perf">Lukas Karytinos <span class="uc__inst">Conductor</span></p>
@@ -1802,7 +1795,7 @@
             </div>
             
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">9</span><span class="uc__mon">Oct</span></div>
             <div class="uc__body">
               <p class="uc__perf">Alexandra Conunova <span class="uc__inst">Violin</span></p>
@@ -1811,7 +1804,7 @@
             </div>
             
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">11</span><span class="uc__mon">Oct</span></div>
             <div class="uc__body">
               <p class="uc__perf">Hannah Kim <span class="uc__inst">Cello</span></p>
@@ -1820,7 +1813,7 @@
             </div>
             
           </li>
-          <li class="uc">
+            <li class="uc">
             <div class="uc__date"><span class="uc__day">31</span><span class="uc__mon">Oct</span></div>
             <div class="uc__body">
               <p class="uc__perf">Fabiola Kim <span class="uc__inst">Violin</span></p>
@@ -1829,12 +1822,19 @@
             </div>
             
           </li>
-      </ol>
+          </ol>
+        </div>
+      </div>
+      <div class="uc-controls">
+        <button class="uc-arrow" id="uc-prev" aria-label="Previous concerts">‹</button>
+        <div class="uc-dots"><button class="uc-dot is-on" data-uc-dot="0" aria-label="Page 1"></button><button class="uc-dot" data-uc-dot="1" aria-label="Page 2"></button><button class="uc-dot" data-uc-dot="2" aria-label="Page 3"></button></div>
+        <button class="uc-arrow" id="uc-next" aria-label="More concerts">›</button>
+      </div>
     </div>
   </section>
 
   <!-- ============ NEWSLETTER ============ -->
-  <section class="downbeat" id="downbeat">
+  <section class="downbeat reveal" id="downbeat">
     <div class="downbeat__eyebrow">ECN Weekly</div>
     <h2 class="downbeat__title">Notable performances from Europe's leading concert halls, delivered <em>every Friday</em>.</h2>
     <p class="downbeat__dek">Discover upcoming concerts, artist stories, interviews, and selected news from the international classical music scene.</p>
@@ -1855,16 +1855,6 @@
       </div>
       <h4>Eurasia Classic News</h4>
       <p>News, reviews, and interviews on orchestras, concertos, and the conversations behind them. Europe <span class="amp">&amp;</span> Korea Edition.</p>
-    </div>
-
-    <div class="foot__col">
-      <h5>Sections</h5>
-      <ul>
-        <li><a href="ecn.html">ECN</a></li>
-        <li><a href="#interviews">Interviews</a></li>
-        <li><a href="articles.html">Articles</a></li>
-        <li><a href="artists.html">Artists</a></li>
-      </ul>
     </div>
 
     <div class="foot__col">
@@ -2015,9 +2005,7 @@
         var u = encodeURIComponent(shareUrl);
         var t = encodeURIComponent(shareTitle);
 
-        if (type === 'email') {
-          window.location.href = 'mailto:?subject=' + t + '&body=' + t + '%0A%0A' + u;
-        } else if (type === 'facebook') {
+        if (type === 'facebook') {
           el.href = 'https://www.facebook.com/sharer/sharer.php?u=' + u;
         } else if (type === 'whatsapp') {
           el.href = 'https://wa.me/?text=' + t + '%20' + u;
@@ -2047,6 +2035,64 @@
         if (type !== 'copy') close();
       });
     });
+  })();
+</script>
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!els.length) return;
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+<script>
+  (function () {
+    var carousel = document.getElementById('uc-carousel');
+    if (!carousel) return;
+    var slides = carousel.querySelectorAll('.uc-slide');
+    var dots = document.querySelectorAll('.uc-dot');
+    var prev = document.getElementById('uc-prev');
+    var next = document.getElementById('uc-next');
+    var current = 0;
+    var total = slides.length;
+
+    function show(i) {
+      if (i < 0) i = 0;
+      if (i > total - 1) i = total - 1;
+      current = i;
+      slides.forEach(function (s, idx) { s.classList.toggle('is-on', idx === i); });
+      dots.forEach(function (d, idx) { d.classList.toggle('is-on', idx === i); });
+      if (prev) prev.disabled = (i === 0);
+      if (next) next.disabled = (i === total - 1);
+    }
+
+    if (prev) prev.addEventListener('click', function () { show(current - 1); });
+    if (next) next.addEventListener('click', function () { show(current + 1); });
+    dots.forEach(function (d, idx) {
+      d.addEventListener('click', function () { show(idx); });
+    });
+
+    // swipe support on touch devices
+    var startX = 0;
+    carousel.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+    carousel.addEventListener('touchend', function (e) {
+      var dx = e.changedTouches[0].clientX - startX;
+      if (dx < -40) show(current + 1);
+      else if (dx > 40) show(current - 1);
+    }, { passive: true });
+
+    show(0);
   })();
 </script>
 </body>
