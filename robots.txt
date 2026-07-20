@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://eurasiaclassicnews.com/sitemap.xml
