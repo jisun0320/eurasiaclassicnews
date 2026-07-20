@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Review — Stuttgart Philharmonic and violinist Edwin E.S. Kim bring an all-Beethoven programme to Daejeon.">
+<meta name="theme-color" content="#6B1A28">
+<title>Review · Stuttgart Philharmonic, Daejeon — Eurasia Classic News</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Source+Serif+4:opsz,wght@8..60,300..700&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:      #F1ECE1;
+    --paper-warm: #E8E1D2;
+    --ink:        #171614;
+    --ink-mute:   #4A4741;
+    --ink-soft:   #75706A;
+    --wine:       #6B1A28;
+    --brass:      #A87F3C;
+    --rule:       #C7BFAD;
+    --rule-soft:  #E1D9C6;
+
+    --f-display: "Fraunces", "Times New Roman", serif;
+    --f-body:    "Source Serif 4", Georgia, serif;
+    --f-kr:      "Noto Serif KR", "Source Serif 4", serif;
+    --f-ui:      "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --f-mast:    "Playfair Display", "Times New Roman", serif;
+
+    --gutter-x: clamp(20px, 4vw, 56px);
+    --page-max: 1240px;
+    --measure: 40rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 17px;
+    line-height: 1.6;
+    font-feature-settings: "kern","onum","liga";
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--wine); }
+  a:focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
+  button { font: inherit; cursor: pointer; }
+  ::selection { background: var(--wine); color: var(--paper); }
+
+  .page { max-width: var(--page-max); margin: 0 auto; padding: 0 var(--gutter-x); }
+
+  /* ---------- Header ---------- */
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; padding: 14px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    font-family: var(--f-ui); font-size: 12px; letter-spacing: .06em; color: var(--ink-mute);
+    flex-wrap: wrap;
+  }
+  .topbar__left { display: flex; gap: 20px; flex-wrap: wrap; }
+  .brandbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 0; gap: 24px; flex-wrap: wrap;
+  }
+  .brandbar__mark {
+    display: inline-flex; align-items: center; gap: 14px;
+    color: var(--ink);
+  }
+  .brandbar__mark-icon {
+    width: 50px; height: 40px; flex: none; display: inline-flex;
+  }
+  .brandbar__mark-icon svg { width: 100%; height: 100%; display: block; }
+  .brandbar__mark-text {
+    font-family: var(--f-mast);
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-left: 0.13em;
+  }
+  .brandbar__mark:hover { color: var(--wine); }
+  .nav { display: flex; flex-wrap: wrap; align-items: center; }
+  .nav > a, .nav__top {
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase; font-weight: 500; padding: 4px 11px;
+    position: relative; color: var(--ink); background: none; border: 0;
+  }
+  .nav > *:not(:first-child)::before {
+    content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 1px; height: 11px; background: var(--rule);
+  }
+  .nav a.is-active, .nav__item.is-active > .nav__top { color: var(--wine); font-weight: 600; }
+  .nav__item { position: relative; }
+  .nav__top { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+  .nav__caret { width: 7px; height: 7px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg) translate(-2px,-2px); }
+  .nav__menu {
+    position: absolute; top: 100%; left: 6px; z-index: 30;
+    min-width: 170px; padding: 8px 0;
+    background: var(--paper); border: 1px solid var(--rule);
+    box-shadow: 0 8px 24px rgba(23,22,20,.10);
+    display: none;
+  }
+  .nav__item:hover .nav__menu, .nav__item:focus-within .nav__menu { display: block; }
+  .nav__menu a {
+    display: block; padding: 9px 18px;
+    font-family: var(--f-ui); font-size: 10.5px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--ink-mute);
+  }
+  .nav__menu a:hover { background: var(--paper-warm); color: var(--wine); }
+  .rule-strong { height: 1px; background: var(--ink); }
+
+  /* ---------- Article header ---------- */
+  .crumb {
+    display: flex; align-items: center; gap: 10px;
+    padding: 26px 0 0;
+    font-family: var(--f-ui); font-size: 11px;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .crumb a { border-bottom: 1px solid var(--rule); padding-bottom: 2px; color: var(--ink-mute); }
+  .crumb a:hover { color: var(--wine); border-color: var(--wine); }
+  .crumb span[aria-current] { color: var(--wine); font-weight: 600; }
+  .art-head { padding: 30px 0 40px; max-width: 64rem; }
+  .art-kicker {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 26px; flex-wrap: wrap;
+  }
+  .art-kicker__tag {
+    font-family: var(--f-ui); font-size: 11px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--wine);
+  }
+  .art-kicker__sep { width: 22px; height: 1px; background: var(--rule); }
+  .art-kicker__place {
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .art-title {
+    font-family: var(--f-mast);
+    font-weight: 700;
+    font-size: clamp(30px, 4vw, 54px);
+    line-height: 1.14; letter-spacing: -.012em;
+    margin: 0 0 26px;
+    text-wrap: pretty;
+  }
+  .art-title em { font-style: italic; color: var(--wine); font-weight: 600; }
+  .art-dek {
+    font-family: var(--f-mast);
+    font-weight: 400;
+    font-style: italic; font-size: clamp(18px, 1.9vw, 23px);
+    line-height: 1.55; color: var(--ink-mute);
+    margin: 0 0 34px; max-width: 56ch;
+  }
+  .art-meta {
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+    padding-top: 22px; border-top: 1px solid var(--rule);
+  }
+  .stars { display: inline-flex; color: var(--brass); font-size: 17px; letter-spacing: 2px; }
+  .art-byline {
+    font-family: var(--f-ui); font-size: 12px; letter-spacing: .1em; color: var(--ink-mute);
+  }
+  .art-byline strong { color: var(--ink); font-weight: 600; }
+  .lang-switch { margin-left: auto; display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; }
+  .lang-switch button {
+    background: transparent; border: 0; padding: 6px 16px;
+    font-family: var(--f-ui); font-size: 11px; font-weight: 600;
+    letter-spacing: .16em; color: var(--ink-soft); transition: .2s;
+  }
+  .lang-switch button.is-on { background: var(--wine); color: var(--paper); }
+
+  /* ---------- Lead image ---------- */
+  .lead-figure { margin: 0 0 12px; }
+  .lead-figure img { width: 100%; height: auto; border-radius: 4px; }
+  .figcap {
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    padding-top: 12px; border-top: 1px solid var(--rule-soft); margin-top: 12px;
+    font-family: var(--f-ui); font-size: 11px; line-height: 1.5;
+    color: var(--ink-soft); letter-spacing: .04em;
+  }
+  .figcap__credit { text-transform: uppercase; letter-spacing: .18em; white-space: nowrap; }
+
+  /* ---------- Body layout ---------- */
+  .art-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 17rem);
+    gap: clamp(32px, 6vw, 80px);
+    padding: 56px 0 0;
+    align-items: start;
+  }
+  .art-body { max-width: var(--measure); }
+  .art-body { line-height: 1.68; }
+  .art-body p { margin: 0 0 1.4em; }
+  .art-body p:first-of-type::first-letter {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 144, "wght" 700;
+    float: left; font-size: 4.6em; line-height: .82;
+    padding: .06em .1em 0 0; color: var(--wine);
+  }
+  .art-body h2 {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 48, "wght" 600;
+    font-size: 26px; line-height: 1.2; letter-spacing: -.015em;
+    margin: 2.4em 0 .8em;
+  }
+  .art-body h2 em { font-style: italic; color: var(--wine); }
+
+  /* Korean body tuning */
+  .art-body[lang="ko"] { font-family: var(--f-kr); font-size: 16.5px; line-height: 1.85; word-break: keep-all; }
+  .art-body[lang="ko"] h2 { font-family: var(--f-kr); font-weight: 600; }
+  .art-body[lang="ko"] p:first-of-type::first-letter { font-size: 1em; float: none; padding: 0; color: inherit; }
+
+  /* Pull quote */
+  .pullquote {
+    margin: 2.6em 0;
+    padding: 0 0 0 24px;
+    border-left: 2px solid var(--wine);
+  }
+  .pullquote p {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 48, "wght" 400;
+    font-style: italic; font-size: clamp(20px, 2.3vw, 27px);
+    line-height: 1.32; letter-spacing: -.01em;
+    margin: 0 0 .55em; color: var(--ink);
+  }
+  .pullquote cite {
+    font-family: var(--f-ui); font-style: normal; font-size: 11px;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .art-body[lang="ko"] .pullquote p { font-family: var(--f-kr); font-style: normal; font-weight: 500; line-height: 1.5; }
+
+  /* Inline wide figure */
+  .fig-wide { margin: 2.8em 0; }
+  .fig-wide img { width: 100%; height: auto; border-radius: 3px; display: block; }
+  .fig-wide figcaption {
+    font-family: var(--f-ui); font-size: 11px; line-height: 1.55;
+    color: var(--ink-soft); letter-spacing: .03em; padding-top: 11px;
+  }
+  .art-body[lang="ko"] .fig-wide figcaption { font-family: var(--f-kr); font-size: 12px; }
+
+  /* Inline figure pair */
+  .fig-pair {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+    margin: 2.8em 0;
+  }
+  .fig-pair figure { margin: 0; }
+  .fig-pair img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3 / 4; border-radius: 3px; }
+  .fig-pair figcaption {
+    font-family: var(--f-ui); font-size: 10.5px; line-height: 1.5;
+    color: var(--ink-soft); letter-spacing: .04em; padding-top: 10px;
+  }
+
+  /* ---------- Sidebar: programme ---------- */
+  .art-aside { position: sticky; top: 24px; }
+  .prog {
+    background: var(--paper-warm);
+    padding: 26px 24px;
+    border-top: 2px solid var(--wine);
+  }
+  .prog h3 {
+    font-family: var(--f-ui); font-size: 10.5px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--wine);
+    margin: 0 0 20px;
+  }
+  .prog dl { margin: 0; }
+  .prog dt {
+    font-family: var(--f-ui); font-size: 9.5px; font-weight: 600;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft);
+    margin-bottom: 5px;
+  }
+  .prog dd {
+    margin: 0 0 18px; font-family: var(--f-body); font-size: 14.5px;
+    line-height: 1.42; color: var(--ink);
+  }
+  .prog dd:last-child { margin-bottom: 0; }
+  .prog dd em { font-style: italic; color: var(--wine); }
+  .prog__works { list-style: none; margin: 0; padding: 0; }
+  .prog__works li {
+    padding: 11px 0; border-bottom: 1px solid var(--rule);
+    font-size: 14px; line-height: 1.4;
+  }
+  .prog__works li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .prog__works .op {
+    display: block; font-family: var(--f-ui); font-size: 9.5px;
+    letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft);
+    margin-top: 3px;
+  }
+  .verdict {
+    margin-top: 22px; padding: 20px 24px;
+    border: 1px solid var(--rule);
+  }
+  .verdict h3 {
+    font-family: var(--f-ui); font-size: 10.5px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--ink-mute);
+    margin: 0 0 12px;
+  }
+  .verdict .stars { font-size: 20px; margin-bottom: 10px; }
+  .verdict p {
+    margin: 0; font-family: var(--f-body); font-size: 14px;
+    line-height: 1.5; color: var(--ink-mute); font-style: italic;
+  }
+
+  /* ---------- Footer ---------- */
+  .art-foot {
+    margin-top: 72px; padding: 32px 0 64px;
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .12em;
+    color: var(--ink-soft);
+  }
+  .art-foot a { border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+
+  /* ---------- Skip link ---------- */
+  .skip {
+    position: absolute; left: -9999px; top: 0; z-index: 200;
+    background: var(--wine); color: var(--paper);
+    padding: 10px 20px; font-family: var(--f-ui); font-size: 12px;
+    letter-spacing: .1em;
+  }
+  .skip:focus { left: 0; }
+
+  /* ---------- Dateline ---------- */
+  .dateline {
+    font-family: var(--f-ui); font-weight: 700; font-size: .78em;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--ink);
+  }
+
+  /* ---------- Critic / ethics box ---------- */
+  .critic-box {
+    margin: 3em 0 0;
+    padding: 22px 24px;
+    background: var(--paper-warm);
+    border-left: 2px solid var(--brass);
+  }
+  .critic-box h3 {
+    font-family: var(--f-ui); font-size: 10px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--ink-mute);
+    margin: 0 0 10px;
+  }
+  .critic-box p {
+    margin: 0; font-family: var(--f-ui); font-size: 12.5px;
+    line-height: 1.65; color: var(--ink-mute); letter-spacing: .01em;
+  }
+
+  /* ---------- Rating legend ---------- */
+  .verdict__legend {
+    margin-top: 14px; padding-top: 12px;
+    border-top: 1px solid var(--rule-soft);
+    font-family: var(--f-ui); font-size: 10px; letter-spacing: .1em;
+    color: var(--ink-soft); line-height: 1.8; font-style: normal;
+  }
+  .verdict__legend b { color: var(--brass); font-weight: 400; letter-spacing: 1px; }
+
+  /* ---------- Related reviews ---------- */
+  .related {
+    margin-top: 80px;
+    padding-top: 36px;
+    border-top: 2px solid var(--ink);
+  }
+  .related > h2 {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 48, "wght" 500;
+    font-size: 26px; letter-spacing: -.015em; margin: 0 0 26px;
+  }
+  .related > h2 em { font-style: italic; color: var(--wine); }
+  .related__grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  }
+  .related__grid--one { grid-template-columns: 1fr; }
+  .related__item {
+    padding: 4px 28px 8px;
+    border-left: 1px solid var(--rule-soft);
+  }
+  .related__item:first-child { padding-left: 0; border-left: 0; }
+  .related__tag {
+    display: block;
+    font-family: var(--f-ui); font-size: 10px; font-weight: 700;
+    letter-spacing: .22em; text-transform: uppercase; color: var(--wine);
+    margin-bottom: 8px;
+  }
+  .related__item h3 {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 36, "wght" 500;
+    font-size: 17.5px; line-height: 1.25; letter-spacing: -.005em;
+    margin: 0 0 8px;
+  }
+  .related__item h3 em { font-style: italic; color: var(--wine); }
+  .related__item .stars { font-size: 12px; letter-spacing: 1px; }
+
+  /* ---------- Print ---------- */
+  @media print {
+    .skip, .topbar, .brandbar, .rule-strong, .lang-switch, .related, .art-foot { display: none !important; }
+    body { background: #fff; color: #000; font-size: 11pt; }
+    .page { max-width: none; padding: 0; }
+    .art-wrap { display: block; }
+    .art-aside { position: static; page-break-inside: avoid; margin-top: 24pt; }
+    .art-body p:first-of-type::first-letter { font-size: 1em; float: none; padding: 0; color: inherit; }
+    .lead-figure img, .fig-pair img { max-height: 70mm; width: auto; }
+    a { color: inherit; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .related__grid { grid-template-columns: 1fr; }
+    .related__item { padding: 16px 0; border-left: 0; border-bottom: 1px solid var(--rule-soft); }
+    .related__item:last-child { border-bottom: 0; }
+    .art-wrap { grid-template-columns: 1fr; gap: 48px; }
+    .art-aside { position: static; max-width: 34rem; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .art-head { padding: 36px 0 28px; }
+    .art-body p:first-of-type::first-letter { font-size: 3.6em; }
+    .fig-pair { grid-template-columns: 1fr; gap: 24px; }
+    .lang-switch { margin-left: 0; }
+    .nav a { padding: 4px 10px; font-size: 10px; letter-spacing: .14em; }
+    .nav a + a::before { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: .001ms !important; }
+  }
+
+  /* ampersand — Playfair's is decorative; use the roman one from the text serif */
+  .amp {
+    font-family: var(--f-body);
+    font-style: normal;
+    font-weight: inherit;
+    font-size: 0.95em;
+    letter-spacing: 0;
+    padding: 0 0.02em;
+  }
+  /* in the sans UI (nav, topbar, labels) keep the sans ampersand */
+  .nav .amp, .topbar .amp, .brandbar .amp,
+  .row__tag .amp, .most-read__tag .amp,
+  .nsect__ko .amp, .psect__ko .amp, .sect__ko .amp,
+  .figcap .amp, .foot .amp, .art-byline .amp, .row__byline .amp {
+    font-family: var(--f-ui);
+    font-size: 1em;
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#article">Skip to article</a>
+
+<div class="page">
+
+  <div class="topbar">
+    <div class="topbar__left">
+      <span id="today">Monday · 13 July 2026</span>
+      <span>Europe <span class="amp">&amp;</span> Korea Edition</span>
+    </div>
+    <div><a href="#">Newsletter</a></div>
+  </div>
+
+  <div class="brandbar">
+    <a href="index.html" class="brandbar__mark"><span class="brandbar__mark-icon"><svg viewBox="235 258 780 622" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="39" stroke-linecap="butt" stroke-linejoin="miter"><path d="M 487 294 L 262 294 L 262 665 L 455 665"/><path d="M 262 473 L 466 473"/><path d="M 692 504 A 184 184 0 1 0 746 812"/></g><path fill="currentColor" stroke="none" d="M 692 276 L 732 276 L 967 623 L 967 276 L 1007 276 L 1007 682 L 960 682 L 732 346 L 732 682 L 692 682 Z"/></svg></span><span class="brandbar__mark-text">Eurasia Classic News</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="ecn.html">ECN</a>
+
+      <span class="nav__item is-active">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">News <span class="amp">&amp;</span> Reviews <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="articles.html#news-latest">Latest News</a>
+          <a href="articles.html#festivals">Festivals <span class="amp">&amp;</span> Tours</a>
+          <a href="articles.html#all">All Articles</a>
+        </span>
+      </span>
+
+      <span class="nav__item">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">Spotlight <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="index.html#interviews">Interviews</a>
+          <a href="spotlight.html#cover">Cover Story</a>
+          <a href="spotlight.html#focus">Artist Focus</a>
+        </span>
+      </span>
+
+      <a href="get-featured.html">Get Featured</a>
+      <a href="video.html">Video</a>
+      <a href="artists.html">Artists</a>
+      <a href="whats-on.html">What's On</a>
+
+      <a href="more.html">More</a>
+    </nav>
+  </div>
+  <div class="rule-strong"></div>
+
+  <!-- ============ ARTICLE HEADER ============ -->
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="articles.html">Articles</a>
+    <span>›</span>
+    <span aria-current="page">Review · Daejeon</span>
+  </nav>
+
+  <header class="art-head" id="article">
+    <div class="art-kicker">
+      <span class="art-kicker__tag">Review</span>
+      <span class="art-kicker__sep"></span>
+      <span class="art-kicker__place">Daejeon · Korea Debut</span>
+    </div>
+
+    <h1 class="art-title" data-en="Why the Stuttgart Philharmonic Chose &lt;em&gt;Edwin E.S. Kim&lt;/em&gt; for Its Korean Debut" data-ko="슈투트가르트 필하모닉은 왜 한국 초연 무대에 &lt;em&gt;김응수&lt;/em&gt;를 선택했나">Why the Stuttgart Philharmonic Chose <em>Edwin E.S. Kim</em> for Its Korean Debut</h1>
+
+    <p class="art-dek" data-en="An all-Beethoven programme, a century-old German sound, and a violinist who plays the Concerto as a question rather than a display." data-ko="베토벤만으로 채운 프로그램, 100년을 이어온 독일의 소리, 그리고 협주곡을 과시가 아닌 물음으로 연주한 바이올리니스트.">An all-Beethoven programme, a century-old German sound, and a violinist who plays the Concerto as a question rather than a display.</p>
+
+    <div class="art-meta">
+      <span class="stars" aria-label="Five out of five stars">★★★★★</span>
+      <span class="art-byline">By <strong>Eurasia Classic News</strong> · Daejeon · 28 May · 7 min read</span>
+      <div class="lang-switch" role="group" aria-label="Article language">
+        <button type="button" class="is-on" data-lang="en">EN</button>
+        <button type="button" data-lang="ko">한국어</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ LEAD IMAGE ============ -->
+  <figure class="lead-figure">
+    <img src="images/conductor-adrian-prabava-and-violinist-edwin-e-s-fad48ea9.jpg" alt="Conductor Adrian Prabava and violinist Edwin E.S. Kim performing with the Stuttgart Philharmonic">
+    <figcaption class="figcap">
+      <span data-en="Adrian Prabava and Edwin E.S. Kim during Beethoven's Violin Concerto in D major, Op. 61 — the Stuttgart Philharmonic's first concert in Korea." data-ko="베토벤 「바이올린 협주곡 D장조 Op.61」 연주 중인 아드리안 프라바바와 김응수. 슈투트가르트 필하모닉의 첫 한국 공연이다.">Adrian Prabava and Edwin E.S. Kim during Beethoven's Violin Concerto in D major, Op. 61 — the Stuttgart Philharmonic's first concert in Korea.</span>
+      <span class="figcap__credit">Photograph · Eurasia Classic News</span>
+    </figcaption>
+  </figure>
+
+  <!-- ============ BODY ============ -->
+  <div class="art-wrap">
+
+    <!-- English body -->
+    <article class="art-body" id="body-en" lang="en">
+      <p><span class="dateline">Daejeon —</span> The Stuttgart Philharmonic arrived carrying a century of German orchestral habit, and chose to spend the entire evening on one composer. An all-Beethoven programme is not a modest gesture. It is an orchestra saying: judge us on the repertoire we cannot hide behind.</p>
+
+      <p>Founded in 1924, the orchestra opened with the <em>Coriolan Overture</em>, Op. 62 — a piece that gives an ensemble nowhere to warm up. The strings answered with a sound that was dense rather than glossy, and the drama arrived without being pushed. Within four minutes the hall knew what kind of playing it was going to hear.</p>
+
+      <figure class="fig-wide">
+        <img src="images/adrian-prabava-rehearsing-the-stuttgart-philharm-cbee39eb.jpg" alt="Adrian Prabava rehearsing the Stuttgart Philharmonic">
+        <figcaption>Prabava in rehearsal. The orchestra answered with a sound that was dense rather than glossy.</figcaption>
+      </figure>
+
+      <h2>The Concerto, played as a question</h2>
+
+      <p>Then came the reason most of the audience was there. Edwin E.S. Kim walked out for Beethoven's <em>Violin Concerto in D major</em>, Op. 61, and immediately declined the easier version of the piece. There is a way to play this concerto that treats the long first movement as a display case. Kim treated it as an argument he was still working through.</p>
+
+      <p>The opening was patient to the point of risk. He let phrases breathe past the point where a more anxious soloist would have moved on, and the orchestra — this is the interesting part — went with him rather than covering for him. The Larghetto was where the reading justified itself: a stillness that felt less like restraint than like listening. The finale, when it came, had energy without hurry.</p>
+
+      <figure class="fig-wide">
+        <img src="images/edwin-e-s-kim-playing-beethoven-s-violin-concert-b825e375.jpg" alt="Edwin E.S. Kim playing Beethoven's Violin Concerto">
+        <figcaption>Kim in the Larghetto: the reading's centre of gravity, and the point at which the hall stopped moving.</figcaption>
+      </figure>
+
+      <p>It is worth saying why this matters beyond one good evening. Kim has spent two decades building the kind of career that does not announce itself: soloist appearances with the Prague Philharmonic, the Prague Radio Symphony, the Regensburg Philharmonic, the Göttingen Symphony, the Korean Symphony and the KBS Symphony. He has been a regular guest at the Smetana Litomyšl Festival, and his performances with Leoš Svárovský once drew fifteen curtain calls. From 2012 to 2019 he directed the Lech Classic Music Festival in Austria; he now leads Camerata SOL.</p>
+
+      <p>His projects have been stranger and more useful than most: a complete <em>Four Seasons</em> setting Vivaldi against Piazzolla and Richter, the full cycle of Mozart's violin concertos, and the series he calls <em>The Aesthetics of Humility</em>. His recordings — <em>Sehnsucht</em>, <em>Das Leben</em>, <em>Mein Wiener Herz</em> — read as a working notebook rather than a portfolio. <em>Das Leben</em> went to No. 1 on the classical chart on release.</p>
+
+      <div class="pullquote">
+        <p>"Kim is an artist of extraordinary technical mastery, but more importantly, he is a musician who understands the essence of music. Beethoven's Violin Concerto demands far more than beauty of sound."</p>
+        <cite>Adrian Prabava, conductor</cite>
+      </div>
+
+      <figure class="fig-wide">
+        <img src="images/adrian-prabava-conducting-with-edwin-e-s-kim-896c6d78.jpg" alt="Adrian Prabava conducting with Edwin E.S. Kim">
+        <figcaption>Conductor and soloist: an accompaniment, not a negotiation.</figcaption>
+      </figure>
+
+      <h2>The Fourth, and what the orchestra is <em>for</em></h2>
+
+      <p>After the interval, Beethoven's <em>Symphony No. 4 in B-flat major</em>, Op. 60 — the symphony that gets called the quiet one, wedged between the Eroica and the Fifth. It suited them. The warmth in the strings, the woodwind colouring that stayed inside the ensemble rather than stepping out of it, the way the whole thing cohered without being drilled: this is what a hundred years of playing together buys you.</p>
+
+      <p>Prabava afterwards called the orchestra's first Korean visit a meaningful one, and said he hoped to return. That is the expected line. What was less expected was the evening's actual achievement: not a display of German pedigree, and not a soloist's showcase, but a conversation between the two that neither side tried to win.</p>
+
+      <aside class="critic-box">
+        <h3>About this review</h3>
+        <p>Eurasia Classic News reviews are written from attended performances; our critic was present at the concert of 28 May in Daejeon. We accept no payment from presenters or artists, and reviews are not shown to their subjects before publication. Ratings follow our five-star scale, explained in the verdict panel.</p>
+      </aside>
+    </article>
+
+    <!-- Korean body -->
+    <article class="art-body" id="body-ko" lang="ko" hidden>
+      <p><span class="dateline">대전 —</span> 슈투트가르트 필하모닉은 100년의 독일 관현악 전통을 안고 도착했고, 저녁 전체를 단 한 명의 작곡가에게 쓰기로 했다. 베토벤만으로 채운 프로그램은 겸손한 선택이 아니다. 숨을 곳 없는 레퍼토리로 평가받겠다는 선언에 가깝다.</p>
+
+      <p>1924년 창단한 이 악단은 「코리올란 서곡 Op.62」으로 문을 열었다. 몸을 풀 여유를 주지 않는 곡이다. 현악은 매끈하기보다 밀도 있는 소리로 답했고, 드라마는 억지로 밀어붙이지 않아도 도착했다. 4분 만에 객석은 오늘 어떤 연주를 듣게 될지 알았다.</p>
+
+      <figure class="fig-wide">
+        <img src="images/adrian-prabava-rehearsing-the-stuttgart-philharm-cbee39eb.jpg" alt="슈투트가르트 필하모닉을 리허설 중인 아드리안 프라바바">
+        <figcaption>리허설의 프라바바. 현악은 매끈하기보다 밀도 있는 소리로 답했다.</figcaption>
+      </figure>
+
+      <h2>과시가 아니라, 물음으로 연주된 협주곡</h2>
+
+      <p>그리고 대부분의 관객이 기다린 순간이 왔다. 김응수가 베토벤 「바이올린 협주곡 D장조 Op.61」을 위해 무대에 올랐고, 곧바로 이 곡의 쉬운 버전을 거절했다. 이 협주곡의 긴 1악장을 진열장처럼 다루는 방법이 있다. 김응수는 그것을 아직 풀어가는 중인 논증처럼 다뤘다.</p>
+
+      <p>도입부는 위태로울 만큼 느긋했다. 더 조급한 독주자라면 이미 넘어갔을 지점을 지나서까지 프레이즈가 숨 쉬도록 두었고, 흥미로운 것은 오케스트라가 그를 덮어주는 대신 함께 따라갔다는 점이다. 해석이 스스로를 증명한 곳은 2악장 라르게토였다. 절제라기보다 경청에 가까운 정적. 뒤이은 3악장은 서두르지 않으면서도 생동했다.</p>
+
+      <figure class="fig-wide">
+        <img src="images/edwin-e-s-kim-playing-beethoven-s-violin-concert-b825e375.jpg" alt="베토벤 바이올린 협주곡을 연주하는 김응수">
+        <figcaption>라르게토의 김응수. 이 해석의 무게중심이자, 객석의 움직임이 멎은 지점.</figcaption>
+      </figure>
+
+      <p>이것이 좋은 저녁 하나를 넘어 왜 중요한지 말할 필요가 있다. 김응수는 스스로를 내세우지 않는 종류의 경력을 20년간 쌓아왔다. 프라하 필하모닉, 프라하 방송교향악단, 레겐스부르크 필하모닉, 괴팅겐 심포니, 코리안 심포니, KBS교향악단과의 협연. 체코 스메타나 리토미슐 페스티벌의 단골 초청 연주자이며, 지휘자 레오시 스바로프스키와의 협연에서는 15차례 커튼콜을 받았다. 2012년부터 2019년까지 오스트리아 레히 클래식 뮤직 페스티벌 예술감독을 맡았고, 현재는 카메라타 솔의 예술감독이다.</p>
+
+      <p>그의 기획은 대체로 남들보다 낯설고, 그만큼 쓸모 있었다. 비발디를 피아졸라·리히터와 맞세운 「사계 전곡」, 모차르트 바이올린 협주곡 전곡 연주, 그리고 「겹의 미학」 시리즈. 음반 「Sehnsucht」, 「Das Leben」, 「Mein Wiener Herz」는 포트폴리오라기보다 작업 노트처럼 읽힌다. 「Das Leben」은 발매와 동시에 클래식 차트 1위에 올랐다.</p>
+
+      <div class="pullquote">
+        <p>"김응수는 뛰어난 기술을 가진 연주자이지만, 무엇보다 음악의 본질을 이해하는 예술가입니다. 베토벤 바이올린 협주곡은 아름답게 연주하는 것만으로는 충분하지 않은 작품입니다."</p>
+        <cite>아드리안 프라바바, 지휘자</cite>
+      </div>
+
+      <figure class="fig-wide">
+        <img src="images/adrian-prabava-conducting-with-edwin-e-s-kim-896c6d78.jpg" alt="김응수와 함께 지휘하는 아드리안 프라바바">
+        <figcaption>지휘자와 독주자. 협상이 아니라 반주다.</figcaption>
+      </figure>
+
+      <h2>4번 교향곡, 그리고 오케스트라가 존재하는 이유</h2>
+
+      <p>휴식 후에는 베토벤 「교향곡 제4번 B♭장조 Op.60」. 영웅과 운명 사이에 낀, 조용한 교향곡이라 불리는 그 곡이다. 악단에 잘 맞았다. 현악의 따뜻함, 앙상블 밖으로 나서지 않으면서 색을 입히는 목관, 훈련된 티 없이 저절로 맞물리는 전체. 100년을 함께 연주해온 시간이 사는 것이 바로 이것이다.</p>
+
+      <p>연주 후 프라바바는 첫 한국 방문이 뜻깊었다며 다시 오고 싶다고 말했다. 예상 가능한 말이다. 예상 밖이었던 것은 이 저녁이 실제로 이룬 것이다. 독일 혈통의 과시도, 독주자의 쇼케이스도 아닌, 어느 쪽도 이기려 들지 않은 둘 사이의 대화였다.</p>
+
+      <aside class="critic-box">
+        <h3>이 리뷰에 대하여</h3>
+        <p>본지의 리뷰는 실제 관람을 바탕으로 작성됩니다. 이 리뷰는 5월 28일 대전 공연 관람을 기반으로 했습니다. 주최자나 아티스트로부터 대가를 받지 않으며, 게재 전 리뷰를 당사자에게 보여주지 않습니다. 별점 기준은 총평 패널에 안내되어 있습니다.</p>
+      </aside>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="art-aside">
+      <div class="prog">
+        <h3 data-en="The Programme" data-ko="프로그램">The Programme</h3>
+        <dl>
+          <dt data-en="Orchestra" data-ko="오케스트라">Orchestra</dt>
+          <dd>Stuttgart Philharmonic <em>(est. 1924)</em></dd>
+
+          <dt data-en="Conductor" data-ko="지휘">Conductor</dt>
+          <dd>Adrian Prabava</dd>
+
+          <dt data-en="Soloist" data-ko="협연">Soloist</dt>
+          <dd>Edwin E.S. Kim, <em>violin</em></dd>
+
+          <dt data-en="Venue" data-ko="장소">Venue</dt>
+          <dd data-en="Daejeon · 28 May" data-ko="대전 · 5월 28일">Daejeon · 28 May</dd>
+
+          <dt data-en="Works" data-ko="연주곡">Works</dt>
+          <dd>
+            <ul class="prog__works">
+              <li>Beethoven — Coriolan Overture<span class="op">Op. 62</span></li>
+              <li>Beethoven — Violin Concerto in D<span class="op">Op. 61</span></li>
+              <li>Beethoven — Symphony No. 4 in B♭<span class="op">Op. 60</span></li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+
+      <div class="verdict">
+        <h3 data-en="Verdict" data-ko="총평">Verdict</h3>
+        <span class="stars" aria-label="Five out of five stars">★★★★★</span>
+        <p data-en="A soloist and an orchestra listening to each other, in repertoire that punishes anything less." data-ko="어느 쪽도 덜 듣는 것을 허락하지 않는 레퍼토리에서, 서로에게 귀 기울인 독주자와 오케스트라.">A soloist and an orchestra listening to each other, in repertoire that punishes anything less.</p>
+        <p class="verdict__legend" data-en="&lt;b&gt;★★★★★&lt;/b&gt; exceptional &amp;nbsp; &lt;b&gt;★★★★&lt;/b&gt; recommended&lt;br&gt;&lt;b&gt;★★★&lt;/b&gt; good &amp;nbsp; &lt;b&gt;★★&lt;/b&gt; uneven &amp;nbsp; &lt;b&gt;★&lt;/b&gt; poor" data-ko="&lt;b&gt;★★★★★&lt;/b&gt; 압도적 &amp;nbsp; &lt;b&gt;★★★★&lt;/b&gt; 추천&lt;br&gt;&lt;b&gt;★★★&lt;/b&gt; 준수 &amp;nbsp; &lt;b&gt;★★&lt;/b&gt; 아쉬움 &amp;nbsp; &lt;b&gt;★&lt;/b&gt; 실망"><b>★★★★★</b> exceptional &nbsp; <b>★★★★</b> recommended<br><b>★★★</b> good &nbsp; <b>★★</b> uneven &nbsp; <b>★</b> poor</p>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ============ RELATED ============ -->
+  <section class="related" aria-label="More reviews">
+    <h2>More from <em>Reviews</em></h2>
+    <div class="related__grid related__grid--one">
+      <article class="related__item">
+        <span class="related__tag">Seoul</span>
+        <h3><a href="review2.html">When Germany Met Korea: Stuttgart Philharmonic's <em>Landmark Korean Debut</em></a></h3>
+        <span class="stars" aria-label="Five stars">★★★★★</span>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="art-foot">
+    <span>© 2026 Eurasia Classic News · Editor Ji Sun Lee · <a href="mailto:jjartscompany@naver.com">jjartscompany@naver.com</a></span>
+    <span>In partnership with IMK · Lothringerstraße 20, 1030 Wien · <a href="mailto:office@classicimk.com">office@classicimk.com</a></span>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.lang-switch button');
+    var bodyEn  = document.getElementById('body-en');
+    var bodyKo  = document.getElementById('body-ko');
+    var html    = document.documentElement;
+
+    function setLang(lang) {
+      var isKo = lang === 'ko';
+
+      bodyEn.hidden = isKo;
+      bodyKo.hidden = !isKo;
+      html.lang = lang;
+
+      // swap any element that carries both strings
+      document.querySelectorAll('[data-en][data-ko]').forEach(function (el) {
+        el.innerHTML = isKo ? el.dataset.ko : el.dataset.en;
+      });
+
+      buttons.forEach(function (b) {
+        b.classList.toggle('is-on', b.dataset.lang === lang);
+      });
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.dataset.lang); });
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    var el = document.getElementById('today');
+    if (!el) return;
+    var d = new Date();
+    var day   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()];
+    var month = ['January','February','March','April','May','June',
+                 'July','August','September','October','November','December'][d.getMonth()];
+    el.textContent = day + ' \u00B7 ' + d.getDate() + ' ' + month + ' ' + d.getFullYear();
+  })();
+</script>
+
+</body>
+</html>

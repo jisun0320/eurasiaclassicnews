@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Share your story with Eurasia Classic News — submit an artist profile or a performance for coverage.">
+<meta name="theme-color" content="#6B1A28">
+<title>Spotlight — Eurasia Classic News</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Source+Serif+4:opsz,wght@8..60,300..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:      #F1ECE1;
+    --paper-warm: #E8E1D2;
+    --ink:        #171614;
+    --ink-mute:   #4A4741;
+    --ink-soft:   #75706A;
+    --wine:       #6B1A28;
+    --brass:      #A87F3C;
+    --rule:       #C7BFAD;
+    --rule-soft:  #E1D9C6;
+
+    --f-mast:  "Playfair Display", "Times New Roman", serif;
+    --f-body:  "Source Serif 4", Georgia, serif;
+    --f-ui:    "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --gutter-x: clamp(20px, 4vw, 56px);
+    --page-max: 1240px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--f-body); font-size: 17px; line-height: 1.6;
+    font-feature-settings: "kern","onum","liga";
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--wine); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 2px solid var(--wine); outline-offset: 2px;
+  }
+  button { font: inherit; cursor: pointer; }
+  ::selection { background: var(--wine); color: var(--paper); }
+
+  .page { max-width: var(--page-max); margin: 0 auto; padding: 0 var(--gutter-x); }
+
+  .skip {
+    position: absolute; left: -9999px; top: 0; z-index: 200;
+    background: var(--wine); color: var(--paper);
+    padding: 10px 20px; font-family: var(--f-ui); font-size: 12px; letter-spacing: .1em;
+  }
+  .skip:focus { left: 0; }
+
+  /* ---------- Header ---------- */
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; padding: 14px 0; flex-wrap: wrap;
+    border-bottom: 1px solid var(--rule-soft);
+    font-family: var(--f-ui); font-size: 12px; letter-spacing: .06em; color: var(--ink-mute);
+  }
+  .topbar__left { display: flex; gap: 20px; flex-wrap: wrap; }
+  .brandbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 0; gap: 24px; flex-wrap: wrap;
+  }
+  .brandbar__mark { display: inline-flex; align-items: center; gap: 14px; color: var(--ink); }
+  .brandbar__mark-icon { width: 50px; height: 40px; flex: none; display: inline-flex; }
+  .brandbar__mark-icon svg { width: 100%; height: 100%; display: block; }
+  .brandbar__mark-text {
+    font-family: var(--f-mast); font-weight: 400; font-size: 22px;
+    letter-spacing: .13em; text-transform: uppercase; padding-left: .13em; color: var(--ink);
+  }
+  .brandbar__mark:hover { color: var(--wine); }
+  .rule-strong { height: 1px; background: var(--ink); }
+
+  /* nav (shared shape with the rest of the site) */
+  .nav { display: flex; flex-wrap: wrap; align-items: center; }
+  .nav > a, .nav__top {
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase; font-weight: 500; padding: 4px 11px;
+    position: relative; color: var(--ink); background: none; border: 0;
+  }
+  .nav > *:not(:first-child)::before {
+    content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 1px; height: 11px; background: var(--rule);
+  }
+  .nav a.is-active, .nav__item.is-active > .nav__top { color: var(--wine); font-weight: 600; }
+  .nav__item { position: relative; }
+  .nav__top { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+  .nav__caret { width: 7px; height: 7px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg) translate(-2px,-2px); }
+  .nav__menu {
+    position: absolute; top: 100%; left: 6px; z-index: 30;
+    min-width: 170px; padding: 8px 0;
+    background: var(--paper); border: 1px solid var(--rule);
+    box-shadow: 0 8px 24px rgba(23,22,20,.10);
+    display: none;
+  }
+  .nav__item:hover .nav__menu, .nav__item:focus-within .nav__menu { display: block; }
+  .nav__menu a {
+    display: block; padding: 9px 18px;
+    font-family: var(--f-ui); font-size: 10.5px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--ink-mute);
+  }
+  .nav__menu a:hover { background: var(--paper-warm); color: var(--wine); }
+
+  /* ---------- Hero ---------- */
+  .share {
+    text-align: center;
+    padding: 74px 0 60px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .share__eyebrow {
+    font-family: var(--f-ui); font-size: 10.5px; font-weight: 700;
+    letter-spacing: .3em; text-transform: uppercase; color: var(--wine);
+    margin-bottom: 26px;
+  }
+  .share h1 {
+    font-family: var(--f-mast); font-weight: 600;
+    font-size: clamp(30px, 4.4vw, 58px);
+    line-height: 1.16; letter-spacing: -.018em;
+    margin: 0 auto 28px; max-width: 22ch;
+    text-wrap: balance;
+  }
+  .share h1 em { font-style: italic; color: var(--wine); }
+  .share p {
+    font-family: var(--f-body);
+    font-size: clamp(16.5px, 1.5vw, 19px);
+    line-height: 1.7; color: var(--ink-mute);
+    margin: 0 auto 34px; max-width: 62ch;
+    text-wrap: pretty;
+  }
+  .share__cta {
+    display: inline-flex; align-items: center;
+    padding: 16px 34px; border: 1px solid var(--wine);
+    font-family: var(--f-ui); font-size: 11px; font-weight: 600;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--wine);
+    border-radius: 1px; transition: .22s;
+  }
+  .share__cta:hover { background: var(--wine); color: var(--paper); }
+  .share__tags {
+    display: flex; justify-content: center; gap: 10px 0; flex-wrap: wrap;
+    margin-top: 32px;
+    font-family: var(--f-ui); font-size: 10px; font-weight: 500;
+    letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .share__tags span { padding: 0 14px; position: relative; }
+  .share__tags span + span::before {
+    content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 3px; height: 3px; border-radius: 50%; background: var(--brass);
+  }
+
+  /* ---------- Form section ---------- */
+  .forms { padding: 62px 0 20px; }
+  .forms__head { text-align: center; margin-bottom: 34px; }
+  .forms__head h2 {
+    font-family: var(--f-mast); font-weight: 600;
+    font-size: clamp(24px, 3vw, 36px);
+    letter-spacing: -.015em; margin: 0 0 12px; line-height: 1.1;
+  }
+  .forms__head p {
+    font-family: var(--f-mast); font-style: italic;
+    font-size: 17px; color: var(--ink-mute); margin: 0;
+  }
+
+  .tabs { display: flex; justify-content: center; gap: 0; margin-bottom: 30px; }
+  .tab {
+    background: transparent; border: 1px solid var(--rule);
+    padding: 12px 26px;
+    font-family: var(--f-ui); font-size: 11px; font-weight: 600;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--ink-mute);
+    transition: .2s;
+  }
+  .tab + .tab { border-left: 0; }
+  .tab.is-on { background: var(--wine); border-color: var(--wine); color: var(--paper); }
+
+  /* the box */
+  .box {
+    border: 1px solid var(--ink);
+    background: var(--paper-warm);
+    padding: clamp(26px, 4vw, 46px);
+    max-width: 860px; margin: 0 auto;
+  }
+  .box[hidden] { display: none; }
+  .box__title {
+    font-family: var(--f-mast); font-weight: 600;
+    font-size: 26px; letter-spacing: -.01em;
+    margin: 0 0 6px; line-height: 1.15;
+  }
+  .box__title em { font-style: italic; color: var(--wine); }
+  .box__sub {
+    font-family: var(--f-ui); font-size: 10.5px;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft);
+    margin: 0 0 30px;
+  }
+
+  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; }
+  .field { display: flex; flex-direction: column; }
+  .field--full { grid-column: 1 / -1; }
+  .field label {
+    font-family: var(--f-ui); font-size: 10px; font-weight: 600;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--ink-mute);
+    margin-bottom: 8px;
+  }
+  .field label .req { color: var(--wine); }
+  .field input, .field textarea, .field select {
+    font-family: var(--f-body); font-size: 16px; color: var(--ink);
+    background: transparent;
+    border: 0; border-bottom: 1px solid var(--rule);
+    padding: 9px 2px;
+    outline: none;
+    transition: border-color .2s;
+    border-radius: 0;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--wine); }
+  .field input::placeholder, .field textarea::placeholder {
+    color: var(--ink-soft); font-style: italic;
+  }
+  .field textarea { resize: vertical; min-height: 96px; line-height: 1.6; }
+  .field__hint {
+    font-family: var(--f-ui); font-size: 10.5px; color: var(--ink-soft);
+    margin-top: 7px; letter-spacing: .02em;
+  }
+
+  .box__foot {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 18px; flex-wrap: wrap;
+    margin-top: 34px; padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .box__note {
+    font-family: var(--f-ui); font-size: 10.5px; line-height: 1.6;
+    color: var(--ink-soft); margin: 0; max-width: 44ch;
+  }
+  .box__note a { border-bottom: 1px solid var(--rule); }
+  .submit {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 32px;
+    background: var(--wine); border: 1px solid var(--wine); color: var(--paper);
+    font-family: var(--f-ui); font-size: 11px; font-weight: 600;
+    letter-spacing: .24em; text-transform: uppercase;
+    border-radius: 1px; transition: .22s;
+    white-space: nowrap;
+  }
+  .submit:hover { background: transparent; color: var(--wine); }
+
+  /* ---------- Footer ---------- */
+  .foot {
+    margin-top: 76px; padding: 28px 0 60px;
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .12em; color: var(--ink-soft);
+  }
+  .foot a { border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .fields { grid-template-columns: 1fr; }
+    .tabs { flex-direction: column; }
+    .tab + .tab { border-left: 1px solid var(--rule); border-top: 0; }
+    .box__foot { flex-direction: column; align-items: stretch; }
+    .submit { justify-content: center; }
+    .nav > a, .nav__top { padding: 4px 9px; font-size: 10px; letter-spacing: .14em; }
+    .nav > *:not(:first-child)::before { display: none; }
+    .share { padding: 46px 0 40px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition-duration: .001ms !important; } }
+
+  /* ---------- Simple page ---------- */
+  .lede { text-align: center; padding: 70px 0 54px; border-bottom: 1px solid var(--rule-soft); }
+  .lede__eyebrow {
+    font-family: var(--f-ui); font-size: 10.5px; font-weight: 700;
+    letter-spacing: .3em; text-transform: uppercase; color: var(--wine);
+    margin-bottom: 24px;
+  }
+  .lede h1 {
+    font-family: var(--f-mast); font-weight: 600;
+    font-size: clamp(32px, 4.6vw, 58px);
+    line-height: 1.08; letter-spacing: -.02em;
+    margin: 0 auto 22px; max-width: 20ch;
+  }
+  .lede h1 em { font-style: italic; color: var(--wine); }
+  .lede p {
+    font-family: var(--f-body); font-size: 18px; line-height: 1.7;
+    color: var(--ink-mute); margin: 0 auto; max-width: 58ch;
+  }
+  .psect { padding: 56px 0 0; }
+  .psect__head {
+    display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+    padding-bottom: 14px; border-bottom: 2px solid var(--ink);
+  }
+  .psect__head h2 {
+    font-family: var(--f-mast); font-weight: 600;
+    font-size: clamp(23px, 2.8vw, 32px);
+    letter-spacing: -.015em; margin: 0; line-height: 1;
+  }
+  .psect__ko {
+    font-family: var(--f-ui); font-size: 10.5px; font-weight: 500;
+    letter-spacing: .16em; color: var(--brass);
+  }
+  .psect__body {
+    font-family: var(--f-mast); font-style: italic;
+    font-size: 17px; color: var(--ink-soft);
+    padding: 30px 0 6px; margin: 0;
+  }
+  .psect__body a { font-style: normal; border-bottom: 1px solid var(--rule); color: var(--ink-mute); }
+  .psect__body a:hover { color: var(--wine); border-color: var(--wine); }
+
+  /* ampersand — Playfair's is decorative; use the roman one from the text serif */
+  .amp {
+    font-family: var(--f-body);
+    font-style: normal;
+    font-weight: inherit;
+    font-size: 0.95em;
+    letter-spacing: 0;
+    padding: 0 0.02em;
+  }
+  /* in the sans UI (nav, topbar, labels) keep the sans ampersand */
+  .nav .amp, .topbar .amp, .brandbar .amp,
+  .row__tag .amp, .most-read__tag .amp,
+  .nsect__ko .amp, .psect__ko .amp, .sect__ko .amp,
+  .figcap .amp, .foot .amp, .art-byline .amp, .row__byline .amp {
+    font-family: var(--f-ui);
+    font-size: 1em;
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#sp-interviews">Skip to content</a>
+
+<div class="page">
+
+  <div class="topbar">
+    <div class="topbar__left">
+      <span id="today">Monday · 13 July 2026</span>
+      <span>Europe <span class="amp">&amp;</span> Korea Edition</span>
+    </div>
+    <div><a href="mailto:jjartscompany@naver.com">Contact</a></div>
+  </div>
+
+  <div class="brandbar">
+    <a href="index.html" class="brandbar__mark">
+      <span class="brandbar__mark-icon"><svg viewBox="235 258 780 622" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="39" stroke-linecap="butt" stroke-linejoin="miter"><path d="M 487 294 L 262 294 L 262 665 L 455 665"/><path d="M 262 473 L 466 473"/><path d="M 692 504 A 184 184 0 1 0 746 812"/></g><path fill="currentColor" stroke="none" d="M 692 276 L 732 276 L 967 623 L 967 276 L 1007 276 L 1007 682 L 960 682 L 732 346 L 732 682 L 692 682 Z"/></svg></span>
+      <span class="brandbar__mark-text">Eurasia Classic News</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="ecn.html">ECN</a>
+
+      <span class="nav__item">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">News <span class="amp">&amp;</span> Reviews <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="articles.html#news-latest">Latest News</a>
+          <a href="articles.html#festivals">Festivals <span class="amp">&amp;</span> Tours</a>
+          <a href="articles.html#all">All Articles</a>
+        </span>
+      </span>
+
+      <span class="nav__item is-active">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">Spotlight <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="index.html#interviews">Interviews</a>
+          <a href="spotlight.html#cover">Cover Story</a>
+          <a href="spotlight.html#focus">Artist Focus</a>
+        </span>
+      </span>
+
+      <a href="get-featured.html">Get Featured</a>
+      <a href="video.html">Video</a>
+      <a href="artists.html">Artists</a>
+      <a href="whats-on.html">What's On</a>
+
+      <a href="more.html">More</a>
+    </nav>
+  </div>
+  <div class="rule-strong"></div>
+
+  <header class="lede">
+    <div class="lede__eyebrow">Spotlight</div>
+    <h1>Interviews, cover stories and <em>artist focus</em>.</h1>
+    <p>In-depth reporting on the artists, performances and orchestras shaping contemporary concert life.</p>
+  </header>
+
+  <section class="psect" id="sp-interviews">
+    <div class="psect__head">
+      <h2>Interviews</h2>
+    </div>
+    <p class="psect__body">Read the latest interview on the <a href="index.html#interviews">front page</a>.</p>
+  </section>
+
+  <section class="psect" id="cover">
+    <div class="psect__head">
+      <h2>Cover Story</h2>
+    </div>
+    <p class="psect__body">No cover story this issue. New features are published every Friday.</p>
+  </section>
+
+  <section class="psect" id="focus">
+    <div class="psect__head">
+      <h2>Artist Focus</h2>
+    </div>
+    <p class="psect__body">No artist focus yet — <a href="get-featured.html">submit an artist</a>.</p>
+  </section>
+
+  <footer class="foot">
+    <span>© 2026 Eurasia Classic News · Editor Ji Sun Lee · <a href="mailto:jjartscompany@naver.com">jjartscompany@naver.com</a></span>
+    <span>In partnership with IMK · Lothringerstraße 20, 1030 Wien · <a href="mailto:office@classicimk.com">office@classicimk.com</a></span>
+  </footer>
+
+</div>
+
+
+
+<script>
+  (function () {
+    var el = document.getElementById('today');
+    if (!el) return;
+    var d = new Date();
+    var day   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()];
+    var month = ['January','February','March','April','May','June',
+                 'July','August','September','October','November','December'][d.getMonth()];
+    el.textContent = day + ' \u00B7 ' + d.getDate() + ' ' + month + ' ' + d.getFullYear();
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About Eurasia Classic News — who we are, what we believe, and how we cover classical music between Europe and Korea.">
+<meta name="theme-color" content="#6B1A28">
+<title>ECN — About Eurasia Classic News</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Source+Serif+4:opsz,wght@8..60,300..700&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:      #F1ECE1;
+    --paper-warm: #E8E1D2;
+    --ink:        #171614;
+    --ink-mute:   #4A4741;
+    --ink-soft:   #75706A;
+    --wine:       #6B1A28;
+    --brass:      #A87F3C;
+    --rule:       #C7BFAD;
+    --rule-soft:  #E1D9C6;
+
+    --f-mast:  "Playfair Display", "Times New Roman", serif;
+    --f-body:  "Source Serif 4", Georgia, serif;
+    --f-kr:    "Noto Serif KR", "Source Serif 4", serif;
+    --f-ui:    "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --gutter-x: clamp(20px, 4vw, 56px);
+    --page-max: 1240px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--f-body); font-size: 17px; line-height: 1.6;
+    font-feature-settings: "kern","onum","liga";
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--wine); }
+  a:focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
+  button { font: inherit; cursor: pointer; }
+  ::selection { background: var(--wine); color: var(--paper); }
+
+  .page { max-width: var(--page-max); margin: 0 auto; padding: 0 var(--gutter-x); }
+
+  .skip {
+    position: absolute; left: -9999px; top: 0; z-index: 200;
+    background: var(--wine); color: var(--paper);
+    padding: 10px 20px; font-family: var(--f-ui); font-size: 12px; letter-spacing: .1em;
+  }
+  .skip:focus { left: 0; }
+
+  /* ---------- Header ---------- */
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; padding: 14px 0; flex-wrap: wrap;
+    border-bottom: 1px solid var(--rule-soft);
+    font-family: var(--f-ui); font-size: 12px; letter-spacing: .06em; color: var(--ink-mute);
+  }
+  .topbar__left { display: flex; gap: 20px; flex-wrap: wrap; }
+  .brandbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 0; gap: 24px; flex-wrap: wrap;
+  }
+  .brandbar__mark { display: inline-flex; align-items: center; gap: 14px; color: var(--ink); }
+  .brandbar__mark-icon { width: 50px; height: 40px; flex: none; display: inline-flex; }
+  .brandbar__mark-icon svg { width: 100%; height: 100%; display: block; }
+  .brandbar__mark-text {
+    font-family: var(--f-mast); font-weight: 400; font-size: 22px;
+    letter-spacing: .13em; text-transform: uppercase; padding-left: .13em; color: var(--ink);
+  }
+  .brandbar__mark:hover { color: var(--wine); }
+  .nav { display: flex; flex-wrap: wrap; align-items: center; }
+  .nav > a, .nav__top {
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase; font-weight: 500; padding: 4px 11px;
+    position: relative; color: var(--ink); background: none; border: 0;
+  }
+  .nav > *:not(:first-child)::before {
+    content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 1px; height: 11px; background: var(--rule);
+  }
+  .nav a.is-active, .nav__item.is-active > .nav__top { color: var(--wine); font-weight: 600; }
+  .nav__item { position: relative; }
+  .nav__top { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+  .nav__caret { width: 7px; height: 7px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg) translate(-2px,-2px); }
+  .nav__menu {
+    position: absolute; top: 100%; left: 6px; z-index: 30;
+    min-width: 170px; padding: 8px 0;
+    background: var(--paper); border: 1px solid var(--rule);
+    box-shadow: 0 8px 24px rgba(23,22,20,.10);
+    display: none;
+  }
+  .nav__item:hover .nav__menu, .nav__item:focus-within .nav__menu { display: block; }
+  .nav__menu a {
+    display: block; padding: 9px 18px;
+    font-family: var(--f-ui); font-size: 10.5px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--ink-mute);
+  }
+  .nav__menu a:hover { background: var(--paper-warm); color: var(--wine); }
+  .rule-strong { height: 1px; background: var(--ink); }
+
+  /* ---------- Hero ---------- */
+  .about-hero {
+    text-align: center;
+    padding: 76px 0 56px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .about-hero__logo {
+    width: clamp(150px, 17vw, 230px);
+    aspect-ratio: 780 / 622;
+    margin: 0 auto 26px;
+    color: var(--ink);
+  }
+  .about-hero__logo svg { width: 100%; height: 100%; display: block; }
+  .about-hero h1 {
+    font-family: var(--f-mast); font-weight: 500;
+    font-size: clamp(28px, 4.2vw, 56px);
+    letter-spacing: .005em; margin: 0 0 20px; line-height: 1.06;
+  }
+  .about-hero p {
+    font-family: var(--f-mast); font-style: italic; font-weight: 400;
+    font-size: clamp(17px, 1.9vw, 22px);
+    color: var(--ink-mute); max-width: 46ch;
+    margin: 0 auto; line-height: 1.45;
+  }
+
+  /* ---------- Lang toggle ---------- */
+  .lang-switch {
+    display: inline-flex; border: 1px solid var(--rule); border-radius: 999px;
+    overflow: hidden; margin-top: 30px;
+  }
+  .lang-switch button {
+    background: transparent; border: 0; padding: 7px 20px;
+    font-family: var(--f-ui); font-size: 11px; font-weight: 600;
+    letter-spacing: .16em; color: var(--ink-soft); transition: .2s;
+  }
+  .lang-switch button.is-on { background: var(--wine); color: var(--paper); }
+
+  /* ---------- Section ---------- */
+  .sect {
+    display: grid;
+    grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+    gap: clamp(24px, 5vw, 72px);
+    padding: 58px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: start;
+  }
+  .sect__label {
+    font-family: var(--f-ui); font-size: 10.5px; font-weight: 700;
+    letter-spacing: .26em; text-transform: uppercase; color: var(--wine);
+    padding-top: 10px;
+  }
+  .sect__body { max-width: 40rem; }
+  .sect__body h2 {
+    font-family: var(--f-mast); font-weight: 600;
+    font-size: clamp(24px, 2.9vw, 34px);
+    line-height: 1.14; letter-spacing: -.015em;
+    margin: 0 0 20px;
+  }
+  .sect__body h2 em { font-style: italic; color: var(--wine); }
+  .sect__body p { margin: 0 0 1.2em; }
+  .sect__body p:last-child { margin-bottom: 0; }
+  .sect__body[lang="ko"] { font-family: var(--f-kr); font-size: 16px; line-height: 1.85; word-break: keep-all; }
+  .sect__body[lang="ko"] h2 { font-family: var(--f-kr); font-weight: 600; letter-spacing: -.01em; }
+
+  /* Vision list */
+  .vision { list-style: none; margin: 0; padding: 0; }
+  .vision li {
+    display: grid; grid-template-columns: auto 1fr; gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+  .vision li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .vision__no {
+    font-family: var(--f-mast); font-weight: 500; font-style: italic;
+    font-size: 26px; color: var(--brass); line-height: 1;
+    min-width: 2ch;
+  }
+  .vision__t {
+    font-family: var(--f-mast); font-weight: 600; font-size: 18px;
+    margin: 0 0 6px; letter-spacing: -.005em;
+  }
+  .vision__d {
+    font-family: var(--f-body); font-size: 15px; line-height: 1.55;
+    color: var(--ink-mute); margin: 0;
+  }
+  [lang="ko"] .vision__t { font-family: var(--f-kr); }
+  [lang="ko"] .vision__d { font-family: var(--f-kr); font-size: 14.5px; line-height: 1.8; }
+
+
+
+  /* Contact */
+  .contact { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 32px; }
+  .statement--contact { border-bottom: 0; padding-bottom: 30px; }
+  .btn {
+    display: inline-flex; align-items: center;
+    padding: 14px 26px; border: 1px solid var(--ink);
+    font-family: var(--f-ui); font-size: 11px; font-weight: 600;
+    letter-spacing: .22em; text-transform: uppercase; color: var(--ink);
+    border-radius: 1px; transition: .22s;
+  }
+  .btn:hover { background: var(--ink); color: var(--paper); }
+  .btn--wine { border-color: var(--wine); color: var(--wine); }
+  .btn--wine:hover { background: var(--wine); color: var(--paper); }
+
+  /* ---------- Footer ---------- */
+  .foot {
+    padding: 30px 0 62px;
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .12em; color: var(--ink-soft);
+  }
+  .foot a { border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+
+  /* ---------- Statement (centred About) ---------- */
+  .statement {
+    text-align: center;
+    padding: 74px 0 66px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .statement__label {
+    font-family: var(--f-ui); font-size: 10.5px; font-weight: 700;
+    letter-spacing: .28em; text-transform: uppercase; color: var(--wine);
+    margin-bottom: 30px;
+  }
+  .statement__body h2 {
+    font-family: var(--f-mast); font-weight: 600;
+    font-size: clamp(23px, 2.5vw, 34px);
+    line-height: 1.34; letter-spacing: -.008em;
+    margin: 0 auto 32px;
+    max-width: 44ch;
+    text-wrap: pretty;
+  }
+  .statement__body h2 em { font-style: italic; color: var(--wine); }
+  .statement__body p {
+    font-family: var(--f-body);
+    font-size: clamp(17px, 1.55vw, 20px);
+    line-height: 1.72;
+    color: var(--ink-mute);
+    margin: 0 auto 1.1em;
+    max-width: 62ch;
+    text-wrap: pretty;
+  }
+  .statement__body p:last-child { margin-bottom: 0; }
+  .statement__body[lang="ko"] h2 { font-family: var(--f-kr); font-weight: 600; }
+  .statement__body[lang="ko"] p {
+    font-family: var(--f-kr); font-size: 16.5px; line-height: 1.9;
+    word-break: keep-all; max-width: 46ch;
+  }
+
+  /* ---------- Performance gallery ---------- */
+  .gallery { padding: 70px 0 76px; text-align: center; }
+  .gallery__head { margin-bottom: 38px; }
+  .gallery__label {
+    display: block;
+    font-family: var(--f-ui); font-size: 10.5px; font-weight: 700;
+    letter-spacing: .28em; text-transform: uppercase; color: var(--brass);
+    margin-bottom: 16px;
+  }
+  .gallery__head h2 {
+    font-family: var(--f-mast); font-weight: 600;
+    font-size: clamp(25px, 3vw, 38px);
+    letter-spacing: -.015em; margin: 0; line-height: 1.1;
+  }
+
+  .strip { position: relative; }
+  .strip__viewport { overflow: hidden; }
+  .strip__track {
+    display: flex;
+    gap: 22px;
+    transition: transform 700ms cubic-bezier(.4,0,.2,1);
+    will-change: transform;
+  }
+  .strip__item {
+    margin: 0;
+    flex: 0 0 calc((100% - 3 * 22px) / 4);
+    min-width: 0;
+    text-align: center;
+  }
+  .strip__frame {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 3px;
+    background: var(--paper-warm);
+    position: relative;
+  }
+  .strip__frame img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .7s ease;
+  }
+  .strip__item:hover .strip__frame img { transform: scale(1.05); }
+  .strip__frame::after {
+    content: ""; position: absolute; inset: 0;
+    box-shadow: inset 0 0 0 1px rgba(23,22,20,.10);
+    pointer-events: none;
+  }
+
+  .strip__ctrl {
+    display: flex; align-items: center; justify-content: center;
+    gap: 16px; padding-top: 30px;
+  }
+  .strip__nav {
+    width: 36px; height: 36px; flex: none;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--rule); border-radius: 50%;
+    background: transparent; color: var(--ink-mute);
+    transition: .2s;
+  }
+  .strip__nav:hover { border-color: var(--wine); color: var(--wine); }
+  .strip__dots { display: flex; gap: 8px; }
+  .strip__dot {
+    width: 7px; height: 7px; padding: 0;
+    border: 1px solid var(--rule); border-radius: 50%;
+    background: transparent; transition: .2s;
+  }
+  .strip__dot.is-on { background: var(--wine); border-color: var(--wine); }
+
+  @media (max-width: 900px) {
+    .strip__item { flex-basis: calc((100% - 22px) / 2); }
+  }
+  @media (max-width: 560px) {
+    .strip__item { flex-basis: 100%; }
+    .statement { padding: 48px 0 44px; }
+    .gallery { padding: 48px 0 52px; }
+  }
+
+  @media (max-width: 820px) {
+    .sect { grid-template-columns: 1fr; gap: 14px; }
+    .sect__label { padding-top: 0; }
+  }
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    .nav a { padding: 4px 10px; font-size: 10px; letter-spacing: .14em; }
+    .nav a + a::before { display: none; }
+    .about-hero { padding: 48px 0 40px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition-duration: .001ms !important; } }
+
+  /* ampersand — Playfair's is decorative; use the roman one from the text serif */
+  .amp {
+    font-family: var(--f-body);
+    font-style: normal;
+    font-weight: inherit;
+    font-size: 0.95em;
+    letter-spacing: 0;
+    padding: 0 0.02em;
+  }
+  /* in the sans UI (nav, topbar, labels) keep the sans ampersand */
+  .nav .amp, .topbar .amp, .brandbar .amp,
+  .row__tag .amp, .most-read__tag .amp,
+  .nsect__ko .amp, .psect__ko .amp, .sect__ko .amp,
+  .figcap .amp, .foot .amp, .art-byline .amp, .row__byline .amp {
+    font-family: var(--f-ui);
+    font-size: 1em;
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#about">Skip to content</a>
+
+<div class="page">
+
+  <div class="topbar">
+    <div class="topbar__left">
+      <span id="today">Monday · 13 July 2026</span>
+      <span>Europe <span class="amp">&amp;</span> Korea Edition</span>
+    </div>
+    <div><a href="#contact">Contact</a></div>
+  </div>
+
+  <div class="brandbar">
+    <a href="index.html" class="brandbar__mark">
+      <span class="brandbar__mark-icon"><svg viewBox="235 258 780 622" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="39" stroke-linecap="butt" stroke-linejoin="miter"><path d="M 487 294 L 262 294 L 262 665 L 455 665"/><path d="M 262 473 L 466 473"/><path d="M 692 504 A 184 184 0 1 0 746 812"/></g><path fill="currentColor" stroke="none" d="M 692 276 L 732 276 L 967 623 L 967 276 L 1007 276 L 1007 682 L 960 682 L 732 346 L 732 682 L 692 682 Z"/></svg></span>
+      <span class="brandbar__mark-text">Eurasia Classic News</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="ecn.html" class="is-active">ECN</a>
+
+      <span class="nav__item">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">News <span class="amp">&amp;</span> Reviews <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="articles.html#news-latest">Latest News</a>
+          <a href="articles.html#festivals">Festivals <span class="amp">&amp;</span> Tours</a>
+          <a href="articles.html#all">All Articles</a>
+        </span>
+      </span>
+
+      <span class="nav__item">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">Spotlight <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="index.html#interviews">Interviews</a>
+          <a href="spotlight.html#cover">Cover Story</a>
+          <a href="spotlight.html#focus">Artist Focus</a>
+        </span>
+      </span>
+
+      <a href="get-featured.html">Get Featured</a>
+      <a href="video.html">Video</a>
+      <a href="artists.html">Artists</a>
+      <a href="whats-on.html">What's On</a>
+
+      <a href="more.html">More</a>
+    </nav>
+  </div>
+  <div class="rule-strong"></div>
+
+  <!-- ============ HERO ============ -->
+  <header class="about-hero" id="about">
+    <div class="about-hero__logo" role="img" aria-label="Eurasia Classic News monogram">
+      <svg viewBox="235 258 780 622" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="39" stroke-linecap="butt" stroke-linejoin="miter"><path d="M 487 294 L 262 294 L 262 665 L 455 665"/><path d="M 262 473 L 466 473"/><path d="M 692 504 A 184 184 0 1 0 746 812"/></g><path fill="currentColor" stroke="none" d="M 692 276 L 732 276 L 967 623 L 967 276 L 1007 276 L 1007 682 L 960 682 L 732 346 L 732 682 L 692 682 Z"/></svg>
+    </div>
+    <h1 data-en="Eurasia Classic News" data-ko="유라시아 클래식 뉴스">Eurasia Classic News</h1>
+    <p data-en="One continent's tradition, another's players — and the concert hall where the two finally have to agree." data-ko="한 대륙의 전통과 다른 대륙의 연주자들, 그리고 그 둘이 마침내 합의해야만 하는 공연장.">One continent's tradition, another's players — and the concert hall where the two finally have to agree.</p>
+
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" class="is-on" data-lang="en">EN</button>
+      <button type="button" data-lang="ko">한국어</button>
+    </div>
+  </header>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="statement">
+    <div class="statement__label" data-en="About" data-ko="소개">About</div>
+
+    <div class="statement__body" id="about-en" lang="en">
+      <h2>Eurasia Classic News is a bilingual classical music publication connecting stories, artists, and audiences across <em>Europe and Asia</em>.</h2>
+      <p>We cover the performers, ensembles, festivals, venues, and collaborations shaping contemporary concert life, with a particular focus on the exchange between Europe and Korea.</p>
+      <p>Through reporting, interviews, and editorial features in English and Korean, ECN brings classical music stories beyond their place of origin and into a wider international conversation.</p>
+    </div>
+
+    <div class="statement__body" id="about-ko" lang="ko" hidden>
+      <h2>유라시아 클래식 뉴스는 <em>유럽과 아시아</em>를 잇는 이중언어 클래식 음악 매체입니다.</h2>
+      <p>동시대 연주 현장을 만들어가는 연주자, 앙상블, 페스티벌, 공연장, 그리고 그들의 협업을 다룹니다. 특히 유럽과 한국 사이의 교류에 주목합니다.</p>
+      <p>영어와 한국어로 쓰인 취재, 인터뷰, 그리고 기획 기사를 통해, ECN은 클래식 음악의 이야기를 그것이 태어난 자리 너머 더 넓은 국제적 대화의 장으로 옮깁니다.</p>
+    </div>
+  </section>
+
+  <!-- ============ PERFORMANCE GALLERY ============ -->
+  <section class="gallery">
+    <div class="gallery__head">
+      <span class="gallery__label" data-en="On Stage" data-ko="무대에서">On Stage</span>
+      <h2 data-en="Concerts we have covered" data-ko="우리가 함께한 무대">Concerts we have covered</h2>
+    </div>
+
+    <div class="strip" data-interval="4000">
+      <div class="strip__viewport">
+        <div class="strip__track">
+            <figure class="strip__item">
+              <div class="strip__frame"><img src="images/stuttgart-philharmonic-in-rehearsal-daejeon-f541af71.jpg" alt="Stuttgart Philharmonic in rehearsal · Daejeon"></div>
+            </figure>
+            <figure class="strip__item">
+              <div class="strip__frame"><img src="images/adrian-prabava-on-the-podium-daejeon-c074aa1b.jpg" alt="Adrian Prabava on the podium · Daejeon"></div>
+            </figure>
+            <figure class="strip__item">
+              <div class="strip__frame"><img src="images/full-stage-empty-hall-the-morning-rehearsal-a6e5b3d2.jpg" alt="Full stage, empty hall · the morning rehearsal"></div>
+            </figure>
+            <figure class="strip__item">
+              <div class="strip__frame"><img src="images/strings-and-brass-beethoven-symphony-no-4-9462652b.jpg" alt="Strings and brass · Beethoven, Symphony No. 4"></div>
+            </figure>
+          </div>
+      </div>
+
+      <div class="strip__ctrl">
+        <button class="strip__nav" type="button" data-dir="-1" aria-label="Previous photos">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <div class="strip__dots" role="tablist" aria-label="Choose photo set"></div>
+        <button class="strip__nav" type="button" data-dir="1" aria-label="Next photos">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="statement statement--contact" id="contact">
+    <div class="statement__label" data-en="Contact" data-ko="문의">Contact</div>
+    <div class="statement__body">
+      <h2 data-en="Concert listings, review requests, corrections." data-ko="공연 등록, 리뷰 요청, 정정 보도.">Concert listings, review requests, corrections.</h2>
+      <p data-en="We read everything. We attend what we can. We correct what we get wrong — publicly, and at the top of the article." data-ko="모든 메일을 읽습니다. 갈 수 있는 공연은 갑니다. 틀린 것은 정정합니다 — 공개적으로, 그리고 기사 맨 위에.">We read everything. We attend what we can. We correct what we get wrong — publicly, and at the top of the article.</p>
+      <div class="contact">
+        <a class="btn btn--wine" href="mailto:jjartscompany@naver.com" data-en="Email the Editor" data-ko="편집장에게 메일">Email the Editor</a>
+        <a class="btn" href="articles.html" data-en="Read our Articles" data-ko="기사 보기">Read our Articles</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>© 2026 Eurasia Classic News · Editor Ji Sun Lee · <a href="mailto:jjartscompany@naver.com">jjartscompany@naver.com</a></span>
+    <span>In partnership with IMK · Lothringerstraße 20, 1030 Wien · <a href="mailto:office@classicimk.com">office@classicimk.com</a></span>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.lang-switch button');
+    var pairs = [['about-en','about-ko']];
+
+    function setLang(lang) {
+      var ko = lang === 'ko';
+      document.documentElement.lang = lang;
+
+      pairs.forEach(function (p) {
+        var en = document.getElementById(p[0]);
+        var kr = document.getElementById(p[1]);
+        if (en) en.hidden = ko;
+        if (kr) kr.hidden = !ko;
+      });
+
+      document.querySelectorAll('[data-en][data-ko]').forEach(function (el) {
+        el.innerHTML = ko ? el.dataset.ko : el.dataset.en;
+      });
+
+      buttons.forEach(function (b) {
+        b.classList.toggle('is-on', b.dataset.lang === lang);
+      });
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.dataset.lang); });
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    var el = document.getElementById('today');
+    if (!el) return;
+    var d = new Date();
+    var day   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()];
+    var month = ['January','February','March','April','May','June',
+                 'July','August','September','October','November','December'][d.getMonth()];
+    el.textContent = day + ' \u00B7 ' + d.getDate() + ' ' + month + ' ' + d.getFullYear();
+  })();
+</script>
+
+<script>
+  (function () {
+    document.querySelectorAll('.strip').forEach(function (strip) {
+      var track = strip.querySelector('.strip__track');
+      var items = Array.prototype.slice.call(strip.querySelectorAll('.strip__item'));
+      var dots  = strip.querySelector('.strip__dots');
+      var navs  = Array.prototype.slice.call(strip.querySelectorAll('.strip__nav'));
+      var delay = parseInt(strip.dataset.interval, 10) || 4000;
+      var page = 0, timer = null;
+
+      var reduced = window.matchMedia &&
+                    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function perView() {
+        var w = window.innerWidth;
+        return w <= 560 ? 1 : w <= 900 ? 2 : 4;
+      }
+      function pages() { return Math.max(1, Math.ceil(items.length / perView())); }
+
+      function buildDots() {
+        dots.innerHTML = '';
+        for (var i = 0; i < pages(); i++) {
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'strip__dot' + (i === page ? ' is-on' : '');
+          b.setAttribute('role', 'tab');
+          b.setAttribute('aria-label', 'Photo set ' + (i + 1));
+          (function (n) {
+            b.addEventListener('click', function () { go(n); start(); });
+          })(i);
+          dots.appendChild(b);
+        }
+      }
+
+      function go(n) {
+        var total = pages();
+        page = (n + total) % total;
+        track.style.transform = 'translateX(-' + (page * 100) + '%)';
+        Array.prototype.forEach.call(dots.children, function (d, i) {
+          d.classList.toggle('is-on', i === page);
+        });
+      }
+
+      function start() { if (!reduced && pages() > 1) { stop(); timer = setInterval(function () { go(page + 1); }, delay); } }
+      function stop()  { if (timer) { clearInterval(timer); timer = null; } }
+
+      navs.forEach(function (b) {
+        b.addEventListener('click', function () {
+          go(page + parseInt(b.dataset.dir, 10));
+          start();
+        });
+      });
+
+      strip.addEventListener('mouseenter', stop);
+      strip.addEventListener('mouseleave', start);
+      document.addEventListener('visibilitychange', function () {
+        document.hidden ? stop() : start();
+      });
+
+      var rt;
+      window.addEventListener('resize', function () {
+        clearTimeout(rt);
+        rt = setTimeout(function () { page = 0; buildDots(); go(0); start(); }, 150);
+      });
+
+      buildDots();
+      go(0);
+      start();
+    });
+  })();
+</script>
+
+</body>
+</html>

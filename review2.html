@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Review — the Stuttgart Philharmonic's landmark Korean debut at the Lotte Concert Hall, with soloists Kyung Sun Lee, Meehae Ryo and Soyeon Kang.">
+<meta name="theme-color" content="#6B1A28">
+<title>Review · Stuttgart Philharmonic, Seoul — Eurasia Classic News</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Source+Serif+4:opsz,wght@8..60,300..700&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:      #F1ECE1;
+    --paper-warm: #E8E1D2;
+    --ink:        #171614;
+    --ink-mute:   #4A4741;
+    --ink-soft:   #75706A;
+    --wine:       #6B1A28;
+    --brass:      #A87F3C;
+    --rule:       #C7BFAD;
+    --rule-soft:  #E1D9C6;
+
+    --f-display: "Fraunces", "Times New Roman", serif;
+    --f-body:    "Source Serif 4", Georgia, serif;
+    --f-kr:      "Noto Serif KR", "Source Serif 4", serif;
+    --f-ui:      "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --f-mast:    "Playfair Display", "Times New Roman", serif;
+
+    --gutter-x: clamp(20px, 4vw, 56px);
+    --page-max: 1240px;
+    --measure: 40rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 17px;
+    line-height: 1.6;
+    font-feature-settings: "kern","onum","liga";
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--wine); }
+  a:focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
+  button { font: inherit; cursor: pointer; }
+  ::selection { background: var(--wine); color: var(--paper); }
+
+  .page { max-width: var(--page-max); margin: 0 auto; padding: 0 var(--gutter-x); }
+
+  /* ---------- Header ---------- */
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; padding: 14px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    font-family: var(--f-ui); font-size: 12px; letter-spacing: .06em; color: var(--ink-mute);
+    flex-wrap: wrap;
+  }
+  .topbar__left { display: flex; gap: 20px; flex-wrap: wrap; }
+  .brandbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 0; gap: 24px; flex-wrap: wrap;
+  }
+  .brandbar__mark {
+    display: inline-flex; align-items: center; gap: 14px;
+    color: var(--ink);
+  }
+  .brandbar__mark-icon {
+    width: 50px; height: 40px; flex: none; display: inline-flex;
+  }
+  .brandbar__mark-icon svg { width: 100%; height: 100%; display: block; }
+  .brandbar__mark-text {
+    font-family: var(--f-mast);
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-left: 0.13em;
+  }
+  .brandbar__mark:hover { color: var(--wine); }
+  .nav { display: flex; flex-wrap: wrap; align-items: center; }
+  .nav > a, .nav__top {
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase; font-weight: 500; padding: 4px 11px;
+    position: relative; color: var(--ink); background: none; border: 0;
+  }
+  .nav > *:not(:first-child)::before {
+    content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 1px; height: 11px; background: var(--rule);
+  }
+  .nav a.is-active, .nav__item.is-active > .nav__top { color: var(--wine); font-weight: 600; }
+  .nav__item { position: relative; }
+  .nav__top { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+  .nav__caret { width: 7px; height: 7px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg) translate(-2px,-2px); }
+  .nav__menu {
+    position: absolute; top: 100%; left: 6px; z-index: 30;
+    min-width: 170px; padding: 8px 0;
+    background: var(--paper); border: 1px solid var(--rule);
+    box-shadow: 0 8px 24px rgba(23,22,20,.10);
+    display: none;
+  }
+  .nav__item:hover .nav__menu, .nav__item:focus-within .nav__menu { display: block; }
+  .nav__menu a {
+    display: block; padding: 9px 18px;
+    font-family: var(--f-ui); font-size: 10.5px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--ink-mute);
+  }
+  .nav__menu a:hover { background: var(--paper-warm); color: var(--wine); }
+  .rule-strong { height: 1px; background: var(--ink); }
+
+  /* ---------- Article header ---------- */
+  .crumb {
+    display: flex; align-items: center; gap: 10px;
+    padding: 26px 0 0;
+    font-family: var(--f-ui); font-size: 11px;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .crumb a { border-bottom: 1px solid var(--rule); padding-bottom: 2px; color: var(--ink-mute); }
+  .crumb a:hover { color: var(--wine); border-color: var(--wine); }
+  .crumb span[aria-current] { color: var(--wine); font-weight: 600; }
+  .art-head { padding: 30px 0 40px; max-width: 64rem; }
+  .art-kicker {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 26px; flex-wrap: wrap;
+  }
+  .art-kicker__tag {
+    font-family: var(--f-ui); font-size: 11px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--wine);
+  }
+  .art-kicker__sep { width: 22px; height: 1px; background: var(--rule); }
+  .art-kicker__place {
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .art-title {
+    font-family: var(--f-mast);
+    font-weight: 700;
+    font-size: clamp(30px, 4vw, 54px);
+    line-height: 1.14; letter-spacing: -.012em;
+    margin: 0 0 26px;
+    text-wrap: pretty;
+  }
+  .art-title em { font-style: italic; color: var(--wine); font-weight: 600; }
+  .art-dek {
+    font-family: var(--f-mast);
+    font-weight: 400;
+    font-style: italic; font-size: clamp(18px, 1.9vw, 23px);
+    line-height: 1.55; color: var(--ink-mute);
+    margin: 0 0 34px; max-width: 56ch;
+  }
+  .art-meta {
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+    padding-top: 22px; border-top: 1px solid var(--rule);
+  }
+  .stars { display: inline-flex; color: var(--brass); font-size: 17px; letter-spacing: 2px; }
+  .art-byline {
+    font-family: var(--f-ui); font-size: 12px; letter-spacing: .1em; color: var(--ink-mute);
+  }
+  .art-byline strong { color: var(--ink); font-weight: 600; }
+  .lang-switch { margin-left: auto; display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; }
+  .lang-switch button {
+    background: transparent; border: 0; padding: 6px 16px;
+    font-family: var(--f-ui); font-size: 11px; font-weight: 600;
+    letter-spacing: .16em; color: var(--ink-soft); transition: .2s;
+  }
+  .lang-switch button.is-on { background: var(--wine); color: var(--paper); }
+
+  /* ---------- Lead image ---------- */
+  .lead-figure { margin: 0 0 12px; }
+  .lead-figure img { width: 100%; height: auto; border-radius: 4px; }
+  .figcap {
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    padding-top: 12px; border-top: 1px solid var(--rule-soft); margin-top: 12px;
+    font-family: var(--f-ui); font-size: 11px; line-height: 1.5;
+    color: var(--ink-soft); letter-spacing: .04em;
+  }
+  .figcap__credit { text-transform: uppercase; letter-spacing: .18em; white-space: nowrap; }
+
+  /* ---------- Body layout ---------- */
+  .art-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 17rem);
+    gap: clamp(32px, 6vw, 80px);
+    padding: 56px 0 0;
+    align-items: start;
+  }
+  .art-body { max-width: var(--measure); }
+  .art-body { line-height: 1.68; }
+  .art-body p { margin: 0 0 1.4em; }
+  .art-body p:first-of-type::first-letter {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 144, "wght" 700;
+    float: left; font-size: 4.6em; line-height: .82;
+    padding: .06em .1em 0 0; color: var(--wine);
+  }
+  .art-body h2 {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 48, "wght" 600;
+    font-size: 26px; line-height: 1.2; letter-spacing: -.015em;
+    margin: 2.4em 0 .8em;
+  }
+  .art-body h2 em { font-style: italic; color: var(--wine); }
+
+  /* Korean body tuning */
+  .art-body[lang="ko"] { font-family: var(--f-kr); font-size: 16.5px; line-height: 1.85; word-break: keep-all; }
+  .art-body[lang="ko"] h2 { font-family: var(--f-kr); font-weight: 600; }
+  .art-body[lang="ko"] p:first-of-type::first-letter { font-size: 1em; float: none; padding: 0; color: inherit; }
+
+  /* Pull quote */
+  .pullquote {
+    margin: 2.6em 0;
+    padding: 0 0 0 24px;
+    border-left: 2px solid var(--wine);
+  }
+  .pullquote p {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 48, "wght" 400;
+    font-style: italic; font-size: clamp(20px, 2.3vw, 27px);
+    line-height: 1.32; letter-spacing: -.01em;
+    margin: 0 0 .55em; color: var(--ink);
+  }
+  .pullquote cite {
+    font-family: var(--f-ui); font-style: normal; font-size: 11px;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .art-body[lang="ko"] .pullquote p { font-family: var(--f-kr); font-style: normal; font-weight: 500; line-height: 1.5; }
+
+  /* Inline wide figure */
+  .fig-wide { margin: 2.8em 0; }
+  .fig-wide img {
+    width: 100%; height: auto;
+    border-radius: 3px; display: block;
+  }
+  .fig-wide figcaption {
+    font-family: var(--f-ui); font-size: 11px; line-height: 1.55;
+    color: var(--ink-soft); letter-spacing: .03em;
+    padding-top: 11px;
+  }
+  .art-body[lang="ko"] .fig-wide figcaption { font-family: var(--f-kr); font-size: 12px; }
+
+  /* Inline figure pair */
+  .fig-pair {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+    margin: 2.8em 0;
+  }
+  .fig-pair figure { margin: 0; }
+  .fig-pair img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3 / 4; border-radius: 3px; }
+  .fig-pair figcaption {
+    font-family: var(--f-ui); font-size: 10.5px; line-height: 1.5;
+    color: var(--ink-soft); letter-spacing: .04em; padding-top: 10px;
+  }
+
+  /* ---------- Sidebar: programme ---------- */
+  .art-aside { position: sticky; top: 24px; }
+  .prog {
+    background: var(--paper-warm);
+    padding: 26px 24px;
+    border-top: 2px solid var(--wine);
+  }
+  .prog h3 {
+    font-family: var(--f-ui); font-size: 10.5px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--wine);
+    margin: 0 0 20px;
+  }
+  .prog dl { margin: 0; }
+  .prog dt {
+    font-family: var(--f-ui); font-size: 9.5px; font-weight: 600;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft);
+    margin-bottom: 5px;
+  }
+  .prog dd {
+    margin: 0 0 18px; font-family: var(--f-body); font-size: 14.5px;
+    line-height: 1.42; color: var(--ink);
+  }
+  .prog dd:last-child { margin-bottom: 0; }
+  .prog dd em { font-style: italic; color: var(--wine); }
+  .prog__works { list-style: none; margin: 0; padding: 0; }
+  .prog__works li {
+    padding: 11px 0; border-bottom: 1px solid var(--rule);
+    font-size: 14px; line-height: 1.4;
+  }
+  .prog__works li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .prog__works .op {
+    display: block; font-family: var(--f-ui); font-size: 9.5px;
+    letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft);
+    margin-top: 3px;
+  }
+  .verdict {
+    margin-top: 22px; padding: 20px 24px;
+    border: 1px solid var(--rule);
+  }
+  .verdict h3 {
+    font-family: var(--f-ui); font-size: 10.5px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--ink-mute);
+    margin: 0 0 12px;
+  }
+  .verdict .stars { font-size: 20px; margin-bottom: 10px; }
+  .verdict p {
+    margin: 0; font-family: var(--f-body); font-size: 14px;
+    line-height: 1.5; color: var(--ink-mute); font-style: italic;
+  }
+
+  /* ---------- Footer ---------- */
+  .art-foot {
+    margin-top: 72px; padding: 32px 0 64px;
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .12em;
+    color: var(--ink-soft);
+  }
+  .art-foot a { border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+
+  /* ---------- Skip link ---------- */
+  .skip {
+    position: absolute; left: -9999px; top: 0; z-index: 200;
+    background: var(--wine); color: var(--paper);
+    padding: 10px 20px; font-family: var(--f-ui); font-size: 12px;
+    letter-spacing: .1em;
+  }
+  .skip:focus { left: 0; }
+
+  /* ---------- Dateline ---------- */
+  .dateline {
+    font-family: var(--f-ui); font-weight: 700; font-size: .78em;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--ink);
+  }
+
+  /* ---------- Critic / ethics box ---------- */
+  .critic-box {
+    margin: 3em 0 0;
+    padding: 22px 24px;
+    background: var(--paper-warm);
+    border-left: 2px solid var(--brass);
+  }
+  .critic-box h3 {
+    font-family: var(--f-ui); font-size: 10px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--ink-mute);
+    margin: 0 0 10px;
+  }
+  .critic-box p {
+    margin: 0; font-family: var(--f-ui); font-size: 12.5px;
+    line-height: 1.65; color: var(--ink-mute); letter-spacing: .01em;
+  }
+
+  /* ---------- Rating legend ---------- */
+  .verdict__legend {
+    margin-top: 14px; padding-top: 12px;
+    border-top: 1px solid var(--rule-soft);
+    font-family: var(--f-ui); font-size: 10px; letter-spacing: .1em;
+    color: var(--ink-soft); line-height: 1.8; font-style: normal;
+  }
+  .verdict__legend b { color: var(--brass); font-weight: 400; letter-spacing: 1px; }
+
+  /* ---------- Related reviews ---------- */
+  .related {
+    margin-top: 80px;
+    padding-top: 36px;
+    border-top: 2px solid var(--ink);
+  }
+  .related > h2 {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 48, "wght" 500;
+    font-size: 26px; letter-spacing: -.015em; margin: 0 0 26px;
+  }
+  .related > h2 em { font-style: italic; color: var(--wine); }
+  .related__grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  }
+  .related__grid--one { grid-template-columns: 1fr; }
+  .related__item {
+    padding: 4px 28px 8px;
+    border-left: 1px solid var(--rule-soft);
+  }
+  .related__item:first-child { padding-left: 0; border-left: 0; }
+  .related__tag {
+    display: block;
+    font-family: var(--f-ui); font-size: 10px; font-weight: 700;
+    letter-spacing: .22em; text-transform: uppercase; color: var(--wine);
+    margin-bottom: 8px;
+  }
+  .related__item h3 {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 36, "wght" 500;
+    font-size: 17.5px; line-height: 1.25; letter-spacing: -.005em;
+    margin: 0 0 8px;
+  }
+  .related__item h3 em { font-style: italic; color: var(--wine); }
+  .related__item .stars { font-size: 12px; letter-spacing: 1px; }
+
+  /* ---------- Print ---------- */
+  @media print {
+    .skip, .topbar, .brandbar, .rule-strong, .lang-switch, .related, .art-foot { display: none !important; }
+    body { background: #fff; color: #000; font-size: 11pt; }
+    .page { max-width: none; padding: 0; }
+    .art-wrap { display: block; }
+    .art-aside { position: static; page-break-inside: avoid; margin-top: 24pt; }
+    .art-body p:first-of-type::first-letter { font-size: 1em; float: none; padding: 0; color: inherit; }
+    .lead-figure img, .fig-pair img { max-height: 70mm; width: auto; }
+    a { color: inherit; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .related__grid { grid-template-columns: 1fr; }
+    .related__item { padding: 16px 0; border-left: 0; border-bottom: 1px solid var(--rule-soft); }
+    .related__item:last-child { border-bottom: 0; }
+    .art-wrap { grid-template-columns: 1fr; gap: 48px; }
+    .art-aside { position: static; max-width: 34rem; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .art-head { padding: 36px 0 28px; }
+    .art-body p:first-of-type::first-letter { font-size: 3.6em; }
+    .fig-pair { grid-template-columns: 1fr; gap: 24px; }
+    .lang-switch { margin-left: 0; }
+    .nav a { padding: 4px 10px; font-size: 10px; letter-spacing: .14em; }
+    .nav a + a::before { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: .001ms !important; }
+  }
+
+  /* ampersand — Playfair's is decorative; use the roman one from the text serif */
+  .amp {
+    font-family: var(--f-body);
+    font-style: normal;
+    font-weight: inherit;
+    font-size: 0.95em;
+    letter-spacing: 0;
+    padding: 0 0.02em;
+  }
+  /* in the sans UI (nav, topbar, labels) keep the sans ampersand */
+  .nav .amp, .topbar .amp, .brandbar .amp,
+  .row__tag .amp, .most-read__tag .amp,
+  .nsect__ko .amp, .psect__ko .amp, .sect__ko .amp,
+  .figcap .amp, .foot .amp, .art-byline .amp, .row__byline .amp {
+    font-family: var(--f-ui);
+    font-size: 1em;
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#article2">Skip to article</a>
+
+<div class="page">
+
+  <div class="topbar">
+    <div class="topbar__left">
+      <span id="today">Monday · 13 July 2026</span>
+      <span>Europe <span class="amp">&amp;</span> Korea Edition</span>
+    </div>
+    <div><a href="#">Newsletter</a></div>
+  </div>
+
+  <div class="brandbar">
+    <a href="index.html" class="brandbar__mark"><span class="brandbar__mark-icon"><svg viewBox="235 258 780 622" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="39" stroke-linecap="butt" stroke-linejoin="miter"><path d="M 487 294 L 262 294 L 262 665 L 455 665"/><path d="M 262 473 L 466 473"/><path d="M 692 504 A 184 184 0 1 0 746 812"/></g><path fill="currentColor" stroke="none" d="M 692 276 L 732 276 L 967 623 L 967 276 L 1007 276 L 1007 682 L 960 682 L 732 346 L 732 682 L 692 682 Z"/></svg></span><span class="brandbar__mark-text">Eurasia Classic News</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="ecn.html">ECN</a>
+
+      <span class="nav__item is-active">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">News <span class="amp">&amp;</span> Reviews <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="articles.html#news-latest">Latest News</a>
+          <a href="articles.html#festivals">Festivals <span class="amp">&amp;</span> Tours</a>
+          <a href="articles.html#all">All Articles</a>
+        </span>
+      </span>
+
+      <span class="nav__item">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">Spotlight <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="index.html#interviews">Interviews</a>
+          <a href="spotlight.html#cover">Cover Story</a>
+          <a href="spotlight.html#focus">Artist Focus</a>
+        </span>
+      </span>
+
+      <a href="get-featured.html">Get Featured</a>
+      <a href="video.html">Video</a>
+      <a href="artists.html">Artists</a>
+      <a href="whats-on.html">What's On</a>
+
+      <a href="more.html">More</a>
+    </nav>
+  </div>
+  <div class="rule-strong"></div>
+
+  <!-- ============ ARTICLE HEADER ============ -->
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="articles.html">Articles</a>
+    <span>›</span>
+    <span aria-current="page">Review · Seoul</span>
+  </nav>
+
+  <header class="art-head" id="article2">
+    <div class="art-kicker">
+      <span class="art-kicker__tag">Review</span>
+      <span class="art-kicker__sep"></span>
+      <span class="art-kicker__place">Seoul · Lotte Concert Hall</span>
+    </div>
+
+    <h1 class="art-title" data-en="When Germany Met Korea: Stuttgart Philharmonic's &lt;em&gt;Landmark Korean Debut&lt;/em&gt;" data-ko="독일과 한국의 만남: 슈투트가르트 필하모닉의 &lt;em&gt;역사적인 한국 내한&lt;/em&gt;">When Germany Met Korea: Stuttgart Philharmonic's <em>Landmark Korean Debut</em></h1>
+
+    <p class="art-dek" data-en="The Finest of German Music Meets Korea's Leading Artists." data-ko="독일 음악의 정수와 한국 대표 예술가들의 만남.">The Finest of German Music Meets Korea's Leading Artists.</p>
+
+    <div class="art-meta">
+      <span class="stars" aria-label="Five out of five stars">★★★★★</span>
+      <span class="art-byline">By <strong>Ji Sun Lee</strong>, Editor · Seoul · 29 May · 6 min read</span>
+      <div class="lang-switch" role="group" aria-label="Article language">
+        <button type="button" class="is-on" data-lang="en">EN</button>
+        <button type="button" data-lang="ko">한국어</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ LEAD IMAGE ============ -->
+  <figure class="lead-figure">
+    <img src="images/the-stuttgart-philharmonic-with-soloists-on-the--f2a69dfb.jpg" alt="The Stuttgart Philharmonic with soloists on the Lotte Concert Hall stage">
+    <figcaption class="figcap">
+      <span data-en="The Stuttgart Philharmonic at the Lotte Concert Hall, Seoul — the orchestra's first performances in South Korea." data-ko="롯데콘서트홀 무대에 오른 슈투트가르트 필하모닉. 이 악단의 첫 한국 공연이다.">The Stuttgart Philharmonic at the Lotte Concert Hall, Seoul — the orchestra's first performances in South Korea.</span>
+      <span class="figcap__credit">Photograph · Eurasia Classic News</span>
+    </figcaption>
+  </figure>
+
+  <!-- ============ BODY ============ -->
+  <div class="art-wrap">
+
+    <!-- English body -->
+    <article class="art-body" id="body2-en" lang="en">
+      <p><span class="dateline">Seoul —</span> The Stuttgart Philharmonic Orchestra, one of Germany's most distinguished ensembles and a cultural emblem of the city of Stuttgart, has successfully concluded its first performances in South Korea — concerts held at the Lotte Concert Hall in Seoul on May 29.</p>
+
+      <p>These landmark performances offered Korean audiences a rare opportunity to experience the depth and richness of the German orchestral tradition through a program devoted entirely to the music of Ludwig van Beethoven. Audiences remained fully engaged throughout both evenings, rewarding the musicians with sustained, enthusiastic applause at the close of each concert.</p>
+
+      <p>The concerts were led by Adrian Prabava, widely recognized for his dynamic career across Germany and Europe. His nuanced yet propulsive interpretation drew out the orchestra's hallmark qualities — a cohesive ensemble sound, refined musicality, and the burnished tonal palette characteristic of the great German orchestral tradition.</p>
+
+      <figure class="fig-wide">
+        <img src="images/adrian-prabava-conducting-the-stuttgart-philharm-53b119a1.jpg" alt="Adrian Prabava conducting the Stuttgart Philharmonic">
+        <figcaption>Adrian Prabava draws out the orchestra's hallmark qualities — a cohesive ensemble sound and a burnished tonal palette.</figcaption>
+      </figure>
+
+      <p>The evening opened with Beethoven's <em>Coriolan Overture</em>, Op. 62, a work of dramatic intensity and powerful emotional contrasts. The Stuttgart Philharmonic delivered a taut, incisive reading that showcased both technical precision and expressive depth, setting the tone for an evening of authoritative Beethoven playing.</p>
+
+      <h2>The <em>Triple Concerto</em>, and three Korean soloists</h2>
+
+      <p>Beethoven's <em>Triple Concerto in C Major</em>, Op. 56 featured three distinguished Korean soloists: violinist Kyung Sun Lee, cellist Meehae Ryo, and pianist Soyeon Kang. Having each cultivated a distinctive musical voice through years of international performance experience, the three artists brought their individual colors and artistry to the stage while breathing as one within the framework of the work.</p>
+
+      <figure class="fig-wide">
+        <img src="images/violinist-kyung-sun-lee-cellist-meehae-ryo-and-p-5db39b11.jpg" alt="Violinist Kyung Sun Lee, cellist Meehae Ryo and pianist Soyeon Kang with the orchestra">
+        <figcaption>Kyung Sun Lee, Meehae Ryo and Soyeon Kang in Beethoven's Triple Concerto, Op. 56.</figcaption>
+      </figure>
+
+      <p>Lee guided the musical narrative with clarity and restraint, while Ryo provided a rich, warm sonority that anchored the ensemble. Kang, with her refined touch and expressive flexibility, served as a natural bridge between the two string soloists and the orchestra.</p>
+
+      <p>More than a showcase of individual virtuosity, Beethoven's <em>Triple Concerto</em> demands a chamber music sensibility in which the soloists and orchestra constantly listen and respond to one another. Throughout the performance, the three soloists maintained a close musical dialogue with the orchestra, capturing the elegance and conversational character that define the work. Their seamless ensemble playing left a lasting impression, highlighting a remarkable collaboration between some of Korea's leading musicians and one of Germany's most distinguished orchestras.</p>
+
+      <figure class="fig-wide">
+        <img src="images/the-three-soloists-in-close-dialogue-with-the-or-8e993cdb.jpg" alt="The three soloists in close dialogue with the orchestra">
+        <figcaption>A chamber-music sensibility: the soloists and orchestra listening and responding to one another.</figcaption>
+      </figure>
+
+      <h2>The <em>Fourth</em>, after the interval</h2>
+
+      <p>The second half featured Beethoven's <em>Symphony No. 4 in B-flat Major</em>, Op. 60. The Stuttgart Philharmonic navigated the work's lyrical beauty and structural sophistication with the orchestra's signature sound — rich, transparent, and meticulously balanced. The performance revealed the symphony's vibrant energy and subtle nuances with remarkable clarity, reminding audiences why this often-overlooked work deserves a place alongside Beethoven's most celebrated symphonies.</p>
+
+      <div class="pullquote">
+        <p>"The level of concentration and musical appreciation among Korean audiences was truly remarkable. From the first note to the final applause, we felt a genuine connection with the audience. It was an unforgettable experience for all of us."</p>
+        <cite>Adrian Prabava, conductor</cite>
+      </div>
+
+      <p>Reflecting on the collaboration with the Korean soloists, he added, "Kyung Sun Lee, Meehae Ryo, and Soyeon Kang each possess exceptional artistry and individuality. At the same time, they blended beautifully with the orchestra, creating a performance that felt both refined and deeply communicative."</p>
+
+      <p>A representative of the Stuttgart Philharmonic commented, "South Korea has a thriving classical music scene and an audience with a profound appreciation for the art form. We were honored by the warm welcome we received and hope this will be the beginning of a lasting cultural relationship between our orchestra and Korean audiences."</p>
+
+      <p>The concerts were widely received as a significant artistic collaboration between one of Germany's leading orchestras and some of Korea's most distinguished musicians. The performances not only celebrated the enduring legacy of Beethoven but also reflected the deepening cultural and musical ties between Germany and South Korea.</p>
+
+      <p>With its successful Korean debut, the Stuttgart Philharmonic reaffirmed its place among Europe's finest orchestras, leaving audiences with a compelling encounter with the German symphonic tradition — and the promise of a relationship between orchestra and audience that may well continue to grow.</p>
+
+      <aside class="critic-box">
+        <h3>About this review</h3>
+        <p>Eurasia Classic News reviews are written from attended performances; our editor was present at the concert of 29 May at the Lotte Concert Hall, Seoul. We accept no payment from presenters or artists, and reviews are not shown to their subjects before publication. Ratings follow our five-star scale, explained in the verdict panel.</p>
+      </aside>
+    </article>
+
+    <!-- Korean body -->
+    <article class="art-body" id="body2-ko" lang="ko" hidden>
+      <p><span class="dateline">서울 —</span> 독일 슈투트가르트를 대표하는 명문 오케스트라 슈투트가르트 필하모닉 오케스트라(Stuttgart Philharmonic Orchestra)가 지난 5월 29일 롯데콘서트홀에서 열린 한국 첫 내한공연을 성공적으로 마무리했다.</p>
+
+      <p>이번 공연은 슈투트가르트 필하모닉의 첫 한국 투어로, 독일 정통 오케스트라의 깊이 있는 음향과 베토벤 음악의 정수를 국내 관객들에게 선보인 뜻깊은 무대였다. 공연장을 찾은 관객들은 연주 내내 높은 집중력을 보이며 무대에 몰입했으며, 공연 종료 후에는 뜨거운 박수로 연주자들을 환호했다.</p>
+
+      <p>지휘는 독일과 유럽을 중심으로 활발히 활동하고 있는 아드리안 프라바바(Adrian Prabava)가 맡았다. 프라바바는 섬세하면서도 에너지 넘치는 해석으로 오케스트라를 이끌며 독일 악단 특유의 견고한 앙상블과 풍부한 음향을 이끌어냈다.</p>
+
+      <figure class="fig-wide">
+        <img src="images/adrian-prabava-conducting-the-stuttgart-philharm-53b119a1.jpg" alt="슈투트가르트 필하모닉을 지휘하는 아드리안 프라바바">
+        <figcaption>독일 악단 특유의 견고한 앙상블과 풍부한 음향을 이끌어낸 아드리안 프라바바.</figcaption>
+      </figure>
+
+      <p>공연은 베토벤의 「코리올란 서곡(Op.62)」으로 시작됐다. 강렬한 긴장감과 극적인 전개가 돋보이는 작품에서 슈투트가르트 필하모닉은 탄탄한 합주력과 섬세한 표현력을 선보이며 객석의 집중을 이끌어냈다.</p>
+
+      <h2><em>삼중협주곡</em>, 그리고 세 명의 한국 협연자</h2>
+
+      <p>이어진 베토벤 「삼중협주곡 C장조(Op.56)」에서는 바이올리니스트 이경선, 첼리스트 여미혜, 피아니스트 강소연이 협연자로 무대에 올라 공연의 깊이를 더했다. 국제 무대에서 오랜 시간 자신만의 음악세계를 구축해온 세 연주자는 각자의 뚜렷한 개성과 음색을 지니고 있으면서도, 작품 안에서는 한 방향을 향해 섬세하게 호흡했다.</p>
+
+      <figure class="fig-wide">
+        <img src="images/violinist-kyung-sun-lee-cellist-meehae-ryo-and-p-5db39b11.jpg" alt="바이올리니스트 이경선, 첼리스트 여미혜, 피아니스트 강소연">
+        <figcaption>베토벤 「삼중협주곡 Op.56」을 협연한 이경선, 여미혜, 강소연.</figcaption>
+      </figure>
+
+      <p>바이올리니스트 이경선은 선명하면서도 절제된 선율로 음악의 흐름을 이끌었고, 첼리스트 여미혜는 깊고 따뜻한 음색으로 작품의 중심을 단단히 받쳐주었다. 피아니스트 강소연은 정교한 터치와 유연한 표현으로 두 현악기와 오케스트라 사이의 균형을 자연스럽게 연결했다.</p>
+
+      <p>베토벤의 삼중협주곡은 독주자의 기교만으로 완성되는 작품이 아니라, 세 악기와 오케스트라가 서로의 소리를 듣고 반응해야 하는 실내악적 성격이 강한 작품이다. 이날 무대에서 세 협연자는 오케스트라와 긴밀하게 호흡하며, 작품 특유의 우아함과 대화적인 매력을 설득력 있게 그려냈다. 앙상블이 자연스럽게 맞물린 이번 무대는 한국 정상급 연주자들과 독일 명문 악단이 만들어낸 조화로운 협업으로 깊은 인상을 남겼다.</p>
+
+      <figure class="fig-wide">
+        <img src="images/the-three-soloists-in-close-dialogue-with-the-or-8e993cdb.jpg" alt="오케스트라와 긴밀하게 호흡하는 세 협연자">
+        <figcaption>실내악적 감수성 — 서로의 소리를 듣고 반응하는 협연자와 오케스트라.</figcaption>
+      </figure>
+
+      <h2>2부, 베토벤 <em>교향곡 제4번</em></h2>
+
+      <p>2부에서는 베토벤 「교향곡 제4번 B♭장조(Op.60)」이 연주됐다. 슈투트가르트 필하모닉은 밝고 유려한 선율 속에서도 독일 악단 특유의 밀도 있는 사운드를 선보이며 작품이 지닌 섬세한 구조와 풍부한 음악적 색채를 효과적으로 전달했다.</p>
+
+      <div class="pullquote">
+        <p>"한국 관객들의 집중력과 음악적 이해도는 정말로 인상적이었습니다. 첫 음부터 마지막 박수까지, 관객과 진정으로 교감하고 있다고 느꼈습니다. 우리 모두에게 잊을 수 없는 경험이었습니다."</p>
+        <cite>아드리안 프라바바, 지휘자</cite>
+      </div>
+
+      <p>아드리안 프라바바는 이번 한국 공연에 대해 깊은 인상을 받았다고 전했다. 그는 한국 관객들의 높은 음악적 이해도와 집중력에 감탄했으며, 공연 내내 느껴지는 에너지와 뜨거운 반응이 연주자들에게도 큰 영감을 주었다고 밝혔다. 특히 베토벤 작품에 대한 관객들의 진지한 몰입은 매우 인상적이었다며, 한국에서의 첫 공연이 특별한 경험으로 기억될 것이라고 전했다.</p>
+
+      <p>또한 프라바바는 이번 공연을 통해 한국의 뛰어난 연주자들과 함께 무대에 설 수 있었던 점을 뜻깊게 생각한다고 말했다. 그는 이경선, 여미혜, 강소연 세 협연자가 각자의 뛰어난 음악성과 개성을 지니고 있으면서도 오케스트라와 자연스럽게 어우러지는 훌륭한 앙상블을 보여주었다고 평가했다.</p>
+
+      <p>슈투트가르트 필하모닉 관계자 역시 "한국은 클래식 음악에 대한 관심과 수준이 매우 높은 나라"라며 "이번 첫 내한공연을 통해 한국 관객들과 특별한 교감을 나눌 수 있었다"고 전했다. 이어 "앞으로도 한국과의 지속적인 문화 교류가 이어지기를 기대한다"고 덧붙였다.</p>
+
+      <p>이번 공연은 독일을 대표하는 오케스트라와 한국 정상급 연주자들의 협업을 통해 유럽 클래식 음악의 전통과 한국 연주자들의 예술성이 조화를 이루는 특별한 무대로 평가받았다. 슈투트가르트 필하모닉 오케스트라의 첫 한국 내한공연은 독일 정통 클래식 음악의 품격을 국내 관객들에게 선사하며 성공적으로 막을 내렸다.</p>
+
+      <aside class="critic-box">
+        <h3>이 리뷰에 대하여</h3>
+        <p>본지의 리뷰는 실제 관람을 바탕으로 작성됩니다. 이 리뷰는 5월 29일 롯데콘서트홀 공연 관람을 기반으로 했습니다. 주최자나 아티스트로부터 대가를 받지 않으며, 게재 전 리뷰를 당사자에게 보여주지 않습니다.</p>
+      </aside>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="art-aside">
+      <div class="prog">
+        <h3 data-en="The Programme" data-ko="프로그램">The Programme</h3>
+        <dl>
+          <dt data-en="Orchestra" data-ko="오케스트라">Orchestra</dt>
+          <dd>Stuttgart Philharmonic <em>(est. 1924)</em></dd>
+
+          <dt data-en="Conductor" data-ko="지휘">Conductor</dt>
+          <dd>Adrian Prabava</dd>
+
+          <dt data-en="Soloist" data-ko="협연">Soloist</dt>
+          <dd>Kyung Sun Lee, <em>violin</em><br>Meehae Ryo, <em>cello</em><br>Soyeon Kang, <em>piano</em></dd>
+
+          <dt data-en="Venue" data-ko="장소">Venue</dt>
+          <dd data-en="Lotte Concert Hall, Seoul · 29 May" data-ko="롯데콘서트홀, 서울 · 5월 29일">Lotte Concert Hall, Seoul · 29 May</dd>
+
+          <dt data-en="Works" data-ko="연주곡">Works</dt>
+          <dd>
+            <ul class="prog__works">
+              <li>Beethoven — Coriolan Overture<span class="op">Op. 62</span></li>
+              <li>Beethoven — Triple Concerto in C<span class="op">Op. 56</span></li>
+              <li>Beethoven — Symphony No. 4 in B♭<span class="op">Op. 60</span></li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+
+      <div class="verdict">
+        <h3 data-en="Verdict" data-ko="총평">Verdict</h3>
+        <span class="stars" aria-label="Five out of five stars">★★★★★</span>
+        <p data-en="Three Korean soloists and a German orchestra, listening and answering — the Triple Concerto as it should be played." data-ko="세 명의 한국 협연자와 독일 오케스트라가 서로를 듣고 답한다. 삼중협주곡이 마땅히 연주되어야 할 방식으로.">Three Korean soloists and a German orchestra, listening and answering — the Triple Concerto as it should be played.</p>
+        <p class="verdict__legend" data-en="&lt;b&gt;★★★★★&lt;/b&gt; exceptional &amp;nbsp; &lt;b&gt;★★★★&lt;/b&gt; recommended&lt;br&gt;&lt;b&gt;★★★&lt;/b&gt; good &amp;nbsp; &lt;b&gt;★★&lt;/b&gt; uneven &amp;nbsp; &lt;b&gt;★&lt;/b&gt; poor" data-ko="&lt;b&gt;★★★★★&lt;/b&gt; 압도적 &amp;nbsp; &lt;b&gt;★★★★&lt;/b&gt; 추천&lt;br&gt;&lt;b&gt;★★★&lt;/b&gt; 준수 &amp;nbsp; &lt;b&gt;★★&lt;/b&gt; 아쉬움 &amp;nbsp; &lt;b&gt;★&lt;/b&gt; 실망"><b>★★★★★</b> exceptional &nbsp; <b>★★★★</b> recommended<br><b>★★★</b> good &nbsp; <b>★★</b> uneven &nbsp; <b>★</b> poor</p>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ============ RELATED ============ -->
+  <section class="related" aria-label="More reviews">
+    <h2>More from <em>Reviews</em></h2>
+    <div class="related__grid related__grid--one">
+      <article class="related__item">
+        <span class="related__tag">Daejeon</span>
+        <h3><a href="review.html">Why the Stuttgart Philharmonic Chose <em>Edwin E.S. Kim</em> for Its Korean Debut</a></h3>
+        <span class="stars" aria-label="Five stars">★★★★★</span>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="art-foot">
+    <span>© 2026 Eurasia Classic News · Editor Ji Sun Lee · <a href="mailto:jjartscompany@naver.com">jjartscompany@naver.com</a></span>
+    <span>In partnership with IMK · Lothringerstraße 20, 1030 Wien · <a href="mailto:office@classicimk.com">office@classicimk.com</a></span>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.lang-switch button');
+    var bodyEn  = document.getElementById('body2-en');
+    var bodyKo  = document.getElementById('body2-ko');
+    var html    = document.documentElement;
+
+    function setLang(lang) {
+      var isKo = lang === 'ko';
+
+      bodyEn.hidden = isKo;
+      bodyKo.hidden = !isKo;
+      html.lang = lang;
+
+      // swap any element that carries both strings
+      document.querySelectorAll('[data-en][data-ko]').forEach(function (el) {
+        el.innerHTML = isKo ? el.dataset.ko : el.dataset.en;
+      });
+
+      buttons.forEach(function (b) {
+        b.classList.toggle('is-on', b.dataset.lang === lang);
+      });
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.dataset.lang); });
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    var el = document.getElementById('today');
+    if (!el) return;
+    var d = new Date();
+    var day   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()];
+    var month = ['January','February','March','April','May','June',
+                 'July','August','September','October','November','December'][d.getMonth()];
+    el.textContent = day + ' \u00B7 ' + d.getDate() + ' ' + month + ' ' + d.getFullYear();
+  })();
+</script>
+
+</body>
+</html>

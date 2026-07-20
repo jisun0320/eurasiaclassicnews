@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Find articles — features, interviews, previews and opinion on orchestras and concertos across Europe and Korea.">
+<meta name="theme-color" content="#6B1A28">
+<title>News &amp; Reviews — Eurasia Classic News</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Source+Serif+4:opsz,wght@8..60,300..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:      #F1ECE1;
+    --paper-warm: #E8E1D2;
+    --ink:        #171614;
+    --ink-mute:   #4A4741;
+    --ink-soft:   #75706A;
+    --wine:       #6B1A28;
+    --brass:      #A87F3C;
+    --rule:       #C7BFAD;
+    --rule-soft:  #E1D9C6;
+
+    --f-display: "Fraunces", "Times New Roman", serif;
+    --f-body:    "Source Serif 4", Georgia, serif;
+    --f-ui:      "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --f-mast:    "Playfair Display", "Times New Roman", serif;
+
+    --gutter-x: clamp(20px, 4vw, 56px);
+    --page-max: 1240px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 17px;
+    line-height: 1.55;
+    font-feature-settings: "kern","onum","liga";
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--wine); }
+  a:focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
+  button, input, select { font: inherit; }
+  ::selection { background: var(--wine); color: var(--paper); }
+
+  .page { max-width: var(--page-max); margin: 0 auto; padding: 0 var(--gutter-x); }
+
+  /* ---------- Header ---------- */
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; padding: 14px 0; flex-wrap: wrap;
+    border-bottom: 1px solid var(--rule-soft);
+    font-family: var(--f-ui); font-size: 12px; letter-spacing: .06em; color: var(--ink-mute);
+  }
+  .topbar__left { display: flex; gap: 20px; flex-wrap: wrap; }
+  .brandbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 0; gap: 24px; flex-wrap: wrap;
+  }
+  .brandbar__mark {
+    display: inline-flex; align-items: center; gap: 14px;
+    color: var(--ink);
+  }
+  .brandbar__mark-icon {
+    width: 50px; height: 40px; flex: none; display: inline-flex;
+  }
+  .brandbar__mark-icon svg { width: 100%; height: 100%; display: block; }
+  .brandbar__mark-text {
+    font-family: var(--f-mast);
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-left: 0.13em;
+  }
+  .brandbar__mark:hover { color: var(--wine); }
+  .nav { display: flex; flex-wrap: wrap; align-items: center; }
+  .nav > a, .nav__top {
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase; font-weight: 500; padding: 4px 11px;
+    position: relative; color: var(--ink); background: none; border: 0;
+  }
+  .nav > *:not(:first-child)::before {
+    content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 1px; height: 11px; background: var(--rule);
+  }
+  .nav a.is-active, .nav__item.is-active > .nav__top { color: var(--wine); font-weight: 600; }
+  .nav__item { position: relative; }
+  .nav__top { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+  .nav__caret { width: 7px; height: 7px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg) translate(-2px,-2px); }
+  .nav__menu {
+    position: absolute; top: 100%; left: 6px; z-index: 30;
+    min-width: 170px; padding: 8px 0;
+    background: var(--paper); border: 1px solid var(--rule);
+    box-shadow: 0 8px 24px rgba(23,22,20,.10);
+    display: none;
+  }
+  .nav__item:hover .nav__menu, .nav__item:focus-within .nav__menu { display: block; }
+  .nav__menu a {
+    display: block; padding: 9px 18px;
+    font-family: var(--f-ui); font-size: 10.5px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--ink-mute);
+  }
+  .nav__menu a:hover { background: var(--paper-warm); color: var(--wine); }
+  .rule-strong { height: 1px; background: var(--ink); }
+
+  /* ---------- Page head ---------- */
+  .find-head { padding: 48px 0 0; }
+  .find-head h1 {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 144, "wght" 600;
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1; letter-spacing: -.03em;
+    margin: 0 0 14px;
+  }
+  .find-head h1 em { font-style: italic; color: var(--wine); }
+  .find-head > p {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 24, "wght" 350;
+    font-style: italic; font-size: 19px; color: var(--ink-mute);
+    margin: 0 0 32px; max-width: 46ch;
+  }
+
+  /* ---------- Filter bar ---------- */
+  .filters {
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px 32px;
+    align-items: center;
+  }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip {
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 7px 16px;
+    font-family: var(--f-ui); font-size: 11px; font-weight: 500;
+    letter-spacing: .14em; text-transform: uppercase;
+    color: var(--ink-mute);
+    cursor: pointer;
+    transition: .18s;
+  }
+  .chip:hover { border-color: var(--wine); color: var(--wine); }
+  .chip.is-on {
+    background: var(--wine); border-color: var(--wine); color: var(--paper); font-weight: 600;
+  }
+  .filters__tools { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .searchbox {
+    display: flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid var(--rule);
+    padding: 6px 2px;
+    min-width: 200px;
+  }
+  .searchbox svg { flex: none; color: var(--ink-soft); }
+  .searchbox input {
+    border: 0; background: transparent; outline: none;
+    font-family: var(--f-body); font-size: 15px; width: 100%;
+    color: var(--ink);
+  }
+  .searchbox input::placeholder { color: var(--ink-soft); font-style: italic; }
+  .sort {
+    border: 1px solid var(--rule);
+    background: transparent;
+    padding: 7px 12px;
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--ink-mute);
+    cursor: pointer; border-radius: 2px;
+  }
+  .count {
+    grid-column: 1 / -1;
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--ink-soft);
+    padding-top: 4px;
+  }
+  .count strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Section jump ---------- */
+  .jump {
+    display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+  }
+  .jump > a {
+    border: 1px solid var(--rule); border-radius: 999px;
+    padding: 8px 18px;
+    font-family: var(--f-ui); font-size: 11px; font-weight: 500;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--ink-mute);
+    transition: .18s;
+  }
+  .jump > a:hover { border-color: var(--wine); color: var(--wine); }
+  .jump .searchbox { margin-left: auto; }
+
+  /* ---------- News sections ---------- */
+  .nsect { padding-top: 52px; }
+  .nsect__head {
+    display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+    padding-bottom: 14px; border-bottom: 2px solid var(--ink);
+  }
+  .nsect__head h2 {
+    font-family: var(--f-mast); font-weight: 600;
+    font-size: clamp(23px, 2.8vw, 32px);
+    letter-spacing: -.015em; margin: 0; line-height: 1;
+  }
+  .nsect__ko {
+    font-family: var(--f-ui); font-size: 10.5px; font-weight: 500;
+    letter-spacing: .16em; color: var(--brass);
+  }
+  .nsect__empty {
+    list-style: none;
+    font-family: var(--f-mast); font-style: italic;
+    font-size: 17px; color: var(--ink-soft);
+    padding: 30px 0 6px; margin: 0;
+  }
+
+  /* ---------- Article list ---------- */
+  .list { list-style: none; margin: 0; padding: 0; }
+  .row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 32px;
+    padding: 34px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: start;
+  }
+  .row:first-child {
+    padding-top: 40px;
+  }
+  .row__figure {
+    position: relative;
+    aspect-ratio: 17 / 12;
+    overflow: hidden;
+    border-radius: 3px;
+    background: var(--paper-warm);
+  }
+  .row__figure img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .5s ease;
+  }
+  .row:hover .row__figure img { transform: scale(1.03); }
+  /* Fallback panels when no photo */
+  .row__figure--tint-a { background: linear-gradient(150deg, #2E3540, #14181F); }
+  .row__figure--tint-b { background: linear-gradient(150deg, #6E4B24, #33220E); }
+  .row__figure--tint-c { background: linear-gradient(150deg, #5A1622, #2A0810); }
+  .row__figure--tint-a::after,
+  .row__figure--tint-b::after,
+  .row__figure--tint-c::after {
+    content: attr(data-glyph);
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--f-display); font-size: 54px;
+    color: rgba(241,236,225,.28);
+  }
+
+  .row__tag {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: var(--f-ui); font-size: 10px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--wine);
+    margin-bottom: 12px;
+  }
+  .row__tag::before { content: ""; width: 18px; height: 1px; background: var(--wine); }
+  .row__title {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 60, "wght" 550;
+    font-size: clamp(21px, 2.3vw, 28px);
+    line-height: 1.16; letter-spacing: -.015em;
+    margin: 0 0 12px;
+    max-width: 30ch;
+  }
+  .row__title em { font-style: italic; color: var(--wine); }
+  .row__byline {
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .1em;
+    color: var(--ink-soft); margin: 0 0 12px;
+  }
+  .row__byline strong { color: var(--ink); font-weight: 600; }
+  .row__standfirst {
+    font-family: var(--f-body); font-size: 16px; line-height: 1.55;
+    color: var(--ink-mute); margin: 0 0 16px; max-width: 62ch;
+  }
+  .row__more {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-family: var(--f-ui); font-size: 11px; font-weight: 600;
+    letter-spacing: .2em; text-transform: uppercase;
+    color: var(--ink); padding-bottom: 3px;
+    border-bottom: 1px solid var(--rule);
+    transition: .2s;
+  }
+  .row__more:hover { color: var(--wine); border-color: var(--wine); }
+  /* whole-card click target */
+  .row__title a::after {
+    content: "";
+    position: absolute; inset: 0;
+    z-index: 1;
+  }
+  .row__more { position: relative; z-index: 2; }
+  .row__stars { color: var(--brass); font-size: 13px; letter-spacing: 1px; margin-left: 10px; }
+
+  /* Lead row gets a little more weight */
+  .row--lead .row__figure { aspect-ratio: 16 / 11; }
+  .row--lead .row__title {
+    font-variation-settings: "opsz" 96, "wght" 650;
+    font-size: clamp(25px, 3.1vw, 38px);
+    line-height: 1.08;
+  }
+  .row--lead .row__standfirst { font-size: 17px; }
+
+  /* ---------- More ---------- */
+  .more-wrap { padding: 44px 0 12px; text-align: center; }
+  .btn-more {
+    background: transparent;
+    border: 1px solid var(--ink);
+    padding: 15px 42px;
+    font-family: var(--f-ui); font-size: 11px; font-weight: 600;
+    letter-spacing: .24em; text-transform: uppercase;
+    color: var(--ink); cursor: pointer; border-radius: 1px;
+    transition: .22s;
+  }
+  .btn-more:hover { background: var(--ink); color: var(--paper); }
+
+  /* ---------- Footer ---------- */
+  .foot {
+    margin-top: 40px; padding: 28px 0 60px;
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .12em; color: var(--ink-soft);
+  }
+  .foot a { border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+
+  .skip {
+    position: absolute; left: -9999px; top: 0; z-index: 200;
+    background: var(--wine); color: var(--paper);
+    padding: 10px 20px; font-family: var(--f-ui); font-size: 12px; letter-spacing: .1em;
+  }
+  .skip:focus { left: 0; }
+  .chip__n { margin-left: 8px; opacity: .6; font-weight: 400; letter-spacing: 0; }
+  .chip.is-on .chip__n { opacity: .85; }
+  .badge-ec {
+    display: inline-block; margin-left: 12px;
+    padding: 3px 10px; border: 1px solid var(--brass); border-radius: 999px;
+    font-family: var(--f-ui); font-size: 9px; font-weight: 700;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--brass);
+    vertical-align: 1px;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 840px) {
+    .filters { grid-template-columns: 1fr; }
+    .row { grid-template-columns: 200px minmax(0, 1fr); gap: 22px; }
+  }
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    .row { grid-template-columns: 1fr; gap: 18px; padding: 28px 0; }
+    .row__figure, .row--lead .row__figure { aspect-ratio: 16 / 10; }
+    .row__title { max-width: none; }
+    .nav a { padding: 4px 10px; font-size: 10px; letter-spacing: .14em; }
+    .nav a + a::before { display: none; }
+    .find-head { padding: 32px 0 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: .001ms !important; }
+    .row:hover .row__figure img { transform: none; }
+  }
+
+  /* ampersand — Playfair's is decorative; use the roman one from the text serif */
+  .amp {
+    font-family: var(--f-body);
+    font-style: normal;
+    font-weight: inherit;
+    font-size: 0.95em;
+    letter-spacing: 0;
+    padding: 0 0.02em;
+  }
+  /* in the sans UI (nav, topbar, labels) keep the sans ampersand */
+  .nav .amp, .topbar .amp, .brandbar .amp,
+  .row__tag .amp, .most-read__tag .amp,
+  .nsect__ko .amp, .psect__ko .amp, .sect__ko .amp,
+  .figcap .amp, .foot .amp, .art-byline .amp, .row__byline .amp {
+    font-family: var(--f-ui);
+    font-size: 1em;
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#list">Skip to articles</a>
+
+<div class="page">
+
+  <div class="topbar">
+    <div class="topbar__left">
+      <span id="today">Monday · 13 July 2026</span>
+      <span>Europe <span class="amp">&amp;</span> Korea Edition</span>
+    </div>
+    <div><a href="#">Newsletter</a></div>
+  </div>
+
+  <div class="brandbar">
+    <a href="index.html" class="brandbar__mark"><span class="brandbar__mark-icon"><svg viewBox="235 258 780 622" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="39" stroke-linecap="butt" stroke-linejoin="miter"><path d="M 487 294 L 262 294 L 262 665 L 455 665"/><path d="M 262 473 L 466 473"/><path d="M 692 504 A 184 184 0 1 0 746 812"/></g><path fill="currentColor" stroke="none" d="M 692 276 L 732 276 L 967 623 L 967 276 L 1007 276 L 1007 682 L 960 682 L 732 346 L 732 682 L 692 682 Z"/></svg></span><span class="brandbar__mark-text">Eurasia Classic News</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="ecn.html">ECN</a>
+
+      <span class="nav__item is-active">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">News <span class="amp">&amp;</span> Reviews <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="articles.html#news-latest">Latest News</a>
+          <a href="articles.html#festivals">Festivals <span class="amp">&amp;</span> Tours</a>
+          <a href="articles.html#all">All Articles</a>
+        </span>
+      </span>
+
+      <span class="nav__item">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">Spotlight <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="index.html#interviews">Interviews</a>
+          <a href="spotlight.html#cover">Cover Story</a>
+          <a href="spotlight.html#focus">Artist Focus</a>
+        </span>
+      </span>
+
+      <a href="get-featured.html">Get Featured</a>
+      <a href="video.html">Video</a>
+      <a href="artists.html">Artists</a>
+      <a href="whats-on.html">What's On</a>
+
+      <a href="more.html">More</a>
+    </nav>
+  </div>
+  <div class="rule-strong"></div>
+
+  <!-- ============ PAGE HEAD ============ -->
+  <header class="find-head">
+    <h1>News <span class="amp">&amp;</span> <em>Reviews</em></h1>
+    <p>Reporting from the concert life running between Europe and Korea — the news, the tours, and the full archive.</p>
+
+    <nav class="jump" aria-label="Sections">
+      <a href="#news-latest">Latest News</a>
+      <a href="#festivals">Festivals <span class="amp">&amp;</span> Tours</a>
+      <a href="#all">All Articles</a>
+      <label class="searchbox">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
+        </svg>
+        <input type="search" id="q" placeholder="Search…" aria-label="Search articles">
+      </label>
+    </nav>
+  </header>
+
+  <!-- ============ ARTICLE LIST ============ -->
+  <section class="nsect" id="news-latest">
+    <div class="nsect__head">
+      <h2>Latest News</h2>
+    </div>
+    <ol class="list">
+      <li class="nsect__empty">Nothing here yet. New reporting is published every Friday.</li>
+    </ol>
+  </section>
+
+  <section class="nsect" id="festivals">
+    <div class="nsect__head">
+      <h2>Festivals <span class="amp">&amp;</span> Tours</h2>
+    </div>
+    <ol class="list">
+    <li class="row" data-cat="review" data-date="2026-05-29">
+      <figure class="row__figure">
+        <img src="images/stuttgart-philharmonic-with-soloists-kyung-sun-l-4d756972.jpg" alt="Stuttgart Philharmonic with soloists Kyung Sun Lee, Meehae Ryo and Soyeon Kang at Lotte Concert Hall">
+      </figure>
+      <div>
+        <span class="row__tag">Review · Seoul</span>
+        <h2 class="row__title"><a href="review2.html">When Germany Met Korea: Stuttgart Philharmonic's <em>Landmark Korean Debut</em></a></h2>
+        <p class="row__byline">By <strong>Ji Sun Lee</strong>, Editor, 29 May 2026 <span class="row__stars" aria-label="Five stars">★★★★★</span></p>
+        <p class="row__standfirst">The Finest of German Music Meets Korea's Leading Artists. At the Lotte Concert Hall, an all-Beethoven programme — the <em>Coriolan Overture</em>, the Triple Concerto with violinist Kyung Sun Lee, cellist Meehae Ryo and pianist Soyeon Kang, and the Fourth Symphony. "From the first note to the final applause, we felt a genuine connection with the audience," said conductor Adrian Prabava.</p>
+        <a href="review2.html" class="row__more">Read more →</a>
+      </div>
+    </li>
+    <li class="row row--lead" data-cat="review" data-date="2026-05-28">
+      <figure class="row__figure">
+        <img src="images/conductor-adrian-prabava-and-violinist-edwin-e-s-5f30cd87.jpg" alt="Conductor Adrian Prabava and violinist Edwin E.S. Kim with the Stuttgart Philharmonic">
+      </figure>
+      <div>
+        <span class="row__tag">Review · Daejeon</span><span class="badge-ec">Editor’s Choice</span>
+        <h2 class="row__title"><a href="review.html">Why the Stuttgart Philharmonic Chose <em>Edwin E.S. Kim</em> for Its Korean Debut</a></h2>
+        <p class="row__byline">By <strong>Eurasia Classic News</strong>, 28 May 2026 <span class="row__stars" aria-label="Five stars">★★★★★</span></p>
+        <p class="row__standfirst">One of Germany's most distinguished orchestras brought an all-Beethoven programme to Daejeon for its first concert in Korea — the <em>Coriolan Overture</em>, the Violin Concerto and the Fourth Symphony. Founded in 1924, the Stuttgart Philharmonic chose repertoire that leaves an orchestra nowhere to hide, and a soloist who played Op. 61 as an argument rather than a display. "He is a musician who understands the essence of music," said conductor Adrian Prabava afterwards.</p>
+        <a href="review.html" class="row__more">Read more →</a>
+      </div>
+    </li>
+    </ol>
+  </section>
+
+  <section class="nsect" id="all">
+    <div class="nsect__head">
+      <h2>All Articles</h2>
+    </div>
+    <ol class="list">
+    <li class="row row--lead" data-cat="review" data-date="2026-05-28">
+      <figure class="row__figure">
+        <img src="images/conductor-adrian-prabava-and-violinist-edwin-e-s-5f30cd87.jpg" alt="Conductor Adrian Prabava and violinist Edwin E.S. Kim with the Stuttgart Philharmonic">
+      </figure>
+      <div>
+        <span class="row__tag">Review · Daejeon</span><span class="badge-ec">Editor’s Choice</span>
+        <h2 class="row__title"><a href="review.html">Why the Stuttgart Philharmonic Chose <em>Edwin E.S. Kim</em> for Its Korean Debut</a></h2>
+        <p class="row__byline">By <strong>Eurasia Classic News</strong>, 28 May 2026 <span class="row__stars" aria-label="Five stars">★★★★★</span></p>
+        <p class="row__standfirst">One of Germany's most distinguished orchestras brought an all-Beethoven programme to Daejeon for its first concert in Korea — the <em>Coriolan Overture</em>, the Violin Concerto and the Fourth Symphony. Founded in 1924, the Stuttgart Philharmonic chose repertoire that leaves an orchestra nowhere to hide, and a soloist who played Op. 61 as an argument rather than a display. "He is a musician who understands the essence of music," said conductor Adrian Prabava afterwards.</p>
+        <a href="review.html" class="row__more">Read more →</a>
+      </div>
+    </li>
+    <li class="row" data-cat="review" data-date="2026-05-29">
+      <figure class="row__figure">
+        <img src="images/stuttgart-philharmonic-with-soloists-kyung-sun-l-4d756972.jpg" alt="Stuttgart Philharmonic with soloists Kyung Sun Lee, Meehae Ryo and Soyeon Kang at Lotte Concert Hall">
+      </figure>
+      <div>
+        <span class="row__tag">Review · Seoul</span>
+        <h2 class="row__title"><a href="review2.html">When Germany Met Korea: Stuttgart Philharmonic's <em>Landmark Korean Debut</em></a></h2>
+        <p class="row__byline">By <strong>Ji Sun Lee</strong>, Editor, 29 May 2026 <span class="row__stars" aria-label="Five stars">★★★★★</span></p>
+        <p class="row__standfirst">The Finest of German Music Meets Korea's Leading Artists. At the Lotte Concert Hall, an all-Beethoven programme — the <em>Coriolan Overture</em>, the Triple Concerto with violinist Kyung Sun Lee, cellist Meehae Ryo and pianist Soyeon Kang, and the Fourth Symphony. "From the first note to the final applause, we felt a genuine connection with the audience," said conductor Adrian Prabava.</p>
+        <a href="review2.html" class="row__more">Read more →</a>
+      </div>
+    </li>
+    </ol>
+  </section>
+
+
+  <footer class="foot">
+    <span>© 2026 Eurasia Classic News · Editor Ji Sun Lee · <a href="mailto:jjartscompany@naver.com">jjartscompany@naver.com</a></span>
+    <span>In partnership with IMK · Lothringerstraße 20, 1030 Wien · <a href="mailto:office@classicimk.com">office@classicimk.com</a></span>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var search = document.getElementById('q');
+    if (!search) return;
+    var rows = Array.prototype.slice.call(document.querySelectorAll('.row'));
+
+    search.addEventListener('input', function () {
+      var q = search.value.trim().toLowerCase();
+      rows.forEach(function (row) {
+        row.hidden = !!q && row.textContent.toLowerCase().indexOf(q) === -1;
+      });
+      // hide a section whose rows are all filtered out
+      document.querySelectorAll('.nsect').forEach(function (s) {
+        var any = Array.prototype.some.call(s.querySelectorAll('.row'), function (r) { return !r.hidden; });
+        var empty = s.querySelector('.nsect__empty');
+        s.hidden = !!q && !any && !empty;
+      });
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    var el = document.getElementById('today');
+    if (!el) return;
+    var d = new Date();
+    var day   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()];
+    var month = ['January','February','March','April','May','June',
+                 'July','August','September','October','November','December'][d.getMonth()];
+    el.textContent = day + ' \u00B7 ' + d.getDate() + ' ' + month + ' ' + d.getFullYear();
+  })();
+</script>
+
+</body>
+</html>
