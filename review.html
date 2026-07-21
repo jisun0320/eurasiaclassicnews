@@ -154,7 +154,6 @@
     display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
     padding-top: 22px; border-top: 1px solid var(--rule);
   }
-  .stars { display: inline-flex; color: var(--brass); font-size: 17px; letter-spacing: 2px; }
   .art-byline {
     font-family: var(--f-ui); font-size: 12px; letter-spacing: .1em; color: var(--ink-mute);
   }
@@ -283,20 +282,6 @@
     letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft);
     margin-top: 3px;
   }
-  .verdict {
-    margin-top: 22px; padding: 20px 24px;
-    border: 1px solid var(--rule);
-  }
-  .verdict h3 {
-    font-family: var(--f-ui); font-size: 10.5px; font-weight: 700;
-    letter-spacing: .24em; text-transform: uppercase; color: var(--ink-mute);
-    margin: 0 0 12px;
-  }
-  .verdict .stars { font-size: 20px; margin-bottom: 10px; }
-  .verdict p {
-    margin: 0; font-family: var(--f-body); font-size: 14px;
-    line-height: 1.5; color: var(--ink-mute); font-style: italic;
-  }
 
   /* ---------- Footer ---------- */
   .art-foot {
@@ -341,13 +326,6 @@
   }
 
   /* ---------- Rating legend ---------- */
-  .verdict__legend {
-    margin-top: 14px; padding-top: 12px;
-    border-top: 1px solid var(--rule-soft);
-    font-family: var(--f-ui); font-size: 10px; letter-spacing: .1em;
-    color: var(--ink-soft); line-height: 1.8; font-style: normal;
-  }
-  .verdict__legend b { color: var(--brass); font-weight: 400; letter-spacing: 1px; }
 
   /* ---------- Related reviews ---------- */
   .related {
@@ -383,7 +361,7 @@
     margin: 0 0 8px;
   }
   .related__item h3 em { font-style: italic; color: var(--wine); }
-  .related__item .stars { font-size: 12px; letter-spacing: 1px; }
+  .related__item
 
   /* ---------- Print ---------- */
   @media print {
@@ -501,7 +479,6 @@
     <p class="art-dek" data-en="An all-Beethoven programme, a century-old German sound, and a violinist who plays the Concerto as a question rather than a display." data-ko="베토벤만으로 채운 프로그램, 100년을 이어온 독일의 소리, 그리고 협주곡을 과시가 아닌 물음으로 연주한 바이올리니스트.">An all-Beethoven programme, a century-old German sound, and a violinist who plays the Concerto as a question rather than a display.</p>
 
     <div class="art-meta">
-      <span class="stars" aria-label="Five out of five stars">★★★★★</span>
       <span class="art-byline">By <strong>Eurasia Classic News</strong> · Daejeon · 28 May · 7 min read</span>
       <div class="lang-switch" role="group" aria-label="Article language">
         <button type="button" class="is-on" data-lang="en">EN</button>
@@ -649,7 +626,6 @@
       <article class="related__item">
         <span class="related__tag">Seoul</span>
         <h3><a href="review2.html">When Germany Met Korea: Stuttgart Philharmonic's <em>Landmark Korean Debut</em></a></h3>
-        <span class="stars" aria-label="Five stars">★★★★★</span>
       </article>
 
     </div>
