@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Eurasia Classic News</title>
+  <link>https://eurasiaclassicnews.com/</link>
+  <description>A review of classical music. Orchestras, concertos, and interviews from Europe and Korea.</description>
+  <language>en</language>
+  <atom:link href="https://eurasiaclassicnews.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>Rising Violin Star Charlotte Spruit Performs at the Salzburg Mozarteum with the Sofia Philharmonic</title>
+    <link>https://eurasiaclassicnews.com/news3.html</link>
+    <guid>https://eurasiaclassicnews.com/news3.html</guid>
+    <pubDate>Sun, 07 Jun 2026 18:00:00 +0200</pubDate>
+    <description>Mozart's Violin Concerto No. 1 in the composer's birthplace — the Kronberg Academy violinist joins Nayden Todorov and the Sofia Philharmonic.</description>
+  </item>
+  <item>
+    <title>First Step Toward the World's Greatest Stage — IMK Scholarship Concert Resonates in the Musikverein's Golden Hall</title>
+    <link>https://eurasiaclassicnews.com/news2.html</link>
+    <guid>https://eurasiaclassicnews.com/news2.html</guid>
+    <pubDate>Fri, 05 Jun 2026 19:30:00 +0200</pubDate>
+    <description>The 58th Schwingungen Scholarship Concert brings trombonist Martin Felsberger to Vienna's Musikverein with Tomasi's Trombone Concerto.</description>
+  </item>
+  <item>
+    <title>Young Virtuoso from the Manhattan School of Music — Yan Fang Makes His Liszt Hall Debut</title>
+    <link>https://eurasiaclassicnews.com/news1.html</link>
+    <guid>https://eurasiaclassicnews.com/news1.html</guid>
+    <pubDate>Wed, 03 Jun 2026 19:30:00 +0200</pubDate>
+    <description>Pianist Yan Fang performs Liszt's Piano Concerto No. 1 at the Franz Liszt Academy with the Hungarian State Symphony Orchestra of Szolnok under Manuel Tévar.</description>
+  </item>
+  <item>
+    <title>When Germany Met Korea: Stuttgart Philharmonic's Landmark Korean Debut</title>
+    <link>https://eurasiaclassicnews.com/review2.html</link>
+    <guid>https://eurasiaclassicnews.com/review2.html</guid>
+    <pubDate>Fri, 29 May 2026 19:30:00 +0900</pubDate>
+    <description>At the Lotte Concert Hall, an all-Beethoven programme with the Triple Concerto and the Fourth Symphony.</description>
+  </item>
+  <item>
+    <title>Why the Stuttgart Philharmonic Chose Edwin E.S. Kim for Its Korean Debut</title>
+    <link>https://eurasiaclassicnews.com/review.html</link>
+    <guid>https://eurasiaclassicnews.com/review.html</guid>
+    <pubDate>Thu, 28 May 2026 19:30:00 +0900</pubDate>
+    <description>An all-Beethoven programme, a century-old German sound, and a violinist who plays the Concerto as a question rather than a display.</description>
+  </item>
+</channel>
+</rss>
