@@ -7,6 +7,11 @@
 <meta name="theme-color" content="#6B1A28">
 <title>Video — Eurasia Classic News</title>
 
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Source+Serif+4:opsz,wght@8..60,300..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -383,7 +388,53 @@
     <div class="psect__head">
       <h2>Latest Video</h2>
     </div>
-    <p class="psect__body">No videos published yet. Send us a link through <a href="get-featured.html">Get Featured</a>.</p>
+    <style>
+      .vid-feature { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(24px, 3vw, 44px); align-items: start; padding-top: 30px; }
+      .vid-player { position: relative; border-radius: 4px; overflow: hidden; display: block; }
+      .vid-player img { width: 100%; height: auto; display: block; transition: transform .5s ease; }
+      .vid-player:hover img { transform: scale(1.02); }
+      .vid-player__play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+      .vid-player__play span { width: 72px; height: 50px; background: rgba(107,26,40,.92); border-radius: 11px; display: flex; align-items: center; justify-content: center; }
+      .vid-link { font-family: var(--f-ui); font-size: 11px; letter-spacing: .12em; color: var(--ink-soft); padding-top: 13px; text-transform: uppercase; }
+      .vid-link a { border-bottom: 1px solid currentColor; }
+      .vid-link a:hover { color: var(--wine); }
+      .vid-info { background: var(--paper-warm); border-top: 2px solid var(--wine); padding: 26px 26px 28px; }
+      .vid-info__kicker { font-family: var(--f-ui); font-size: 10px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--wine); margin: 0 0 12px; }
+      .vid-info__title { font-family: var(--f-mast); font-weight: 600; font-size: 21px; line-height: 1.24; letter-spacing: -.01em; margin: 0 0 20px; }
+      .vid-info__title em { font-style: italic; color: var(--wine); }
+      .vid-info dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 11px 16px; }
+      .vid-info dt { font-family: var(--f-ui); font-size: 9.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft); padding-top: 3px; white-space: nowrap; }
+      .vid-info dd { margin: 0; font-family: var(--f-body); font-size: 15px; line-height: 1.4; color: var(--ink); }
+      .vid-info dd em { font-style: italic; color: var(--wine); }
+      .vid-info__cta { display: inline-flex; align-items: center; gap: 7px; margin-top: 22px; font-family: var(--f-ui); font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--ink); padding-bottom: 3px; border-bottom: 1px solid var(--rule); transition: .2s; }
+      .vid-info__cta:hover { color: var(--wine); border-color: var(--wine); }
+      @media (max-width: 780px) { .vid-feature { grid-template-columns: 1fr; } }
+    </style>
+
+    <div class="vid-feature">
+      <div>
+        <a class="vid-player" href="https://youtu.be/wJDPejzb4yo" target="_blank" rel="noopener" aria-label="Watch the concert on YouTube">
+          <img src="https://img.youtube.com/vi/wJDPejzb4yo/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/wJDPejzb4yo/hqdefault.jpg'" alt="Charlotte Spruit performing Mozart with the Sofia Philharmonic at the Salzburg Mozarteum">
+          <span class="vid-player__play"><span><svg viewBox="0 0 24 24" width="27" height="27" fill="#F1ECE1" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </a>
+        <p class="vid-link">Watch on YouTube&nbsp;·&nbsp;<a href="https://youtu.be/wJDPejzb4yo" target="_blank" rel="noopener">youtu.be/wJDPejzb4yo</a></p>
+      </div>
+
+      <aside class="vid-info">
+        <p class="vid-info__kicker">Concert Film</p>
+        <h3 class="vid-info__title">Charlotte Spruit performs Mozart's <em>Violin Concerto No. 1</em> with the Sofia Philharmonic</h3>
+        <dl>
+          <dt>Date</dt><dd>7 June 2026</dd>
+          <dt>Venue</dt><dd>Gro&szlig;er Saal, Mozarteum, Salzburg</dd>
+          <dt>Concert</dt><dd>IMK Schwingungen Concert</dd>
+          <dt>Orchestra</dt><dd>Sofia Philharmonic Orchestra</dd>
+          <dt>Conductor</dt><dd>Nayden Todorov</dd>
+          <dt>Soloist</dt><dd>Charlotte Spruit, <em>violin</em></dd>
+          <dt>Work</dt><dd>Mozart — Violin Concerto No. 1 in B&#9837;, K.207</dd>
+        </dl>
+        <a class="vid-info__cta" href="news3.html">Read the full article →</a>
+      </aside>
+    </div>
   </section>
 
   <footer class="foot">
