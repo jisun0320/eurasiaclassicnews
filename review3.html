@@ -174,6 +174,18 @@
   /* ---------- Lead image ---------- */
   .lead-figure { margin: 0 0 12px; }
   .lead-figure img { width: 100%; height: auto; border-radius: 4px; }
+
+  /* small poster floated at article top-left, text wraps around */
+  .fig-poster {
+    float: left;
+    width: min(44%, 240px);
+    margin: 6px 28px 14px 0;
+  }
+  .fig-poster img { width: 100%; height: auto; border-radius: 3px; box-shadow: 0 1px 4px rgba(23,22,20,.14); }
+  .art-body::after { content: ""; display: block; clear: both; }
+  @media (max-width: 560px) {
+    .fig-poster { width: 48%; margin: 4px 18px 10px 0; }
+  }
   .figcap {
     display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
     padding-top: 12px; border-top: 1px solid var(--rule-soft); margin-top: 12px;
@@ -492,16 +504,14 @@
     </div>
   </header>
 
-  <figure class="lead-figure">
-    <img src="images/teplice-beethoven-festival-poster-a1b2c3d4.jpg" alt="Poster for the closing concert of the 61st Ludwig van Beethoven Music Festival in Teplice">
-
-</figure>
-
   <!-- ============ BODY ============ -->
   <div class="art-wrap">
 
     <!-- English body -->
     <article class="art-body" id="body-en" lang="en">
+      <figure class="fig-poster">
+        <img src="images/teplice-beethoven-festival-poster-a1b2c3d4.jpg" alt="Poster for the closing concert of the 61st Ludwig van Beethoven Music Festival in Teplice">
+      </figure>
       <p>The 61st Ludwig van Beethoven Music Festival came to a close on June 25 at the Concert Hall of the Dům kultury Teplice in the Czech Republic. Founded in 1964 to commemorate Beethoven's stays in Teplice, the festival concluded with a concert featuring the North Czech Philharmonic, conductor Petr Vronský, world-renowned violinist Maxim Vengerov, and rising Korean violinist Sungmin Cho. Sharing the stage with one of the world's leading violinists at one of Europe's long-established music festivals marked another meaningful step in Cho's growing international career.</p>
 
       <p>Cho first took the spotlight in Tchaikovsky's <em>Valse-Scherzo</em>, Op. 34, displaying rhythmic vitality and effortless technique. He then joined Vengerov in Bach's <em>Concerto for Two Violins in D minor</em>, BWV 1043, where the distinctive musical personalities of two generations came together with natural balance. The slow second movement offered one of the evening's most memorable moments, as Vengerov's seasoned, resonant tone intertwined with Cho's clear and focused sound in an extended musical dialogue. Cho maintained his own phrasing and tonal identity alongside the celebrated violinist, while Vronský and the North Czech Philharmonic provided a poised orchestral foundation. In the latter half of the concert, Vengerov performed Sibelius's <em>Violin Concerto in D minor</em>, Op. 47, bringing the festival to its conclusion.</p>
@@ -511,6 +521,9 @@
 
     <!-- Korean body -->
     <article class="art-body" id="body-ko" lang="ko" hidden>
+      <figure class="fig-poster">
+        <img src="images/teplice-beethoven-festival-poster-a1b2c3d4.jpg" alt="Poster for the closing concert of the 61st Ludwig van Beethoven Music Festival in Teplice">
+      </figure>
       <p>지난 6월 25일 체코 테플리체 문화의집(Dům kultury Teplice) 콘서트홀에서 제61회 루트비히 판 베토벤 음악축제가 막을 내렸다. 1964년 베토벤의 테플리체 체류를 기념해 시작된 이 축제의 폐막 무대에는 북체코 필하모니(Severočeská filharmonie Teplice)와 지휘자 페트르 브론스키(Petr Vronský), 세계적인 바이올리니스트 막심 벵게로프(Maxim Vengerov)가 함께했으며, 한국의 젊은 바이올리니스트 조성민(Sungmin Cho)이 협연자로 나섰다. 세계적인 연주자와 유서 깊은 유럽 음악축제의 폐막 무대에서 나란히 선 이번 공연은, 조성민이 국제무대에서 자신의 음악적 존재감을 한층 넓히는 의미 있는 자리였다.</p>
 
       <p>조성민은 차이콥스키의 〈왈츠-스케르초 Op.34〉에서 경쾌한 리듬과 유연한 기교를 보여주며 자신의 존재감을 드러냈고, 이어 벵게로프와 함께한 바흐의 두 대의 바이올린을 위한 협주곡 d단조 BWV 1043에서는 서로 다른 세대의 음악적 개성이 자연스럽게 맞물렸다. 특히 느린 2악장에서 벵게로프의 깊고 노련한 음색과 조성민의 맑고 선명한 소리가 긴 호흡으로 교차하며 이날 공연의 인상적인 순간을 만들었다. 조성민 역시 거장과의 협연 속에서 자신의 프레이징과 음색을 잃지 않았고, 북체코 필하모니와 브론스키는 두 솔리스트의 대화를 안정적으로 받쳐주었다. 후반부에는 벵게로프가 시벨리우스 바이올린 협주곡 d단조 Op.47을 연주하며 제61회 축제의 마지막을 장식했다.</p>

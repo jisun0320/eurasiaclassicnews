@@ -174,6 +174,18 @@
   /* ---------- Lead image ---------- */
   .lead-figure { margin: 0 0 12px; }
   .lead-figure img { width: 100%; height: auto; border-radius: 4px; }
+
+  /* small poster floated at article top-left, text wraps around */
+  .fig-poster {
+    float: left;
+    width: min(44%, 240px);
+    margin: 6px 28px 14px 0;
+  }
+  .fig-poster img { width: 100%; height: auto; border-radius: 3px; box-shadow: 0 1px 4px rgba(23,22,20,.14); }
+  .art-body::after { content: ""; display: block; clear: both; }
+  @media (max-width: 560px) {
+    .fig-poster { width: 48%; margin: 4px 18px 10px 0; }
+  }
   .figcap {
     display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
     padding-top: 12px; border-top: 1px solid var(--rule-soft); margin-top: 12px;
@@ -492,16 +504,14 @@
     </div>
   </header>
 
-  <figure class="lead-figure">
-    <img src="images/prague-municipal-house-dvorak-poster-fab0c1d2.jpg" alt="Concert poster — Concert in Municipal House, Smetana Hall, Prague, with cellist Dongyeol Lee">
-
-</figure>
-
   <!-- ============ BODY ============ -->
   <div class="art-wrap">
 
     <!-- English body -->
     <article class="art-body" id="body-en" lang="en">
+      <figure class="fig-poster">
+        <img src="images/prague-municipal-house-dvorak-poster-fab0c1d2.jpg" alt="Concert poster — Concert in Municipal House, Smetana Hall, Prague, with cellist Dongyeol Lee">
+      </figure>
       <p>Korean cellist Dongyeol Lee made his European debut on July 18 at Smetana Hall in Prague's Municipal House, performing Dvořák's <em>Cello Concerto in B minor</em>, Op. 104 with the North Czech Philharmonic Orchestra. The concert was conducted by Charles Olivieri-Munroe, former chief conductor and current honorary chief conductor of the North Czech Philharmonic, bringing together a Korean soloist, a Czech orchestra and one of the Czech Republic's most emblematic composers on a historic Prague stage.</p>
 
       <p>Appearing as soloist in the first half, Lee worked closely with the North Czech Philharmonic in one of the central masterpieces of the cello repertoire. Dvořák's concerto combines expansive lyricism with the full dramatic weight of a symphony orchestra, requiring the soloist both to engage in close dialogue with the ensemble and to sustain long, expressive lines at the centre of the musical narrative. Against this rich orchestral backdrop, Lee brought forward the work's lyrical depth and dramatic trajectory, presenting Dvořák's music in the historic setting of Smetana Hall with a Czech orchestra deeply connected to the musical tradition from which the work emerged.</p>
@@ -511,6 +521,9 @@
 
     <!-- Korean body -->
     <article class="art-body" id="body-ko" lang="ko" hidden>
+      <figure class="fig-poster">
+        <img src="images/prague-municipal-house-dvorak-poster-fab0c1d2.jpg" alt="Concert poster — Concert in Municipal House, Smetana Hall, Prague, with cellist Dongyeol Lee">
+      </figure>
       <p>지난 7월 18일 체코 프라하 시민회관(Municipal House)의 스메타나홀(Smetana Hall)에서 첼리스트 이동열(Dongyeol Lee)이 북체코 필하모닉 오케스트라와 함께 드보르작 첼로 협주곡 b단조 Op.104를 연주하며 유럽 데뷔 무대에 올랐다. 이날 지휘는 북체코 필하모닉의 전 상임지휘자이자 명예 상임지휘자인 찰스 올리비에리-먼로(Charles Olivieri-Munroe)가 맡았다.</p>
 
       <p>전반부 무대에 오른 이동열은 드보르작 첼로 협주곡 Op.104의 솔리스트로 북체코 필하모닉과 호흡을 맞췄다. 서정적인 선율과 대규모 오케스트라의 웅장한 흐름이 공존하는 이 작품에서 첼로는 때로는 오케스트라와 긴밀하게 대화하고, 때로는 긴 호흡의 독주를 통해 음악의 중심을 이끌었다. 이동열은 프라하의 역사적인 스메타나홀에서 체코 오케스트라와 함께 드보르자크의 대표적인 첼로 레퍼토리를 선보이며, 작품이 지닌 깊은 서정성과 극적인 흐름을 무대 위에 펼쳐냈다.</p>
