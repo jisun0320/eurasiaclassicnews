@@ -204,7 +204,14 @@
   }
   .art-body { max-width: var(--measure); }
   .art-body { line-height: 1.68; }
-  .art-body p { margin: 0 0 1.4em; }
+    .art-body p { margin: 0 0 1.4em; }
+  /* justified body text (desktop + mobile) */
+  .art-body p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  .art-body[lang="en"] { hyphens: auto; -webkit-hyphens: auto; }
+  .art-body[lang="ko"] p { word-break: keep-all; overflow-wrap: break-word; }
   .art-body p:first-of-type::first-letter {
     font-family: var(--f-display);
     font-variation-settings: "opsz" 144, "wght" 700;

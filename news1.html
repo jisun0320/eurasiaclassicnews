@@ -192,7 +192,14 @@
   }
   .art-body { max-width: var(--measure); }
   .art-body { line-height: 1.68; }
-  .art-body p { margin: 0 0 1.4em; }
+    .art-body p { margin: 0 0 1.4em; }
+  /* justified body text (desktop + mobile) */
+  .art-body p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  .art-body[lang="en"] { hyphens: auto; -webkit-hyphens: auto; }
+  .art-body[lang="ko"] p { word-break: keep-all; overflow-wrap: break-word; }
   .art-body p:first-of-type::first-letter {
     font-family: var(--f-display);
     font-variation-settings: "opsz" 144, "wght" 700;
@@ -495,11 +502,8 @@
   <!-- ============ LEAD IMAGE ============ -->
   <figure class="lead-figure">
     <img src="images/yan-fang-liszt-2.jpg" alt="Pianist Yan Fang at the Steinway during Liszt's Piano Concerto No. 1">
-    <figcaption class="figcap">
-      <span data-en="Yan Fang performs Liszt's Piano Concerto No. 1 in E-flat major in the hall that bears the composer's name." data-ko="리스트의 이름을 딴 리스트홀에서 리스트 「피아노 협주곡 제1번 E♭장조」를 연주하는 Yan Fang.">Yan Fang performs Liszt's Piano Concerto No. 1 in E-flat major in the hall that bears the composer's name.</span>
-      <span class="figcap__credit">Photograph · Eurasia Classic News</span>
-    </figcaption>
-  </figure>
+
+</figure>
 
   <!-- ============ BODY ============ -->
   <div class="art-wrap">
@@ -510,8 +514,8 @@
 
       <figure class="fig-wide">
         <img src="images/yan-fang-liszt-1.jpg" alt="Yan Fang performing Liszt's Piano Concerto No. 1 with the orchestra at Liszt Hall">
-        <figcaption>Yan Fang with Manuel Tévar and the Hungarian State Symphony Orchestra of Szolnok, beneath the organ of Liszt Hall.</figcaption>
-      </figure>
+
+</figure>
 
       <p>The concert formed part of IMK's university partnership initiative, connecting leading music institutions with professional orchestras to provide outstanding young musicians with opportunities to perform on the international stage.</p>
 
@@ -519,8 +523,8 @@
 
       <figure class="fig-wide">
         <img src="images/yan-fang-liszt-3.jpg" alt="Yan Fang taking a curtain call with the orchestra">
-        <figcaption>Curtain call: Yan Fang acknowledges the audience after Liszt's First Piano Concerto.</figcaption>
-      </figure>
+
+</figure>
 
       <p>At the heart of the evening was Yan Fang's performance of Liszt's Piano Concerto No. 1 in the very hall that bears the composer's name. He balanced dazzling virtuosity with lyrical sensitivity, delivering powerful energy in the brilliant passages while revealing rich tonal depth in the work's lyrical moments. Manuel Tévar and the Hungarian State Symphony Orchestra of Szolnok provided finely balanced orchestral support, allowing the soloist and orchestra to interact organically throughout the performance.</p>
 
@@ -528,15 +532,15 @@
 
       <figure class="fig-wide">
         <img src="images/yan-fang-liszt-4.jpg" alt="Yan Fang bowing, hand on heart">
-        <figcaption>The pianist takes his bow at the Franz Liszt Academy of Music.</figcaption>
-      </figure>
+
+</figure>
 
       <p>His debut at Liszt Hall represented more than another international appearance; it illustrated the growing potential of IMK's university collaboration project, which connects leading music institutions with major international stages. IMK is expected to continue expanding its role as a platform supporting young musicians through partnerships with distinguished music schools worldwide, while Yan Fang continues to establish himself as one of the next generation's most promising pianists.</p>
 
       <figure class="fig-wide">
         <img src="images/yan-fang-liszt-5.jpg" alt="The audience in the hall of the Franz Liszt Academy">
-        <figcaption>A capacity audience in the ornate hall of the Franz Liszt Academy of Music.</figcaption>
-      </figure>
+
+</figure>
     </article>
 
     <!-- Korean body -->
@@ -545,8 +549,8 @@
 
       <figure class="fig-wide">
         <img src="images/yan-fang-liszt-1.jpg" alt="리스트홀에서 협연하는 피아니스트 Yan Fang">
-        <figcaption>리스트홀 오르간을 배경으로 마누엘 테바르, 헝가리 솔노크 심포니 오케스트라와 협연하는 Yan Fang.</figcaption>
-      </figure>
+
+</figure>
 
       <p>이번 공연은 세계적인 음악교육기관과 전문 오케스트라를 연결하여 젊은 연주자들에게 국제 무대를 제공하는 IMK의 대학협력 프로젝트로 마련됐다. 교육과 실연을 연결하는 프로젝트의 취지를 담아, 차세대 음악가가 세계적인 공연장에서 관객과 만나는 뜻깊은 무대가 펼쳐졌다.</p>
 
@@ -554,8 +558,8 @@
 
       <figure class="fig-wide">
         <img src="images/yan-fang-liszt-3.jpg" alt="커튼콜 중인 Yan Fang과 오케스트라">
-        <figcaption>커튼콜에서 관객에게 인사하는 Yan Fang.</figcaption>
-      </figure>
+
+</figure>
 
       <p>이날 공연의 중심에는 Yan Fang이 있었다. 그는 리스트의 이름을 딴 프란츠 리스트 음악원 리스트홀에서 리스트 피아노 협주곡 제1번을 협연하며 작품의 화려한 기교와 섬세한 서정성을 균형 있게 풀어냈다. 빠른 패시지에서는 힘 있는 에너지를, 서정적인 선율에서는 깊이 있는 음색을 들려주며 관객들의 집중을 이끌었다. 특히 지휘자 마누엘 테바르와 헝가리 솔노크 심포니 오케스트라는 독주와 오케스트라가 유기적으로 호흡할 수 있도록 안정적인 균형을 만들어내며 작품의 극적인 전개를 효과적으로 살려냈다.</p>
 
@@ -563,13 +567,13 @@
 
       <figure class="fig-wide">
         <img src="images/yan-fang-liszt-4.jpg" alt="인사하는 Yan Fang">
-        <figcaption>프란츠 리스트 음악원 무대에서 인사하는 피아니스트.</figcaption>
-      </figure>
+
+</figure>
 
       <figure class="fig-wide">
         <img src="images/yan-fang-liszt-5.jpg" alt="프란츠 리스트 음악원 객석의 관객">
-        <figcaption>프란츠 리스트 음악원의 화려한 홀을 가득 채운 관객.</figcaption>
-      </figure>
+
+</figure>
     </article>
 
     <!-- Sidebar -->

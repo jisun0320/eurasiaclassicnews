@@ -192,7 +192,14 @@
   }
   .art-body { max-width: var(--measure); }
   .art-body { line-height: 1.68; }
-  .art-body p { margin: 0 0 1.4em; }
+    .art-body p { margin: 0 0 1.4em; }
+  /* justified body text (desktop + mobile) */
+  .art-body p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  .art-body[lang="en"] { hyphens: auto; -webkit-hyphens: auto; }
+  .art-body[lang="ko"] p { word-break: keep-all; overflow-wrap: break-word; }
   .art-body p:first-of-type::first-letter {
     font-family: var(--f-display);
     font-variation-settings: "opsz" 144, "wght" 700;
@@ -495,11 +502,8 @@
   <!-- ============ LEAD IMAGE ============ -->
   <figure class="lead-figure">
     <img src="images/felsberger-musikverein-1.jpg" alt="The Golden Hall of the Vienna Musikverein during the concert">
-    <figcaption class="figcap">
-      <span data-en="The Golden Hall of the Musikverein in Vienna during the 58th Schwingungen Scholarship Concert." data-ko="제58회 Schwingungen 장학음악회가 열린 빈 무지크페라인 황금홀.">The Golden Hall of the Musikverein in Vienna during the 58th Schwingungen Scholarship Concert.</span>
-      <span class="figcap__credit">Photograph · Eurasia Classic News</span>
-    </figcaption>
-  </figure>
+
+</figure>
 
   <!-- ============ BODY ============ -->
   <div class="art-wrap">
@@ -510,8 +514,8 @@
 
       <figure class="fig-wide">
         <img src="images/felsberger-musikverein-2.jpg" alt="Trombonist Martin Felsberger performing at the Musikverein">
-        <figcaption>Martin Felsberger performs Tomasi's Trombone Concerto with the Hungarian State Symphony Orchestra of Szolnok under Manuel Tévar.</figcaption>
-      </figure>
+
+</figure>
 
       <p>This scholarship concert represented a meaningful international collaboration connecting higher music education with a global performance platform, creating valuable professional opportunities for the next generation of artists.</p>
 
@@ -519,8 +523,8 @@
 
       <figure class="fig-wide">
         <img src="images/felsberger-musikverein-3.jpg" alt="Martin Felsberger taking a bow with the conductor">
-        <figcaption>Felsberger acknowledges the conductor and orchestra after the concerto.</figcaption>
-      </figure>
+
+</figure>
 
       <p>Born in 2000, Felsberger graduated from GMPU in 2025 and was appointed Principal Trombone of the Kärntner Sinfonieorchester in the same year, emerging as one of Austria's promising young musicians.</p>
 
@@ -528,8 +532,8 @@
 
       <figure class="fig-wide">
         <img src="images/felsberger-musikverein-4.jpg" alt="Martin Felsberger and the orchestra at the curtain call">
-        <figcaption>Curtain call in the Golden Hall of the Musikverein.</figcaption>
-      </figure>
+
+</figure>
 
       <p>Founded in 1991, IMK has continuously promoted international cultural exchange through music. The Schwingungen Scholarship Concert has become one of its flagship programs, connecting educational institutions worldwide with international performance opportunities for emerging artists. This concert once again demonstrated the value of an international model that bridges music education with professional performance while supporting the artistic growth of the next generation.</p>
     </article>
@@ -540,8 +544,8 @@
 
       <figure class="fig-wide">
         <img src="images/felsberger-musikverein-2.jpg" alt="무지크페라인에서 연주하는 트롬보니스트 마르틴 펠스베르거">
-        <figcaption>마누엘 테바르가 지휘하는 헝가리 솔노크 심포니 오케스트라와 앙리 토마지 「트롬본 협주곡」을 협연하는 마르틴 펠스베르거.</figcaption>
-      </figure>
+
+</figure>
 
       <p>세계 최고의 클래식 공연장 가운데 하나로 손꼽히는 무지크페라인 황금홀에서 열린 이번 음악회는 교육기관과 국제 공연 플랫폼이 함께 차세대 음악가를 세계 무대로 연결하는 장학 프로젝트라는 점에서 의미를 더했다.</p>
 
@@ -549,8 +553,8 @@
 
       <figure class="fig-wide">
         <img src="images/felsberger-musikverein-3.jpg" alt="지휘자와 함께 인사하는 마르틴 펠스베르거">
-        <figcaption>협연을 마친 뒤 지휘자와 오케스트라에게 인사하는 펠스베르거.</figcaption>
-      </figure>
+
+</figure>
 
       <p>그는 앙리 토마지의 트롬본 협주곡을 협연하며 깊이 있는 음색과 안정적인 연주를 선보였다. 섬세한 선율과 화려한 기교가 교차하는 작품 속에서 그는 오케스트라와 자연스럽게 호흡하며 트롬본 특유의 풍부한 표현력을 무대 위에 펼쳐냈다. 특히 세계적인 공연장인 무지크페라인 황금홀의 울림과 어우러진 그의 연주는 객석에 깊은 인상을 남기며 차세대 연주자로서의 가능성을 보여주었다.</p>
 
@@ -558,8 +562,8 @@
 
       <figure class="fig-wide">
         <img src="images/felsberger-musikverein-4.jpg" alt="커튼콜 중인 마르틴 펠스베르거와 오케스트라">
-        <figcaption>무지크페라인 황금홀에서의 커튼콜.</figcaption>
-      </figure>
+
+</figure>
 
       <p>GMPU의 롤란트 슈트라이너(Roland Streiner) 총장은 프로그램북 인사말에서 “마르틴 펠스베르거는 우리 대학이 추구하는 교육의 성과를 보여주는 대표적인 젊은 음악가”라고 소개하며, IMK와의 협력이 학생과 졸업생들에게 세계적인 콘서트홀에서의 실질적인 무대 경험을 제공하는 중요한 교육 과정임을 강조했다.</p>
 
