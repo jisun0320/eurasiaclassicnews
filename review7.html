@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The IMK Trio — Liang Wang, Meehae Ryo and Chulhee Yoon — brings the 26th Daejeon Cosmopolitan Music Festival to the KAIST Art Museum with Mendelssohn and Dvořák.">
+<meta name="theme-color" content="#6B1A28">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<title>IMK Trio at KAIST — Eurasia Classic News</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Source+Serif+4:opsz,wght@8..60,300..700&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:      #F1ECE1;
+    --paper-warm: #E8E1D2;
+    --ink:        #171614;
+    --ink-mute:   #4A4741;
+    --ink-soft:   #75706A;
+    --wine:       #6B1A28;
+    --brass:      #A87F3C;
+    --rule:       #C7BFAD;
+    --rule-soft:  #E1D9C6;
+
+    --f-display: "Fraunces", "Times New Roman", serif;
+    --f-body:    "Source Serif 4", Georgia, serif;
+    --f-kr:      "Noto Serif KR", "Source Serif 4", serif;
+    --f-ui:      "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --f-mast:    "Playfair Display", "Times New Roman", serif;
+
+    --gutter-x: clamp(20px, 4vw, 56px);
+    --page-max: 1240px;
+    --measure: 40rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 17px;
+    line-height: 1.6;
+    font-feature-settings: "kern","onum","liga";
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--wine); }
+  a:focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
+  button { font: inherit; cursor: pointer; }
+  ::selection { background: var(--wine); color: var(--paper); }
+
+  .page { max-width: var(--page-max); margin: 0 auto; padding: 0 var(--gutter-x); }
+
+  /* ---------- Header ---------- */
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; padding: 14px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    font-family: var(--f-ui); font-size: 12px; letter-spacing: .06em; color: var(--ink-mute);
+    flex-wrap: wrap;
+  }
+  .topbar__left { display: flex; gap: 20px; flex-wrap: wrap; }
+  .brandbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 0; gap: 24px; flex-wrap: wrap;
+  }
+  .brandbar__mark {
+    display: inline-flex; align-items: center; gap: 14px;
+    color: var(--ink);
+  }
+  .brandbar__mark-icon {
+    width: 50px; height: 40px; flex: none; display: inline-flex;
+  }
+  .brandbar__mark-icon svg { width: 100%; height: 100%; display: block; }
+  .brandbar__mark-text {
+    font-family: var(--f-mast);
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-left: 0.13em;
+  }
+  .brandbar__mark:hover { color: var(--wine); }
+  .nav { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 4px; }
+  .nav > a, .nav__top {
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase; font-weight: 500; padding: 4px 11px;
+    position: relative; color: var(--ink); background: none; border: 0;
+  }
+  .nav a.is-active, .nav__item.is-active > .nav__top { color: var(--wine); font-weight: 600; }
+  .nav__item { position: relative; }
+  .nav__top { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+  .nav__caret { width: 7px; height: 7px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg) translate(-2px,-2px); }
+  .nav__menu {
+    position: absolute; top: 100%; left: 6px; z-index: 30;
+    min-width: 170px; padding: 8px 0;
+    background: var(--paper); border: 1px solid var(--rule);
+    box-shadow: 0 8px 24px rgba(23,22,20,.10);
+    display: none;
+  }
+  .nav__item:hover .nav__menu, .nav__item:focus-within .nav__menu { display: block; }
+  .nav__menu a {
+    display: block; padding: 9px 18px;
+    font-family: var(--f-ui); font-size: 10.5px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--ink-mute);
+  }
+  .nav__menu a:hover { background: var(--paper-warm); color: var(--wine); }
+  .rule-strong { height: 1px; background: var(--ink); }
+
+  /* ---------- Article header ---------- */
+  .crumb {
+    display: flex; align-items: center; gap: 10px;
+    padding: 26px 0 0;
+    font-family: var(--f-ui); font-size: 11px;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .crumb a { border-bottom: 1px solid var(--rule); padding-bottom: 2px; color: var(--ink-mute); }
+  .crumb a:hover { color: var(--wine); border-color: var(--wine); }
+  .crumb span[aria-current] { color: var(--wine); font-weight: 600; }
+  .art-head { padding: 30px 0 26px; max-width: 64rem; }
+  .art-kicker {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 26px; flex-wrap: wrap;
+  }
+  .art-kicker__tag {
+    font-family: var(--f-ui); font-size: 11px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--wine);
+  }
+  .art-kicker__sep { width: 22px; height: 1px; background: var(--rule); }
+  .art-kicker__place {
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .art-title {
+    font-family: var(--f-mast);
+    font-weight: 700;
+    font-size: clamp(30px, 4vw, 54px);
+    line-height: 1.14; letter-spacing: -.012em;
+    margin: 0 0 20px;
+    text-wrap: pretty;
+  }
+  .art-title em { font-style: italic; color: var(--wine); font-weight: 600; }
+  .art-dek {
+    font-family: var(--f-mast);
+    font-weight: 400;
+    font-style: italic; font-size: clamp(18px, 1.9vw, 23px);
+    line-height: 1.55; color: var(--ink-mute);
+    margin: 0 0 20px; max-width: 56ch;
+  }
+  .art-meta {
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+    padding-top: 16px; border-top: 1px solid var(--rule);
+  }
+  .art-byline {
+    font-family: var(--f-ui); font-size: 12px; letter-spacing: .1em; color: var(--ink-mute);
+  }
+  .art-byline strong { color: var(--ink); font-weight: 600; }
+  .lang-switch { margin-left: auto; display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; }
+  .lang-switch button {
+    background: transparent; border: 0; padding: 6px 16px;
+    font-family: var(--f-ui); font-size: 11px; font-weight: 600;
+    letter-spacing: .16em; color: var(--ink-soft); transition: .2s;
+  }
+  .lang-switch button.is-on { background: var(--wine); color: var(--paper); }
+
+  /* ---------- Lead image ---------- */
+  .lead-figure { margin: 0 0 12px; }
+  .lead-figure img { width: 100%; height: auto; border-radius: 4px; }
+  .figcap {
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    padding-top: 12px; border-top: 1px solid var(--rule-soft); margin-top: 12px;
+    font-family: var(--f-ui); font-size: 11px; line-height: 1.5;
+    color: var(--ink-soft); letter-spacing: .04em;
+  }
+  .figcap__credit { text-transform: uppercase; letter-spacing: .18em; white-space: nowrap; }
+
+  /* ---------- Body layout ---------- */
+  .art-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 17rem);
+    gap: clamp(32px, 6vw, 80px);
+    padding: 56px 0 0;
+    align-items: start;
+  }
+  .art-body { max-width: var(--measure); }
+  .art-body { line-height: 1.68; }
+    .art-body p { margin: 0 0 1.4em; }
+  /* justified body text (desktop + mobile) */
+  .art-body p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  .art-body[lang="en"] { hyphens: auto; -webkit-hyphens: auto; }
+  .art-body[lang="ko"] p { word-break: keep-all; overflow-wrap: break-word; }
+  .art-body p:first-of-type::first-letter {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 144, "wght" 700;
+    float: left; font-size: 4.6em; line-height: .82;
+    padding: .06em .1em 0 0; color: var(--wine);
+  }
+  .art-body h2 {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 48, "wght" 600;
+    font-size: 26px; line-height: 1.2; letter-spacing: -.015em;
+    margin: 2.4em 0 .8em;
+  }
+  .art-body h2 em { font-style: italic; color: var(--wine); }
+
+  /* Korean body tuning */
+  .art-body[lang="ko"] { font-family: var(--f-kr); font-size: 16.5px; line-height: 1.85; word-break: keep-all; }
+  .art-body[lang="ko"] h2 { font-family: var(--f-kr); font-weight: 600; }
+  .art-body[lang="ko"] p:first-of-type::first-letter { font-size: 1em; float: none; padding: 0; color: inherit; }
+
+  /* Pull quote */
+  .pullquote {
+    margin: 2.6em 0;
+    padding: 0 0 0 24px;
+    border-left: 2px solid var(--wine);
+  }
+  .pullquote p {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 48, "wght" 400;
+    font-style: italic; font-size: clamp(20px, 2.3vw, 27px);
+    line-height: 1.32; letter-spacing: -.01em;
+    margin: 0 0 .55em; color: var(--ink);
+  }
+  .pullquote cite {
+    font-family: var(--f-ui); font-style: normal; font-size: 11px;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .art-body[lang="ko"] .pullquote p { font-family: var(--f-kr); font-style: normal; font-weight: 500; line-height: 1.5; }
+
+  /* Inline wide figure */
+  .fig-wide { margin: 2.8em 0; }
+  .fig-wide img { width: 100%; height: auto; border-radius: 3px; display: block; }
+  .fig-wide figcaption {
+    font-family: var(--f-ui); font-size: 11px; line-height: 1.55;
+    color: var(--ink-soft); letter-spacing: .03em; padding-top: 11px;
+  }
+  .art-body[lang="ko"] .fig-wide figcaption { font-family: var(--f-kr); font-size: 12px; }
+
+  /* Inline figure pair */
+  .fig-pair {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+    margin: 2.8em 0;
+  }
+  .fig-pair figure { margin: 0; }
+  .fig-pair img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3 / 4; border-radius: 3px; }
+  .fig-pair figcaption {
+    font-family: var(--f-ui); font-size: 10.5px; line-height: 1.5;
+    color: var(--ink-soft); letter-spacing: .04em; padding-top: 10px;
+  }
+
+  /* ---------- Sidebar: programme ---------- */
+  .art-aside { position: sticky; top: 24px; }
+  .prog {
+    background: var(--paper-warm);
+    padding: 26px 24px;
+    border-top: 2px solid var(--wine);
+  }
+  .prog h3 {
+    font-family: var(--f-ui); font-size: 10.5px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--wine);
+    margin: 0 0 20px;
+  }
+  .prog dl { margin: 0; }
+  .prog dt {
+    font-family: var(--f-ui); font-size: 9.5px; font-weight: 600;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft);
+    margin-bottom: 5px;
+  }
+  .prog dd {
+    margin: 0 0 18px; font-family: var(--f-body); font-size: 14.5px;
+    line-height: 1.42; color: var(--ink);
+  }
+  .prog dd:last-child { margin-bottom: 0; }
+  .prog dd em { font-style: italic; color: var(--wine); }
+  .prog__works { list-style: none; margin: 0; padding: 0; }
+  .prog__works li {
+    padding: 11px 0; border-bottom: 1px solid var(--rule);
+    font-size: 14px; line-height: 1.4;
+  }
+  .prog__works li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .prog__works .op {
+    display: block; font-family: var(--f-ui); font-size: 9.5px;
+    letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft);
+    margin-top: 3px;
+  }
+
+  /* ---------- Footer ---------- */
+  .art-foot {
+    margin-top: 72px; padding: 32px 0 64px;
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .12em;
+    color: var(--ink-soft);
+  }
+  .art-foot a { border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+
+  /* ---------- Skip link ---------- */
+  .skip {
+    position: absolute; left: -9999px; top: 0; z-index: 200;
+    background: var(--wine); color: var(--paper);
+    padding: 10px 20px; font-family: var(--f-ui); font-size: 12px;
+    letter-spacing: .1em;
+  }
+  .skip:focus { left: 0; }
+
+  /* ---------- Dateline ---------- */
+  .dateline {
+    font-family: var(--f-ui); font-weight: 700; font-size: .78em;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--ink);
+  }
+
+  /* ---------- Critic / ethics box ---------- */
+  .critic-box {
+    margin: 3em 0 0;
+    padding: 22px 24px;
+    background: var(--paper-warm);
+    border-left: 2px solid var(--brass);
+  }
+  .critic-box h3 {
+    font-family: var(--f-ui); font-size: 10px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--ink-mute);
+    margin: 0 0 10px;
+  }
+  .critic-box p {
+    margin: 0; font-family: var(--f-ui); font-size: 12.5px;
+    line-height: 1.65; color: var(--ink-mute); letter-spacing: .01em;
+  }
+
+  /* ---------- Rating legend ---------- */
+
+  /* ---------- Related reviews ---------- */
+  .related {
+    margin-top: 80px;
+    padding-top: 36px;
+    border-top: 2px solid var(--ink);
+  }
+  .related > h2 {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 48, "wght" 500;
+    font-size: 26px; letter-spacing: -.015em; margin: 0 0 26px;
+  }
+  .related > h2 em { font-style: italic; color: var(--wine); }
+  .related__grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  }
+  .related__grid--one { grid-template-columns: 1fr; }
+  .related__item {
+    padding: 4px 28px 8px;
+    border-left: 1px solid var(--rule-soft);
+  }
+  .related__item:first-child { padding-left: 0; border-left: 0; }
+  .related__tag {
+    display: block;
+    font-family: var(--f-ui); font-size: 10px; font-weight: 700;
+    letter-spacing: .22em; text-transform: uppercase; color: var(--wine);
+    margin-bottom: 8px;
+  }
+  .related__item h3 {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 36, "wght" 500;
+    font-size: 17.5px; line-height: 1.25; letter-spacing: -.005em;
+    margin: 0 0 8px;
+  }
+  .related__item h3 em { font-style: italic; color: var(--wine); }
+  .related__item
+
+  /* ---------- Print ---------- */
+  @media print {
+    .skip, .topbar, .brandbar, .rule-strong, .lang-switch, .related, .art-foot { display: none !important; }
+    body { background: #fff; color: #000; font-size: 11pt; }
+    .page { max-width: none; padding: 0; }
+    .art-wrap { display: block; }
+    .art-aside { position: static; page-break-inside: avoid; margin-top: 24pt; }
+    .art-body p:first-of-type::first-letter { font-size: 1em; float: none; padding: 0; color: inherit; }
+    .lead-figure img, .fig-pair img { max-height: 70mm; width: auto; }
+    a { color: inherit; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .related__grid { grid-template-columns: 1fr; }
+    .related__item { padding: 16px 0; border-left: 0; border-bottom: 1px solid var(--rule-soft); }
+    .related__item:last-child { border-bottom: 0; }
+    .art-wrap { grid-template-columns: 1fr; gap: 48px; }
+    .art-aside { position: static; max-width: 34rem; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .art-head { padding: 36px 0 28px; }
+    .art-body p:first-of-type::first-letter { font-size: 3.6em; }
+    .fig-pair { grid-template-columns: 1fr; gap: 24px; }
+    .lang-switch { margin-left: 0; }
+    .nav a, .nav__top { padding: 4px 8px; font-size: 10.5px; letter-spacing: .06em; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: .001ms !important; }
+  }
+
+  /* ampersand — Playfair's is decorative; use the roman one from the text serif */
+  .amp {
+    font-family: var(--f-body);
+    font-style: normal;
+    font-weight: inherit;
+    font-size: 0.95em;
+    letter-spacing: 0;
+    padding: 0 0.02em;
+  }
+  /* in the sans UI (nav, topbar, labels) keep the sans ampersand */
+  .nav .amp, .topbar .amp, .brandbar .amp,
+  .row__tag .amp, .most-read__tag .amp,
+  .nsect__ko .amp, .psect__ko .amp, .sect__ko .amp,
+  .figcap .amp, .foot .amp, .art-byline .amp, .row__byline .amp {
+    font-family: var(--f-ui);
+    font-size: 1em;
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#article">Skip to article</a>
+
+<div class="page">
+
+  <div class="topbar">
+    <div class="topbar__left">
+      <span id="today">Monday · 13 July 2026</span>
+    </div>
+    <div><a href="#">Newsletter</a></div>
+  </div>
+
+  <div class="brandbar">
+    <a href="index.html" class="brandbar__mark"><span class="brandbar__mark-icon"><svg viewBox="235 258 780 622" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="39" stroke-linecap="butt" stroke-linejoin="miter"><path d="M 487 294 L 262 294 L 262 665 L 455 665"/><path d="M 262 473 L 466 473"/><path d="M 692 504 A 184 184 0 1 0 746 812"/></g><path fill="currentColor" stroke="none" d="M 692 276 L 732 276 L 967 623 L 967 276 L 1007 276 L 1007 682 L 960 682 L 732 346 L 732 682 L 692 682 Z"/></svg></span><span class="brandbar__mark-text">Eurasia Classic News</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="ecn.html">ECN</a>
+
+      <span class="nav__item is-active">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">News <span class="amp">&amp;</span> Reviews <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="articles.html#news-latest">Latest News</a>
+          <a href="articles.html#festivals">Festivals <span class="amp">&amp;</span> Tours</a>
+          <a href="articles.html#all">All Articles</a>
+        </span>
+      </span>
+
+      <span class="nav__item">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">Spotlight <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="index.html#interviews">Interviews</a>
+          <a href="spotlight.html#cover">Cover Story</a>
+          <a href="spotlight.html#focus">Artist Focus</a>
+        </span>
+      </span>
+
+      <a href="get-featured.html">Get Featured</a>
+      <a href="video.html">Video</a>
+      <a href="artists.html">Artists</a>
+      <a href="whats-on.html">What's On</a>
+
+      <a href="more.html">More</a>
+    </nav>
+  </div>
+  <div class="rule-strong"></div>
+
+  <!-- ============ ARTICLE HEADER ============ -->
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="articles.html">Articles</a>
+    <span>›</span>
+    <span aria-current="page" data-en="Report · Daejeon" data-ko="리포트 · 대전">Report · Daejeon</span>
+  </nav>
+
+  <header class="art-head" id="article">
+    <div class="art-kicker">
+      <span class="art-kicker__tag" data-en="Festival" data-ko="페스티벌">Festival</span>
+      <span class="art-kicker__sep"></span>
+      <span class="art-kicker__place" data-en="Daejeon, Korea · KAIST × DCMF" data-ko="대한민국 대전 · KAIST × DCMF">Daejeon, Korea · KAIST × DCMF</span>
+    </div>
+
+    <h1 class="art-title" data-en="&lt;em&gt;IMK Trio&lt;/em&gt; Brings the Daejeon Cosmopolitan Music Festival to KAIST" data-ko="&lt;em&gt;IMK 트리오&lt;/em&gt;, KAIST에서 만난 대전국제음악제"><em>IMK Trio</em> Brings the Daejeon Cosmopolitan Music Festival to KAIST</h1>
+
+    <p class="art-dek" data-en="KAIST × DCMF Collaboration Expands the Resonance of Classical Music with Masterworks by Mendelssohn and Dvořák." data-ko="KAIST × DCMF 협업으로 확장된 클래식의 울림… 멘델스존·드보르작 명작 선보여.">KAIST × DCMF Collaboration Expands the Resonance of Classical Music with Masterworks by Mendelssohn and Dvořák.</p>
+
+    <div class="art-meta">
+      <span class="art-byline" data-en="By &lt;strong&gt;Eurasia Classic News&lt;/strong&gt; · Daejeon · 7 August 2026" data-ko="글 &lt;strong&gt;Eurasia Classic News&lt;/strong&gt; · 대전 · 2026년 8월 7일">By <strong>Eurasia Classic News</strong> · Daejeon · 7 August 2026</span>
+      <div class="lang-switch" role="group" aria-label="Article language">
+        <button type="button" class="is-on" data-lang="en">EN</button>
+        <button type="button" data-lang="ko">한국어</button>
+      </div>
+    </div>
+  </header>
+
+  <figure class="lead-figure">
+    <img src="images/imk-trio-kaist-stage-e1b6d4f8.jpg" alt="The IMK Trio — Liang Wang, Chulhee Yoon and Meehae Ryo — performing at the KAIST Art Museum">
+
+</figure>
+
+  <!-- ============ BODY ============ -->
+  <div class="art-wrap">
+
+    <!-- English body -->
+    <article class="art-body" id="body-en" lang="en">
+      <p>A special concert presented as part of the 26th Daejeon Cosmopolitan Music Festival (DCMF) took place at the KAIST Art Museum on August 7. Presented through the KAIST × DCMF collaboration, the concert featured the IMK Trio, comprising violinist Liang Wang, cellist Meehae Ryo, and pianist Chulhee Yoon, who delivered a compelling evening of chamber music.</p>
+
+      <p>The concert carried particular significance as it extended the festival’s theme, “Resonanz und Verklärung” (Resonance and Transfiguration), into the KAIST campus. Moving beyond the setting of a traditional concert hall, the performance created a distinctive meeting point between art and academia, as well as between the local community and international cultural exchange, within one of Korea’s leading institutions of education and research.</p>
+
+      <figure class="fig-wide">
+        <img src="images/kaist-art-museum-audience-a3d8f6b0.jpg" alt="Audience at the KAIST Art Museum during the IMK Trio concert">
+      </figure>
+
+      <p>For the program, the IMK Trio presented two major works of the Romantic chamber music repertoire. The concert opened with Felix Mendelssohn’s Piano Trio No. 1 in D minor, Op. 49, MWV Q29, followed by Antonín Dvořák’s Piano Trio No. 4 in E minor, Op. 90, B.166, “Dumky.” Mendelssohn’s lyrical melodies and dramatic energy were followed by the distinctive Slavic character of Dvořák’s Dumky, in which folk-inspired rhythms, introspection, and moments of exuberance continually intersect. Together, the two works offered the audience contrasting yet complementary expressions of Romantic chamber music.</p>
+
+      <p>Throughout the performance, the three musicians brought their individual musical identities to the stage while maintaining a closely unified ensemble. Cellist Meehae Ryo, Artistic Director of IMK and an active figure in international musical exchange, joined violinist Liang Wang and pianist Chulhee Yoon in an intricate musical dialogue, exchanging phrases with sensitivity and revealing the wide-ranging emotional character of the works.</p>
+
+      <div class="fig-pair">
+        <figure>
+          <img src="images/meehae-ryo-imk-trio-kaist-c9f4b2d6.jpg" alt="Cellist Meehae Ryo performing with the IMK Trio at KAIST">
+        </figure>
+        <figure>
+          <img src="images/liang-wang-imk-trio-kaist-d0a5c3e7.jpg" alt="Violinist Liang Wang performing with the IMK Trio at KAIST">
+        </figure>
+      </div>
+
+      <p>The concert was further enriched by pianist Chulhee Yoon’s commentary, which offered the audience additional insight into the music. His introductions helped listeners approach the works with greater familiarity and understanding, providing context for their musical background and characteristics while enhancing the overall concert experience.</p>
+
+      <figure class="fig-wide">
+        <img src="images/chulhee-yoon-commentary-kaist-f2c7e5a9.jpg" alt="Pianist Chulhee Yoon giving commentary during the concert">
+      </figure>
+
+      <p>The audience itself also played an important role in shaping the atmosphere of the evening. Their evident enthusiasm for classical music was reflected in the attentive silence and thoughtful concert etiquette maintained throughout the performance, as well as in their warm and engaged response to the musicians. The combination of distinguished performances and a highly receptive audience created a genuine sense of communication between the stage and the hall.</p>
+
+      <p>The KAIST × DCMF collaboration demonstrated how the Daejeon Cosmopolitan Music Festival continues to expand beyond the boundaries of conventional performance venues, reaching new spaces and audiences. By bringing together the international artistry of the IMK Trio and the distinctive setting of KAIST, the concert highlighted new possibilities for classical music while reaffirming the festival’s growing role as a platform connecting Daejeon with the international music community.</p>
+    </article>
+
+    <!-- Korean body -->
+    <article class="art-body" id="body-ko" lang="ko" hidden>
+      <p>제26회 대전국제음악제(Daejeon Cosmopolitan Music Festival, DCMF)의 특별한 무대가 지난 8월 7일 KAIST 미술관에서 펼쳐졌다. ‘KAIST × DCMF’ 협업 공연으로 마련된 이번 무대에는 바이올리니스트 리앙 왕(Liang Wang), 첼리스트 여미혜(Meehae Ryo), 피아니스트 윤철희(Chulhee Yoon)가 IMK 트리오로 함께해 깊이 있는 실내악 무대를 선보였다.</p>
+
+      <p>이번 공연은 제26회 대전국제음악제가 내건 주제 ‘울림과 정화(Resonanz und Verklärung)’의 의미를 KAIST 캠퍼스로 확장했다는 점에서 의미를 더했다. 전문 공연장을 넘어 교육과 연구의 공간인 KAIST에서 클래식 음악을 매개로 예술과 학문, 지역과 국제 문화교류가 만나는 특별한 접점을 마련해주었다.</p>
+
+      <figure class="fig-wide">
+        <img src="images/kaist-art-museum-audience-a3d8f6b0.jpg" alt="Audience at the KAIST Art Museum during the IMK Trio concert">
+      </figure>
+
+      <p>IMK 트리오는 이날 낭만주의 실내악을 대표하는 두 작품을 연주했다. 첫 곡으로 펠릭스 멘델스존의 피아노 삼중주 제1번 d단조 Op.49, MWV Q29을 선보였으며, 이어 안토닌 드보르작의 피아노 삼중주 제4번 e단조 Op.90, B.166 ‘둠키(Dumky)’를 연주했다. 서정적인 선율과 극적인 에너지가 공존하는 멘델스존의 작품에 이어, 슬라브 특유의 정서와 민속적 리듬, 명상과 환희가 교차하는 드보르작의 ‘둠키’가 이어지며 서로 다른 낭만주의 실내악의 매력을 한자리에서 만날 수 있었다. 특히 세 연주자는 각자의 음악적 개성을 드러내면서도 긴밀한 호흡으로 하나의 앙상블을 완성했다. IMK 예술감독으로 국제 음악교류 활동을 이어오고 있는 첼리스트 여미혜를 비롯해 바이올리니스트 리앙 왕과 피아니스트 윤철희가 서로의 선율을 섬세하게 주고받으며 작품의 다채로운 정서를 풀어냈다.</p>
+
+      <div class="fig-pair">
+        <figure>
+          <img src="images/meehae-ryo-imk-trio-kaist-c9f4b2d6.jpg" alt="Cellist Meehae Ryo performing with the IMK Trio at KAIST">
+        </figure>
+        <figure>
+          <img src="images/liang-wang-imk-trio-kaist-d0a5c3e7.jpg" alt="Violinist Liang Wang performing with the IMK Trio at KAIST">
+        </figure>
+      </div>
+
+      <p>이날 공연에서는 피아니스트 윤철희의 해설도 더해져 관객들이 작품을 보다 친근하고 깊이 있게 이해할 수 있도록 도왔다. 곡에 대한 설명과 함께 음악을 감상할 수 있는 구성은 클래식 음악의 진입 장벽을 낮추는 동시에 작품의 배경과 특징을 보다 입체적으로 전달하며 공연의 몰입도를 높였다. 무엇보다 공연장을 찾은 관객들의 반응도 인상적이었다. 클래식 음악에 대한 높은 관심을 바탕으로 연주에 집중하는 분위기가 이어졌으며, 연주 중 세심한 관람 매너와 함께 무대에 적극적으로 호응하면서 연주자와 관객이 음악을 통해 자연스럽게 교감하는 자리가 만들어졌고 수준 높은 연주와 성숙한 관객 문화가 어우러지며 이번 공연의 의미를 더욱 풍성하게 했다.</p>
+
+      <figure class="fig-wide">
+        <img src="images/chulhee-yoon-commentary-kaist-f2c7e5a9.jpg" alt="Pianist Chulhee Yoon giving commentary during the concert">
+      </figure>
+
+      <p>이번 KAIST × DCMF 협업 공연은 대전국제음악제가 전통적인 공연장의 경계를 넘어 다양한 공간과 관객을 찾아가는 음악제로 영역을 확장하고 있음을 보여주는 무대였다. 또한 IMK 트리오의 국제적인 음악적 역량과 KAIST라는 공간의 특성이 만나 클래식 음악의 새로운 가능성을 제시하며, 지역과 세계를 연결하는 대전국제음악제의 국제성과 확장성을 다시 한번 확인하게 했다.</p>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="art-aside">
+      <div class="prog">
+        <h3 data-en="The Programme" data-ko="프로그램">The Programme</h3>
+        <dl>
+          <dt data-en="Ensemble" data-ko="앙상블">Ensemble</dt>
+          <dd>IMK Trio</dd>
+
+          <dt data-en="Performers" data-ko="연주자">Performers</dt>
+          <dd>Liang Wang, <em>violin</em> · Meehae Ryo, <em>cello</em> · Chulhee Yoon, <em>piano</em></dd>
+
+          <dt data-en="Festival" data-ko="축제">Festival</dt>
+          <dd>26th Daejeon Cosmopolitan Music Festival <em>(KAIST × DCMF)</em></dd>
+
+          <dt data-en="Venue" data-ko="장소">Venue</dt>
+          <dd>KAIST Art Museum, Daejeon · 7 August 2026</dd>
+
+          <dt data-en="Works" data-ko="연주곡">Works</dt>
+          <dd>
+            <ul class="prog__works">
+              <li>Mendelssohn — Piano Trio No. 1 in D minor<span class="op">Op. 49, MWV Q29</span></li>
+              <li>Dvořák — Piano Trio No. 4 in E minor “Dumky”<span class="op">Op. 90, B. 166</span></li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ============ RELATED ============ -->
+  <section class="related" aria-label="More reviews">
+    <h2 data-en="More from &lt;em&gt;Reviews&lt;/em&gt;" data-ko="다른 &lt;em&gt;기사&lt;/em&gt;">More from <em>Reviews</em></h2>
+    <div class="related__grid">
+      <article class="related__item">
+        <span class="related__tag">Prague</span>
+        <h3><a href="review6.html">Cellist <em>Dongyeol Lee</em> Makes European Debut at Prague's Smetana Hall</a></h3>
+      </article>
+      <article class="related__item">
+        <span class="related__tag">Gunpo</span>
+        <h3><a href="review5.html">From the Resonance of Tradition to Tchaikovsky: Gunpo Prime Philharmonic's <em>Boheoja Resounds</em></a></h3>
+      </article>
+      <article class="related__item">
+        <span class="related__tag">Daejeon</span>
+        <h3><a href="review.html">Why the Stuttgart Philharmonic Chose <em>Edwin E.S. Kim</em> for Its Korean Debut</a></h3>
+      </article>
+    </div>
+  </section>
+
+  <footer class="art-foot">
+    <span>© 2026 Eurasia Classic News · <a href="mailto:eurasiaclassicnews@gmail.com">eurasiaclassicnews@gmail.com</a></span>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.lang-switch button');
+    var bodyEn  = document.getElementById('body-en');
+    var bodyKo  = document.getElementById('body-ko');
+    var html    = document.documentElement;
+
+    function setLang(lang) {
+      var isKo = lang === 'ko';
+      bodyEn.hidden = isKo;
+      bodyKo.hidden = !isKo;
+      html.lang = lang;
+      document.querySelectorAll('[data-en][data-ko]').forEach(function (el) {
+        el.innerHTML = isKo ? el.dataset.ko : el.dataset.en;
+      });
+      buttons.forEach(function (b) {
+        b.classList.toggle('is-on', b.dataset.lang === lang);
+      });
+    }
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.dataset.lang); });
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    var el = document.getElementById('today');
+    if (!el) return;
+    var d = new Date();
+    var day   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()];
+    var month = ['January','February','March','April','May','June',
+                 'July','August','September','October','November','December'][d.getMonth()];
+    el.textContent = day + ' \u00B7 ' + d.getDate() + ' ' + month + ' ' + d.getFullYear();
+  })();
+</script>
+
+</body>
+</html>
