@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Korean violinist Sungmin Cho shares the stage with Maxim Vengerov and the North Czech Philharmonic at the closing concert of the 61st Beethoven Festival in Teplice.">
+<meta name="theme-color" content="#6B1A28">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<title>Sungmin Cho with Maxim Vengerov, Teplice — Eurasia Classic News</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Source+Serif+4:opsz,wght@8..60,300..700&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:      #F1ECE1;
+    --paper-warm: #E8E1D2;
+    --ink:        #171614;
+    --ink-mute:   #4A4741;
+    --ink-soft:   #75706A;
+    --wine:       #6B1A28;
+    --brass:      #A87F3C;
+    --rule:       #C7BFAD;
+    --rule-soft:  #E1D9C6;
+
+    --f-display: "Fraunces", "Times New Roman", serif;
+    --f-body:    "Source Serif 4", Georgia, serif;
+    --f-kr:      "Noto Serif KR", "Source Serif 4", serif;
+    --f-ui:      "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --f-mast:    "Playfair Display", "Times New Roman", serif;
+
+    --gutter-x: clamp(20px, 4vw, 56px);
+    --page-max: 1240px;
+    --measure: 40rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 17px;
+    line-height: 1.6;
+    font-feature-settings: "kern","onum","liga";
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--wine); }
+  a:focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
+  button { font: inherit; cursor: pointer; }
+  ::selection { background: var(--wine); color: var(--paper); }
+
+  .page { max-width: var(--page-max); margin: 0 auto; padding: 0 var(--gutter-x); }
+
+  /* ---------- Header ---------- */
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; padding: 14px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    font-family: var(--f-ui); font-size: 12px; letter-spacing: .06em; color: var(--ink-mute);
+    flex-wrap: wrap;
+  }
+  .topbar__left { display: flex; gap: 20px; flex-wrap: wrap; }
+  .brandbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 0; gap: 24px; flex-wrap: wrap;
+  }
+  .brandbar__mark {
+    display: inline-flex; align-items: center; gap: 14px;
+    color: var(--ink);
+  }
+  .brandbar__mark-icon {
+    width: 50px; height: 40px; flex: none; display: inline-flex;
+  }
+  .brandbar__mark-icon svg { width: 100%; height: 100%; display: block; }
+  .brandbar__mark-text {
+    font-family: var(--f-mast);
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-left: 0.13em;
+  }
+  .brandbar__mark:hover { color: var(--wine); }
+  .nav { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 4px; }
+  .nav > a, .nav__top {
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase; font-weight: 500; padding: 4px 11px;
+    position: relative; color: var(--ink); background: none; border: 0;
+  }
+  .nav a.is-active, .nav__item.is-active > .nav__top { color: var(--wine); font-weight: 600; }
+  .nav__item { position: relative; }
+  .nav__top { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+  .nav__caret { width: 7px; height: 7px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg) translate(-2px,-2px); }
+  .nav__menu {
+    position: absolute; top: 100%; left: 6px; z-index: 30;
+    min-width: 170px; padding: 8px 0;
+    background: var(--paper); border: 1px solid var(--rule);
+    box-shadow: 0 8px 24px rgba(23,22,20,.10);
+    display: none;
+  }
+  .nav__item:hover .nav__menu, .nav__item:focus-within .nav__menu { display: block; }
+  .nav__menu a {
+    display: block; padding: 9px 18px;
+    font-family: var(--f-ui); font-size: 10.5px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--ink-mute);
+  }
+  .nav__menu a:hover { background: var(--paper-warm); color: var(--wine); }
+  .rule-strong { height: 1px; background: var(--ink); }
+
+  /* ---------- Article header ---------- */
+  .crumb {
+    display: flex; align-items: center; gap: 10px;
+    padding: 26px 0 0;
+    font-family: var(--f-ui); font-size: 11px;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .crumb a { border-bottom: 1px solid var(--rule); padding-bottom: 2px; color: var(--ink-mute); }
+  .crumb a:hover { color: var(--wine); border-color: var(--wine); }
+  .crumb span[aria-current] { color: var(--wine); font-weight: 600; }
+  .art-head { padding: 30px 0 26px; max-width: 64rem; }
+  .art-kicker {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 26px; flex-wrap: wrap;
+  }
+  .art-kicker__tag {
+    font-family: var(--f-ui); font-size: 11px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--wine);
+  }
+  .art-kicker__sep { width: 22px; height: 1px; background: var(--rule); }
+  .art-kicker__place {
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .art-title {
+    font-family: var(--f-mast);
+    word-break: keep-all; /* KEEPALL-FIX: KO words don't split mid-word */
+    font-weight: 700;
+    font-size: clamp(30px, 4vw, 54px);
+    line-height: 1.14; letter-spacing: -.012em;
+    margin: 0 0 20px;
+    text-wrap: pretty;
+  }
+  .art-title em { font-style: italic; color: var(--wine); font-weight: 600; }
+  .art-kicker__place, .art-kicker__tag, .crumb, .art-byline { word-break: keep-all; }
+  .art-dek {
+    font-family: var(--f-mast);
+    word-break: keep-all;
+    font-weight: 400;
+    font-style: italic; font-size: clamp(18px, 1.9vw, 23px);
+    line-height: 1.55; color: var(--ink-mute);
+    margin: 0 0 20px; max-width: 56ch;
+  }
+  .art-meta {
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+    padding-top: 16px; border-top: 1px solid var(--rule);
+  }
+  .art-byline {
+    font-family: var(--f-ui); font-size: 12px; letter-spacing: .1em; color: var(--ink-mute);
+  }
+  .art-byline strong { color: var(--ink); font-weight: 600; }
+  .lang-switch { margin-left: auto; display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; }
+  .lang-switch button {
+    background: transparent; border: 0; padding: 6px 16px;
+    font-family: var(--f-ui); font-size: 11px; font-weight: 600;
+    letter-spacing: .16em; color: var(--ink-soft); transition: .2s;
+  }
+  .lang-switch button.is-on { background: var(--wine); color: var(--paper); }
+
+  /* ---------- Lead image ---------- */
+  .lead-figure { margin: 0 0 12px; }
+  .lead-figure img { width: 100%; height: auto; border-radius: 4px; }
+
+  /* small poster floated at article top-left, text wraps around */
+  .fig-poster {
+    float: left;
+    width: min(44%, 240px);
+    margin: 6px 28px 14px 0;
+  }
+  .fig-poster img { width: 100%; height: auto; border-radius: 3px; box-shadow: 0 1px 4px rgba(23,22,20,.14); }
+  .art-body::after { content: ""; display: block; clear: both; }
+  @media (max-width: 560px) {
+    .fig-poster { width: 48%; margin: 4px 18px 10px 0; }
+  }
+  .figcap {
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    padding-top: 12px; border-top: 1px solid var(--rule-soft); margin-top: 12px;
+    font-family: var(--f-ui); font-size: 11px; line-height: 1.5;
+    color: var(--ink-soft); letter-spacing: .04em;
+  }
+  .figcap__credit { text-transform: uppercase; letter-spacing: .18em; white-space: nowrap; }
+
+  /* ---------- Body layout ---------- */
+  .art-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 17rem);
+    gap: clamp(32px, 6vw, 80px);
+    padding: 56px 0 0;
+    align-items: start;
+  }
+  .art-body { max-width: var(--measure); }
+  .art-body { line-height: 1.68; }
+    .art-body p { margin: 0 0 1.4em; }
+  /* justified body text (desktop + mobile) */
+  .art-body p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  .art-body[lang="en"] { hyphens: auto; -webkit-hyphens: auto; }
+  .art-body[lang="ko"] p { word-break: keep-all; overflow-wrap: break-word; }
+  .art-body p:first-of-type::first-letter {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 144, "wght" 700;
+    float: left; font-size: 4.6em; line-height: .82;
+    padding: .06em .1em 0 0; color: var(--wine);
+  }
+  .art-body h2 {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 48, "wght" 600;
+    font-size: 26px; line-height: 1.2; letter-spacing: -.015em;
+    margin: 2.4em 0 .8em;
+  }
+  .art-body h2 em { font-style: italic; color: var(--wine); }
+
+  /* Korean body tuning */
+  .art-body[lang="ko"] { font-family: var(--f-kr); font-size: 16.5px; line-height: 1.85; word-break: keep-all; }
+  .art-body[lang="ko"] h2 { font-family: var(--f-kr); font-weight: 600; }
+  .art-body[lang="ko"] p:first-of-type::first-letter { font-size: 1em; float: none; padding: 0; color: inherit; }
+
+  /* Pull quote */
+  .pullquote {
+    margin: 2.6em 0;
+    padding: 0 0 0 24px;
+    border-left: 2px solid var(--wine);
+  }
+  .pullquote p {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 48, "wght" 400;
+    font-style: italic; font-size: clamp(20px, 2.3vw, 27px);
+    line-height: 1.32; letter-spacing: -.01em;
+    margin: 0 0 .55em; color: var(--ink);
+  }
+  .pullquote cite {
+    font-family: var(--f-ui); font-style: normal; font-size: 11px;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .art-body[lang="ko"] .pullquote p { font-family: var(--f-kr); font-style: normal; font-weight: 500; line-height: 1.5; }
+
+  /* Inline wide figure */
+  .fig-wide { margin: 2.8em 0; }
+  .fig-wide img { width: 100%; height: auto; border-radius: 3px; display: block; }
+  .fig-wide figcaption {
+    font-family: var(--f-ui); font-size: 11px; line-height: 1.55;
+    color: var(--ink-soft); letter-spacing: .03em; padding-top: 11px;
+  }
+  .art-body[lang="ko"] .fig-wide figcaption { font-family: var(--f-kr); font-size: 12px; }
+
+  /* Inline figure pair */
+  .fig-pair {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+    margin: 2.8em 0;
+  }
+  .fig-pair figure { margin: 0; }
+  .fig-pair img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3 / 4; border-radius: 3px; }
+  .fig-pair figcaption {
+    font-family: var(--f-ui); font-size: 10.5px; line-height: 1.5;
+    color: var(--ink-soft); letter-spacing: .04em; padding-top: 10px;
+  }
+
+  /* ---------- Sidebar: programme ---------- */
+  .art-aside { position: sticky; top: 24px; }
+  .prog {
+    background: var(--paper-warm);
+    padding: 26px 24px;
+    border-top: 2px solid var(--wine);
+  }
+  .prog h3 {
+    font-family: var(--f-ui); font-size: 10.5px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--wine);
+    margin: 0 0 20px;
+  }
+  .prog dl { margin: 0; }
+  .prog dt {
+    font-family: var(--f-ui); font-size: 9.5px; font-weight: 600;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft);
+    margin-bottom: 5px;
+  }
+  .prog dd {
+    margin: 0 0 18px; font-family: var(--f-body); font-size: 14.5px;
+    line-height: 1.42; color: var(--ink);
+  }
+  .prog dd:last-child { margin-bottom: 0; }
+  .prog dd em { font-style: italic; color: var(--wine); }
+  .prog__works { list-style: none; margin: 0; padding: 0; }
+  .prog__works li {
+    padding: 11px 0; border-bottom: 1px solid var(--rule);
+    font-size: 14px; line-height: 1.4;
+  }
+  .prog__works li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .prog__works .op {
+    display: block; font-family: var(--f-ui); font-size: 9.5px;
+    letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft);
+    margin-top: 3px;
+  }
+
+  /* ---------- Footer ---------- */
+  .art-foot {
+    margin-top: 72px; padding: 32px 0 64px;
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .12em;
+    color: var(--ink-soft);
+  }
+  .art-foot a { border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+
+  /* ---------- Skip link ---------- */
+  .skip {
+    position: absolute; left: -9999px; top: 0; z-index: 200;
+    background: var(--wine); color: var(--paper);
+    padding: 10px 20px; font-family: var(--f-ui); font-size: 12px;
+    letter-spacing: .1em;
+  }
+  .skip:focus { left: 0; }
+
+  /* ---------- Dateline ---------- */
+  .dateline {
+    font-family: var(--f-ui); font-weight: 700; font-size: .78em;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--ink);
+  }
+
+  /* ---------- Critic / ethics box ---------- */
+  .critic-box {
+    margin: 3em 0 0;
+    padding: 22px 24px;
+    background: var(--paper-warm);
+    border-left: 2px solid var(--brass);
+  }
+  .critic-box h3 {
+    font-family: var(--f-ui); font-size: 10px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--ink-mute);
+    margin: 0 0 10px;
+  }
+  .critic-box p {
+    margin: 0; font-family: var(--f-ui); font-size: 12.5px;
+    line-height: 1.65; color: var(--ink-mute); letter-spacing: .01em;
+  }
+
+  /* ---------- Rating legend ---------- */
+
+  /* ---------- Related reviews ---------- */
+  .related {
+    margin-top: 80px;
+    padding-top: 36px;
+    border-top: 2px solid var(--ink);
+  }
+  .related > h2 {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 48, "wght" 500;
+    font-size: 26px; letter-spacing: -.015em; margin: 0 0 26px;
+  }
+  .related > h2 em { font-style: italic; color: var(--wine); }
+  .related__grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  }
+  .related__grid--one { grid-template-columns: 1fr; }
+  .related__item {
+    padding: 4px 28px 8px;
+    border-left: 1px solid var(--rule-soft);
+  }
+  .related__item:first-child { padding-left: 0; border-left: 0; }
+  .related__tag {
+    display: block;
+    font-family: var(--f-ui); font-size: 10px; font-weight: 700;
+    letter-spacing: .22em; text-transform: uppercase; color: var(--wine);
+    margin-bottom: 8px;
+  }
+  .related__item h3 {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 36, "wght" 500;
+    font-size: 17.5px; line-height: 1.25; letter-spacing: -.005em;
+    margin: 0 0 8px;
+  }
+  .related__item h3 em { font-style: italic; color: var(--wine); }
+  .related__item
+
+  /* ---------- Print ---------- */
+  @media print {
+    .skip, .topbar, .brandbar, .rule-strong, .lang-switch, .related, .art-foot { display: none !important; }
+    body { background: #fff; color: #000; font-size: 11pt; }
+    .page { max-width: none; padding: 0; }
+    .art-wrap { display: block; }
+    .art-aside { position: static; page-break-inside: avoid; margin-top: 24pt; }
+    .art-body p:first-of-type::first-letter { font-size: 1em; float: none; padding: 0; color: inherit; }
+    .lead-figure img, .fig-pair img { max-height: 70mm; width: auto; }
+    a { color: inherit; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .related__grid { grid-template-columns: 1fr; }
+    .related__item { padding: 16px 0; border-left: 0; border-bottom: 1px solid var(--rule-soft); }
+    .related__item:last-child { border-bottom: 0; }
+    .art-wrap { grid-template-columns: 1fr; gap: 48px; }
+    .art-aside { position: static; max-width: 34rem; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .art-head { padding: 36px 0 28px; }
+    .art-body p:first-of-type::first-letter { font-size: 3.6em; }
+    .fig-pair { grid-template-columns: 1fr; gap: 24px; }
+    .lang-switch { margin-left: 0; }
+    .nav a, .nav__top { padding: 4px 8px; font-size: 10.5px; letter-spacing: .06em; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: .001ms !important; }
+  }
+
+  /* ampersand — Playfair's is decorative; use the roman one from the text serif */
+  .amp {
+    font-family: var(--f-body);
+    font-style: normal;
+    font-weight: inherit;
+    font-size: 0.95em;
+    letter-spacing: 0;
+    padding: 0 0.02em;
+  }
+  /* in the sans UI (nav, topbar, labels) keep the sans ampersand */
+  .nav .amp, .topbar .amp, .brandbar .amp,
+  .row__tag .amp, .most-read__tag .amp,
+  .nsect__ko .amp, .psect__ko .amp, .sect__ko .amp,
+  .figcap .amp, .foot .amp, .art-byline .amp, .row__byline .amp {
+    font-family: var(--f-ui);
+    font-size: 1em;
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#article">Skip to article</a>
+
+<div class="page">
+
+  <div class="topbar">
+    <div class="topbar__left">
+      <span id="today">Monday · 13 July 2026</span>
+    </div>
+    <div><a href="#">Newsletter</a></div>
+  </div>
+
+  <div class="brandbar">
+    <a href="index.html" class="brandbar__mark"><span class="brandbar__mark-icon"><svg viewBox="235 258 780 622" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="39" stroke-linecap="butt" stroke-linejoin="miter"><path d="M 487 294 L 262 294 L 262 665 L 455 665"/><path d="M 262 473 L 466 473"/><path d="M 692 504 A 184 184 0 1 0 746 812"/></g><path fill="currentColor" stroke="none" d="M 692 276 L 732 276 L 967 623 L 967 276 L 1007 276 L 1007 682 L 960 682 L 732 346 L 732 682 L 692 682 Z"/></svg></span><span class="brandbar__mark-text">Eurasia Classic News</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="ecn.html">ECN</a>
+
+      <span class="nav__item is-active">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">News <span class="amp">&amp;</span> Reviews <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="articles.html#news-latest">Latest News</a>
+          <a href="articles.html#festivals">Festivals <span class="amp">&amp;</span> Tours</a>
+          <a href="articles.html#all">All Articles</a>
+        </span>
+      </span>
+
+      <span class="nav__item">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">Spotlight <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="index.html#interviews">Interviews</a>
+          <a href="spotlight.html#cover">Cover Story</a>
+          <a href="spotlight.html#focus">Artist Focus</a>
+        </span>
+      </span>
+
+      <a href="get-featured.html">Get Featured</a>
+      <a href="video.html">Video</a>
+      <a href="artists.html">Artists</a>
+      <a href="whats-on.html">What's On</a>
+
+      <a href="more.html">More</a>
+    </nav>
+  </div>
+  <div class="rule-strong"></div>
+
+  <!-- ============ ARTICLE HEADER ============ -->
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="articles.html">Articles</a>
+    <span>›</span>
+    <span aria-current="page" data-en="Report · Teplice" data-ko="리포트 · 테플리체">Report · Teplice</span>
+  </nav>
+
+  <header class="art-head" id="article">
+    <div class="art-kicker">
+      <span class="art-kicker__tag" data-en="Festival" data-ko="페스티벌">Festival</span>
+      <span class="art-kicker__sep"></span>
+      <span class="art-kicker__place" data-en="Teplice, Czech Republic · Festival Finale" data-ko="체코 테플리체 · 폐막 공연">Teplice, Czech Republic · Festival Finale</span>
+    </div>
+
+    <h1 class="art-title" data-en="&lt;em&gt;Sungmin Cho&lt;/em&gt; Shares the Stage with Maxim Vengerov at the Beethoven Festival's Closing Concert" data-ko="막심 벵게로프와 나란히 선 &lt;em&gt;조성민&lt;/em&gt;, 체코 베토벤 음악축제 폐막 무대 장식"><em>Sungmin Cho</em> Shares the Stage with Maxim Vengerov at the Beethoven Festival's Closing Concert</h1>
+
+    <p class="art-dek" data-en="Young Korean violinist makes a strong impression alongside the North Czech Philharmonic." data-ko="북체코 필하모니와 협연… 유럽 무대에서 존재감 드러낸 젊은 바이올리니스트.">Young Korean violinist makes a strong impression alongside the North Czech Philharmonic.</p>
+
+    <div class="art-meta">
+      <span class="art-byline" data-en="By &lt;strong&gt;Eurasia Classic News&lt;/strong&gt; · Teplice · 25 June 2026" data-ko="글 &lt;strong&gt;Eurasia Classic News&lt;/strong&gt; · 테플리체 · 2026년 6월 25일">By <strong>Eurasia Classic News</strong> · Teplice · 25 June 2026</span>
+      <div class="lang-switch" role="group" aria-label="Article language">
+        <button type="button" class="is-on" data-lang="en">EN</button>
+        <button type="button" data-lang="ko">한국어</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ BODY ============ -->
+  <div class="art-wrap">
+
+    <!-- English body -->
+    <article class="art-body" id="body-en" lang="en">
+      <figure class="fig-poster">
+        <img src="images/teplice-beethoven-festival-poster-a1b2c3d4.jpg" alt="Poster for the closing concert of the 61st Ludwig van Beethoven Music Festival in Teplice">
+      </figure>
+      <p>The 61st Ludwig van Beethoven Music Festival came to a close on June 25 at the Concert Hall of the Dům kultury Teplice in the Czech Republic. Founded in 1964 to commemorate Beethoven's stays in Teplice, the festival concluded with a concert featuring the North Czech Philharmonic, conductor Petr Vronský, world-renowned violinist Maxim Vengerov, and rising Korean violinist Sungmin Cho. Sharing the stage with one of the world's leading violinists at one of Europe's long-established music festivals marked another meaningful step in Cho's growing international career.</p>
+
+      <p>Cho first took the spotlight in Tchaikovsky's <em>Valse-Scherzo</em>, Op. 34, displaying rhythmic vitality and effortless technique. He then joined Vengerov in Bach's <em>Concerto for Two Violins in D minor</em>, BWV 1043, where the distinctive musical personalities of two generations came together with natural balance. The slow second movement offered one of the evening's most memorable moments, as Vengerov's seasoned, resonant tone intertwined with Cho's clear and focused sound in an extended musical dialogue. Cho maintained his own phrasing and tonal identity alongside the celebrated violinist, while Vronský and the North Czech Philharmonic provided a poised orchestral foundation. In the latter half of the concert, Vengerov performed Sibelius's <em>Violin Concerto in D minor</em>, Op. 47, bringing the festival to its conclusion.</p>
+
+      <p>After attending Seoul Arts High School, Cho completed both his bachelor's and master's degrees at The Juilliard School. He made his debut at the Kumho Prodigy Concert at the age of 13 and has since built experience through international competitions and festivals, including a third prize at the 2024 Princess Astrid International Music Competition and appearances at the Verbier Festival. He is currently pursuing an Artist Diploma at the San Francisco Conservatory of Music. For Cho, performing at the closing concert of a European festival with more than six decades of history—and sharing the stage with an artist of Vengerov's stature—represented more than another international engagement. It was a significant milestone in a career that continues to expand beyond Korea, while IMK's international collaborations continue to provide meaningful connections between emerging artists and the global stage.</p>
+    </article>
+
+    <!-- Korean body -->
+    <article class="art-body" id="body-ko" lang="ko" hidden>
+      <figure class="fig-poster">
+        <img src="images/teplice-beethoven-festival-poster-a1b2c3d4.jpg" alt="Poster for the closing concert of the 61st Ludwig van Beethoven Music Festival in Teplice">
+      </figure>
+      <p>지난 6월 25일 체코 테플리체 문화의집(Dům kultury Teplice) 콘서트홀에서 제61회 루트비히 판 베토벤 음악축제가 막을 내렸다. 1964년 베토벤의 테플리체 체류를 기념해 시작된 이 축제의 폐막 무대에는 북체코 필하모니(Severočeská filharmonie Teplice)와 지휘자 페트르 브론스키(Petr Vronský), 세계적인 바이올리니스트 막심 벵게로프(Maxim Vengerov)가 함께했으며, 한국의 젊은 바이올리니스트 조성민(Sungmin Cho)이 협연자로 나섰다. 세계적인 연주자와 유서 깊은 유럽 음악축제의 폐막 무대에서 나란히 선 이번 공연은, 조성민이 국제무대에서 자신의 음악적 존재감을 한층 넓히는 의미 있는 자리였다.</p>
+
+      <p>조성민은 차이콥스키의 〈왈츠-스케르초 Op.34〉에서 경쾌한 리듬과 유연한 기교를 보여주며 자신의 존재감을 드러냈고, 이어 벵게로프와 함께한 바흐의 두 대의 바이올린을 위한 협주곡 d단조 BWV 1043에서는 서로 다른 세대의 음악적 개성이 자연스럽게 맞물렸다. 특히 느린 2악장에서 벵게로프의 깊고 노련한 음색과 조성민의 맑고 선명한 소리가 긴 호흡으로 교차하며 이날 공연의 인상적인 순간을 만들었다. 조성민 역시 거장과의 협연 속에서 자신의 프레이징과 음색을 잃지 않았고, 북체코 필하모니와 브론스키는 두 솔리스트의 대화를 안정적으로 받쳐주었다. 후반부에는 벵게로프가 시벨리우스 바이올린 협주곡 d단조 Op.47을 연주하며 제61회 축제의 마지막을 장식했다.</p>
+
+      <p>서울예고를 거쳐 줄리아드음악원에서 학사와 석사 과정을 마친 조성민은 13세에 금호영재콘서트로 데뷔했으며, 2024 프린세스 아스트리드 국제음악콩쿠르 3위를 비롯해 국내외 콩쿠르와 베르비에 페스티벌 등 다양한 무대를 통해 경험을 쌓아왔다. 현재는 샌프란시스코 콘서바토리에서 Artist Diploma 과정을 이어가고 있다. 이미 유럽 여러 무대에서 활동 영역을 넓혀가고 있는 그에게 이번 공연은 단순한 해외 협연을 넘어, 세계 정상급 연주자와 한 무대에서 음악을 나눈 의미 있는 이정표가 됐다. 국제 무대를 연결하는 IMK의 협력 프로젝트가 젊은 연주자의 실질적인 커리어 확장으로 이어지고 있다는 점에서, 조성민의 다음 행보 역시 주목할 만하다.</p>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="art-aside">
+      <div class="prog">
+        <h3 data-en="The Programme" data-ko="프로그램">The Programme</h3>
+        <dl>
+          <dt data-en="Festival" data-ko="축제">Festival</dt>
+          <dd>61st Ludwig van Beethoven Music Festival <em>(est. 1964)</em></dd>
+
+          <dt data-en="Orchestra" data-ko="오케스트라">Orchestra</dt>
+          <dd>North Czech Philharmonic Teplice</dd>
+
+          <dt data-en="Conductor" data-ko="지휘">Conductor</dt>
+          <dd>Petr Vronský</dd>
+
+          <dt data-en="Soloists" data-ko="협연">Soloists</dt>
+          <dd>Maxim Vengerov, <em>violin</em> · Sungmin Cho, <em>violin</em></dd>
+
+          <dt data-en="Venue" data-ko="장소">Venue</dt>
+          <dd>Dům kultury Teplice · 25 June 2026</dd>
+
+          <dt data-en="Works" data-ko="연주곡">Works</dt>
+          <dd>
+            <ul class="prog__works">
+              <li>Tchaikovsky — Valse-Scherzo<span class="op">Op. 34</span></li>
+              <li>Bach — Concerto for Two Violins in D minor<span class="op">BWV 1043</span></li>
+              <li>Sibelius — Violin Concerto in D minor<span class="op">Op. 47</span></li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ============ RELATED ============ -->
+  <section class="related" aria-label="More reviews">
+    <h2 data-en="More from &lt;em&gt;Reviews&lt;/em&gt;" data-ko="다른 &lt;em&gt;기사&lt;/em&gt;">More from <em>Reviews</em></h2>
+    <div class="related__grid">
+      <article class="related__item">
+        <span class="related__tag">Eisenstadt</span>
+        <h3><a href="review4.html">Young Conductors Take the Podium at Haydn Hall: IMK <span class="amp">&amp;</span> mdW's <em>Classical Bridge</em></a></h3>
+      </article>
+
+      <article class="related__item">
+        <span class="related__tag">Prague</span>
+        <h3><a href="review6.html">Cellist <em>Dongyeol Lee</em> Makes European Debut at Prague's Smetana Hall</a></h3>
+      </article>
+
+      <article class="related__item">
+        <span class="related__tag">Gunpo</span>
+        <h3><a href="review5.html">From the Resonance of Tradition to Tchaikovsky: Gunpo Prime Philharmonic's <em>Boheoja Resounds</em></a></h3>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="art-foot">
+    <span>© 2026 Eurasia Classic News · <a href="mailto:eurasiaclassicnews@gmail.com">eurasiaclassicnews@gmail.com</a></span>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.lang-switch button');
+    var bodyEn  = document.getElementById('body-en');
+    var bodyKo  = document.getElementById('body-ko');
+    var html    = document.documentElement;
+
+    function setLang(lang) {
+      var isKo = lang === 'ko';
+      bodyEn.hidden = isKo;
+      bodyKo.hidden = !isKo;
+      html.lang = lang;
+      document.querySelectorAll('[data-en][data-ko]').forEach(function (el) {
+        el.innerHTML = isKo ? el.dataset.ko : el.dataset.en;
+      });
+      buttons.forEach(function (b) {
+        b.classList.toggle('is-on', b.dataset.lang === lang);
+      });
+    }
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.dataset.lang); });
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    var el = document.getElementById('today');
+    if (!el) return;
+    var d = new Date();
+    var day   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()];
+    var month = ['January','February','March','April','May','June',
+                 'July','August','September','October','November','December'][d.getMonth()];
+    el.textContent = day + ' \u00B7 ' + d.getDate() + ' ' + month + ' ' + d.getFullYear();
+  })();
+</script>
+
+</body>
+</html>
