@@ -7,11 +7,6 @@
 <meta name="theme-color" content="#6B1A28">
 <title>What's On — Eurasia Classic News</title>
 
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Source+Serif+4:opsz,wght@8..60,300..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -310,6 +305,49 @@
   .psect__body a { font-style: normal; border-bottom: 1px solid var(--rule); color: var(--ink-mute); }
   .psect__body a:hover { color: var(--wine); border-color: var(--wine); }
 
+  /* ---------- What's On schedule ---------- */
+  .wo-sect { padding: 44px 0 0; }
+  .wo-sect__head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    border-bottom: 2px solid var(--ink); padding-bottom: 12px; margin-bottom: 8px; gap: 16px;
+  }
+  .wo-sect__head h2 {
+    font-family: var(--f-mast); font-weight: 500;
+    font-size: clamp(22px, 3vw, 32px); letter-spacing: -0.01em; margin: 0; line-height: 1;
+  }
+  .wo-sect__head h2 em { font-style: italic; color: var(--wine); }
+  .wo-sect__count {
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--ink-mute); white-space: nowrap;
+  }
+  .wo-list { list-style: none; margin: 0; padding: 0; }
+  .wo-month {
+    font-family: var(--f-ui); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--brass);
+    padding: 26px 0 8px;
+  }
+  .wo-row {
+    display: grid; grid-template-columns: auto 1fr auto; gap: 20px;
+    align-items: start; padding: 16px 0; border-bottom: 1px solid var(--rule-soft);
+  }
+  .wo-date { display: flex; flex-direction: column; align-items: center; min-width: 46px; padding-top: 2px; }
+  .wo-day { font-family: var(--f-mast); font-weight: 600; font-size: 24px; line-height: 1; color: var(--wine); }
+  .wo-mon { font-family: var(--f-ui); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-top: 4px; }
+  .wo-info { min-width: 0; }
+  .wo-perf { font-family: var(--f-mast); font-weight: 600; font-size: 16px; line-height: 1.25; margin: 0 0 4px; color: var(--ink); }
+  .wo-inst { font-family: var(--f-ui); font-size: 9.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); margin-left: 6px; white-space: nowrap; }
+  .wo-where { font-family: var(--f-body); font-size: 13.5px; line-height: 1.4; color: var(--ink-mute); margin: 0 0 2px; }
+  .wo-where strong { color: var(--ink); font-weight: 600; }
+  .wo-orch { font-family: var(--f-body); font-size: 12.5px; font-style: italic; color: var(--ink-soft); margin: 0; }
+  .wo-tag { align-self: center; font-family: var(--f-ui); font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--wine); border: 1px solid var(--rule); border-radius: 999px; padding: 4px 9px; max-width: 150px; text-align: center; line-height: 1.3; }
+  .wo-row--past { opacity: 0.58; }
+  .wo-empty { font-family: var(--f-mast); font-style: italic; font-size: 16px; color: var(--ink-soft); padding: 24px 0; }
+  .wo-empty a { font-style: normal; border-bottom: 1px solid var(--rule); color: var(--wine); }
+  @media (max-width: 520px) {
+    .wo-row { grid-template-columns: auto 1fr; }
+    .wo-tag { grid-column: 2; justify-self: start; margin-top: 6px; }
+  }
+
   /* ampersand — Playfair's is decorative; use the roman one from the text serif */
   .amp {
     font-family: var(--f-body);
@@ -350,7 +388,14 @@
     <nav class="nav" aria-label="Primary">
       <a href="ecn.html">ECN</a>
 
-      <a href="articles.html">News <span class="amp">&amp;</span> Reviews</a>
+      <span class="nav__item">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">News <span class="amp">&amp;</span> Reviews <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="articles.html#news-latest">Latest News</a>
+          <a href="articles.html#festivals">Festivals <span class="amp">&amp;</span> Tours</a>
+          <a href="articles.html#all">All Articles</a>
+        </span>
+      </span>
 
       <span class="nav__item">
         <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">Spotlight <span class="nav__caret"></span></button>
@@ -373,15 +418,249 @@
 
   <header class="lede">
     <div class="lede__eyebrow">What's On</div>
-    <h1>ECN <em>Picks</em>.</h1>
-    <p>The concerts our editors would clear an evening for — across Europe and Korea.</p>
+    <h1>The <em>Season</em>.</h1>
+    <p>Concerts across Europe and Korea — the IMK season, as it unfolds.</p>
   </header>
 
-  <section class="psect" id="picks">
-    <div class="psect__head">
-      <h2>ECN Picks</h2>
+  <section class="wo-sect" id="upcoming" aria-label="Upcoming concerts">
+    <div class="wo-sect__head">
+      <h2>Upcoming</h2>
+      <span class="wo-sect__count">1 concert</span>
     </div>
-    <p class="psect__body">No picks listed this week. <a href="get-featured.html">Tell us about a concert</a>.</p>
+    <ul class="wo-list">
+        <li class="wo-month">October 2026</li>
+        <li class="wo-row">
+          <div class="wo-date"><span class="wo-day">31</span><span class="wo-mon">Oct</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Fabiola Kim <span class="wo-inst">Violin</span></p>
+            <p class="wo-where"><strong>Dvořák Hall, Prague</strong></p>
+            <p class="wo-orch">North Czech Philharmonic Orchestra</p>
+          </div>
+          
+        </li>
+    </ul>
+  </section>
+
+  <section class="wo-sect" id="past" aria-label="Past concerts">
+    <div class="wo-sect__head">
+      <h2>Earlier this <em>season</em></h2>
+      <span class="wo-sect__count">23 concerts</span>
+    </div>
+    <ul class="wo-list">
+        <li class="wo-month">May 2026</li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">28</span><span class="wo-mon">May</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Edwin E. S. Kim <span class="wo-inst">Violin</span></p>
+            <p class="wo-where"><strong>Daejeon Arts Center</strong></p>
+            <p class="wo-orch">Stuttgart Philharmonic Orchestra</p>
+          </div>
+          
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">29</span><span class="wo-mon">May</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Kyung Sun Lee · Meehae Ryo · Soyeon Kang <span class="wo-inst">Trio</span></p>
+            <p class="wo-where"><strong>Lotte Concert Hall, Seoul</strong></p>
+            <p class="wo-orch">Stuttgart Philharmonic Orchestra</p>
+          </div>
+          
+        </li>
+        <li class="wo-month">June 2026</li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">3</span><span class="wo-mon">Jun</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Yan Fang <span class="wo-inst">Piano</span></p>
+            <p class="wo-where"><strong>Liszt Hall, Budapest</strong></p>
+            <p class="wo-orch">Hungarian State Symphony Orchestra of Szolnok</p>
+          </div>
+          <span class="wo-tag">MSM</span>
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">5</span><span class="wo-mon">Jun</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Martin Felsberger <span class="wo-inst">Trombone</span></p>
+            <p class="wo-where"><strong>Musikverein Golden Hall, Vienna</strong></p>
+            <p class="wo-orch">Hungarian State Symphony Orchestra of Szolnok</p>
+          </div>
+          <span class="wo-tag">GMPU</span>
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">7</span><span class="wo-mon">Jun</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Charlotte Spruit <span class="wo-inst">Violin</span></p>
+            <p class="wo-where"><strong>Mozarteum, Salzburg</strong></p>
+            <p class="wo-orch">Sofia Philharmonic Orchestra</p>
+          </div>
+          <span class="wo-tag">Kronberg Academy</span>
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">25</span><span class="wo-mon">Jun</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Maxim Vengerov · Sungmin Cho <span class="wo-inst">Violin</span></p>
+            <p class="wo-where"><strong>Beethoven Festival, Teplice</strong></p>
+            <p class="wo-orch">North Czech Philharmonic Orchestra</p>
+          </div>
+          
+        </li>
+        <li class="wo-month">July 2026</li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">1</span><span class="wo-mon">Jul</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">MDW Students <span class="wo-inst">Conductors</span></p>
+            <p class="wo-where"><strong>Haydn Hall, Eisenstadt</strong></p>
+            <p class="wo-orch">Hungarian State Symphony Orchestra of Szolnok</p>
+          </div>
+          <span class="wo-tag">MDW · DiplomKonzert</span>
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">18</span><span class="wo-mon">Jul</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Baylee Kilgore <span class="wo-inst">Soprano</span></p>
+            <p class="wo-where"><strong>Smetana Hall, Prague</strong></p>
+            <p class="wo-orch">North Czech Philharmonic Orchestra</p>
+          </div>
+          <span class="wo-tag">MSM</span>
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">18</span><span class="wo-mon">Jul</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Mirjam Schroeder <span class="wo-inst">Harp</span></p>
+            <p class="wo-where"><strong>Gunpo Cultural Arts Center</strong></p>
+            <p class="wo-orch">Prime Philharmonic Orchestra</p>
+          </div>
+          
+        </li>
+        <li class="wo-month">August 2026</li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">7</span><span class="wo-mon">Aug</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Liang Wang <span class="wo-inst">Violin</span></p>
+            <p class="wo-where"><strong>Daejeon International Music Festival</strong></p>
+            <p class="wo-orch">Recital</p>
+          </div>
+          
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">7</span><span class="wo-mon">Aug</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Meehae Ryo <span class="wo-inst">Cello</span></p>
+            <p class="wo-where"><strong>Daejeon International Music Festival</strong></p>
+            <p class="wo-orch">Recital</p>
+          </div>
+          
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">7</span><span class="wo-mon">Aug</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Chulhee Yoon <span class="wo-inst">Piano</span></p>
+            <p class="wo-where"><strong>Daejeon International Music Festival</strong></p>
+            <p class="wo-orch">Recital</p>
+          </div>
+          
+        </li>
+        <li class="wo-month">September 2026</li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">1</span><span class="wo-mon">Sep</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Mikhail Gavrilov <span class="wo-inst">Violin</span></p>
+            <p class="wo-where"><strong>Grado</strong></p>
+            <p class="wo-orch">FVG Orchestra</p>
+          </div>
+          <span class="wo-tag">MDW · Stephanie Hohl Competition Winner</span>
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">17</span><span class="wo-mon">Sep</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Edwin E. S. Kim <span class="wo-inst">Violin</span></p>
+            <p class="wo-where"><strong>Bulgaria Concert Hall</strong></p>
+            <p class="wo-orch">Sofia Philharmonic Orchestra</p>
+          </div>
+          
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">17</span><span class="wo-mon">Sep</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Gregoria Nieto <span class="wo-inst">Cello</span></p>
+            <p class="wo-where"><strong>Bulgaria Concert Hall</strong></p>
+            <p class="wo-orch">Sofia Philharmonic Orchestra</p>
+          </div>
+          
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">18</span><span class="wo-mon">Sep</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Fabiola Kim <span class="wo-inst">Violin</span></p>
+            <p class="wo-where"><strong>Schwäbisch Hall</strong></p>
+            <p class="wo-orch">Stuttgart Philharmonic Orchestra</p>
+          </div>
+          
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">19</span><span class="wo-mon">Sep</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Fabiola Kim <span class="wo-inst">Violin</span></p>
+            <p class="wo-where"><strong>Alpirsbach</strong></p>
+            <p class="wo-orch">Stuttgart Philharmonic Orchestra</p>
+          </div>
+          
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">19</span><span class="wo-mon">Sep</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Cosima Regina Federle <span class="wo-inst">Cello</span></p>
+            <p class="wo-where"><strong>Smetana Hall, Prague</strong></p>
+            <p class="wo-orch">North Czech Philharmonic Orchestra</p>
+          </div>
+          <span class="wo-tag">Khatchaturian Competition Winner</span>
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">20</span><span class="wo-mon">Sep</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Fabiola Kim <span class="wo-inst">Violin</span></p>
+            <p class="wo-where"><strong>Gustav-Siegle-Haus, Stuttgart</strong></p>
+            <p class="wo-orch">Stuttgart Philharmonic Orchestra</p>
+          </div>
+          
+        </li>
+        <li class="wo-month">October 2026</li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">3</span><span class="wo-mon">Oct</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Itamar Cameli <span class="wo-inst">Piano</span></p>
+            <p class="wo-where"><strong>Smetana Hall, Prague</strong></p>
+            <p class="wo-orch">North Czech Philharmonic Orchestra</p>
+          </div>
+          <span class="wo-tag">Kronberg Academy</span>
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">8</span><span class="wo-mon">Oct</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Lukas Karytinos <span class="wo-inst">Conductor</span></p>
+            <p class="wo-where"><strong>Megaron, Athens</strong></p>
+            <p class="wo-orch">Athens State Orchestra (Tour)</p>
+          </div>
+          
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">9</span><span class="wo-mon">Oct</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Alexandra Conunova <span class="wo-inst">Violin</span></p>
+            <p class="wo-where"><strong>Concertgebouw, Amsterdam</strong></p>
+            <p class="wo-orch">Athens State Orchestra (Tour)</p>
+          </div>
+          
+        </li>
+        <li class="wo-row wo-row--past">
+          <div class="wo-date"><span class="wo-day">11</span><span class="wo-mon">Oct</span></div>
+          <div class="wo-info">
+            <p class="wo-perf">Hannah Kim <span class="wo-inst">Cello</span></p>
+            <p class="wo-where"><strong>Terneuzen</strong></p>
+            <p class="wo-orch">Athens State Orchestra (Tour)</p>
+          </div>
+          
+        </li>
+    </ul>
   </section>
 
   <footer class="foot">

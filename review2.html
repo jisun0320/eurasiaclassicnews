@@ -5,11 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Review — the Stuttgart Philharmonic's landmark Korean debut at the Lotte Concert Hall, with soloists Kyung Sun Lee, Meehae Ryo and Soyeon Kang.">
 <meta name="theme-color" content="#6B1A28">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-
 <title>Review · Stuttgart Philharmonic, Seoul — Eurasia Classic News</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -141,7 +136,6 @@
   }
   .art-title {
     font-family: var(--f-mast);
-    word-break: keep-all; /* KEEPALL-FIX: KO words don't split mid-word */
     font-weight: 700;
     font-size: clamp(30px, 4vw, 54px);
     line-height: 1.14; letter-spacing: -.012em;
@@ -149,10 +143,8 @@
     text-wrap: pretty;
   }
   .art-title em { font-style: italic; color: var(--wine); font-weight: 600; }
-  .art-kicker__place, .art-kicker__tag, .crumb, .art-byline { word-break: keep-all; }
   .art-dek {
     font-family: var(--f-mast);
-    word-break: keep-all;
     font-weight: 400;
     font-style: italic; font-size: clamp(18px, 1.9vw, 23px);
     line-height: 1.55; color: var(--ink-mute);
@@ -195,14 +187,7 @@
   }
   .art-body { max-width: var(--measure); }
   .art-body { line-height: 1.68; }
-    .art-body p { margin: 0 0 1.4em; }
-  /* justified body text (desktop + mobile) */
-  .art-body p {
-    text-align: justify;
-    text-justify: inter-word;
-  }
-  .art-body[lang="en"] { hyphens: auto; -webkit-hyphens: auto; }
-  .art-body[lang="ko"] p { word-break: keep-all; overflow-wrap: break-word; }
+  .art-body p { margin: 0 0 1.4em; }
   .art-body p:first-of-type::first-letter {
     font-family: var(--f-display);
     font-variation-settings: "opsz" 144, "wght" 700;
@@ -451,7 +436,14 @@
     <nav class="nav" aria-label="Primary">
       <a href="ecn.html">ECN</a>
 
-      <a href="articles.html" class="is-active">News <span class="amp">&amp;</span> Reviews</a>
+      <span class="nav__item is-active">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">News <span class="amp">&amp;</span> Reviews <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="articles.html#news-latest">Latest News</a>
+          <a href="articles.html#festivals">Festivals <span class="amp">&amp;</span> Tours</a>
+          <a href="articles.html#all">All Articles</a>
+        </span>
+      </span>
 
       <span class="nav__item">
         <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">Spotlight <span class="nav__caret"></span></button>
@@ -502,8 +494,11 @@
   <!-- ============ LEAD IMAGE ============ -->
   <figure class="lead-figure">
     <img src="images/the-stuttgart-philharmonic-with-soloists-on-the--f2a69dfb.jpg" alt="The Stuttgart Philharmonic with soloists on the Lotte Concert Hall stage">
-
-</figure>
+    <figcaption class="figcap">
+      <span data-en="The Stuttgart Philharmonic at the Lotte Concert Hall, Seoul — the orchestra's first performances in South Korea." data-ko="롯데콘서트홀 무대에 오른 슈투트가르트 필하모닉. 이 악단의 첫 한국 공연이다.">The Stuttgart Philharmonic at the Lotte Concert Hall, Seoul — the orchestra's first performances in South Korea.</span>
+      <span class="figcap__credit">Photograph · Eurasia Classic News</span>
+    </figcaption>
+  </figure>
 
   <!-- ============ BODY ============ -->
   <div class="art-wrap">
@@ -518,8 +513,8 @@
 
       <figure class="fig-wide">
         <img src="images/adrian-prabava-conducting-the-stuttgart-philharm-53b119a1.jpg" alt="Adrian Prabava conducting the Stuttgart Philharmonic">
-
-</figure>
+        <figcaption>Adrian Prabava draws out the orchestra's hallmark qualities — a cohesive ensemble sound and a burnished tonal palette.</figcaption>
+      </figure>
 
       <p>The evening opened with Beethoven's <em>Coriolan Overture</em>, Op. 62, a work of dramatic intensity and powerful emotional contrasts. The Stuttgart Philharmonic delivered a taut, incisive reading that showcased both technical precision and expressive depth, setting the tone for an evening of authoritative Beethoven playing.</p>
 
@@ -529,8 +524,8 @@
 
       <figure class="fig-wide">
         <img src="images/violinist-kyung-sun-lee-cellist-meehae-ryo-and-p-5db39b11.jpg" alt="Violinist Kyung Sun Lee, cellist Meehae Ryo and pianist Soyeon Kang with the orchestra">
-
-</figure>
+        <figcaption>Kyung Sun Lee, Meehae Ryo and Soyeon Kang in Beethoven's Triple Concerto, Op. 56.</figcaption>
+      </figure>
 
       <p>Lee guided the musical narrative with clarity and restraint, while Ryo provided a rich, warm sonority that anchored the ensemble. Kang, with her refined touch and expressive flexibility, served as a natural bridge between the two string soloists and the orchestra.</p>
 
@@ -538,8 +533,8 @@
 
       <figure class="fig-wide">
         <img src="images/the-three-soloists-in-close-dialogue-with-the-or-8e993cdb.jpg" alt="The three soloists in close dialogue with the orchestra">
-
-</figure>
+        <figcaption>A chamber-music sensibility: the soloists and orchestra listening and responding to one another.</figcaption>
+      </figure>
 
       <h2>The <em>Fourth</em>, after the interval</h2>
 
@@ -572,8 +567,8 @@
 
       <figure class="fig-wide">
         <img src="images/the-stuttgart-philharmonic-with-soloists-on-the--f2a69dfb.jpg" alt="롯데콘서트홀 무대의 슈투트가르트 필하모닉과 협연자들">
-
-</figure>
+        <figcaption>롯데콘서트홀 무대에 오른 슈투트가르트 필하모닉과 협연자들.</figcaption>
+      </figure>
 
       <p>공연은 베토벤의 「코리올란 서곡(Op.62)」으로 시작됐다. 강렬한 긴장감과 극적인 전개가 돋보이는 작품에서 슈투트가르트 필하모닉은 탄탄한 합주력과 섬세한 표현력을 선보이며 객석의 집중을 이끌어냈다.</p>
 
@@ -581,15 +576,15 @@
 
       <figure class="fig-wide">
         <img src="images/violinist-kyung-sun-lee-cellist-meehae-ryo-and-p-5db39b11.jpg" alt="바이올리니스트 이경선, 첼리스트 여미혜, 피아니스트 강소연">
-
-</figure>
+        <figcaption>협연자 이경선, 여미혜, 강소연.</figcaption>
+      </figure>
 
       <p>베토벤의 삼중협주곡은 독주자의 기교만으로 완성되는 작품이 아니라, 세 악기와 오케스트라가 서로의 소리를 듣고 반응해야 하는 실내악적 성격이 강한 작품이다. 이날 무대에서 세 협연자는 오케스트라와 긴밀하게 호흡하며, 작품 특유의 우아함과 대화적인 매력을 설득력 있게 그려냈다. 앙상블이 자연스럽게 맞물린 이번 무대는 한국 정상급 연주자들과 독일 명문 악단이 만들어낸 조화로운 협업으로 깊은 인상을 남겼다. 세 협연자는 오케스트라와 완벽한 호흡을 이루며 베토벤 삼중협주곡 특유의 우아함과 실내악적 매력을 설득력 있게 표현했으며 관객들에게 깊은 인상을 남겼다.</p>
 
       <figure class="fig-wide">
         <img src="images/the-three-soloists-in-close-dialogue-with-the-or-8e993cdb.jpg" alt="오케스트라와 긴밀하게 호흡하는 세 협연자">
-
-</figure>
+        <figcaption>오케스트라와 긴밀하게 호흡하는 세 협연자.</figcaption>
+      </figure>
 
       <p>2부에서는 베토벤 「교향곡 제4번 B♭장조(Op.60)」이 연주됐다. 슈투트가르트 필하모닉은 밝고 유려한 선율 속에서도 독일 악단 특유의 밀도 있는 사운드를 선보이며 작품이 지닌 섬세한 구조와 풍부한 음악적 색채를 효과적으로 전달했다.</p>
 
@@ -597,8 +592,8 @@
 
       <figure class="fig-wide">
         <img src="images/adrian-prabava-conducting-the-stuttgart-philharm-53b119a1.jpg" alt="슈투트가르트 필하모닉을 지휘하는 아드리안 프라바바">
-
-</figure>
+        <figcaption>슈투트가르트 필하모닉을 지휘하는 아드리안 프라바바.</figcaption>
+      </figure>
 
       <p>슈투트가르트 필하모닉 관계자 역시 "한국은 클래식 음악에 대한 관심과 수준이 매우 높은 나라"라며 "이번 첫 내한공연을 통해 한국 관객들과 특별한 교감을 나눌 수 있었다"고 전했다. 이어 "앞으로도 한국과의 지속적인 문화 교류가 이어지기를 기대한다"고 덧붙였다.</p>
 
@@ -641,19 +636,12 @@
   <!-- ============ RELATED ============ -->
   <section class="related" aria-label="More reviews">
     <h2>More from <em>Reviews</em></h2>
-    <div class="related__grid">
-      <article class="related__item">
-        <span class="related__tag">Eisenstadt</span>
-        <h3><a href="review4.html">Young Conductors Take the Podium at Haydn Hall: IMK <span class="amp">&amp;</span> mdW's <em>Classical Bridge</em></a></h3>
-      </article>
-      <article class="related__item">
-        <span class="related__tag">Teplice</span>
-        <h3><a href="review3.html"><em>Sungmin Cho</em> Shares the Stage with Maxim Vengerov at the Beethoven Festival</a></h3>
-      </article>
+    <div class="related__grid related__grid--one">
       <article class="related__item">
         <span class="related__tag">Daejeon</span>
         <h3><a href="review.html">Why the Stuttgart Philharmonic Chose <em>Edwin E.S. Kim</em> for Its Korean Debut</a></h3>
       </article>
+
     </div>
   </section>
 

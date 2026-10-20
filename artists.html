@@ -5,11 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Artists — the conductors, soloists and players who have shared the stage with Eurasia Classic News.">
 <meta name="theme-color" content="#6B1A28">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-
 <title>Artists — Eurasia Classic News</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -278,7 +273,14 @@
     <nav class="nav" aria-label="Primary">
       <a href="ecn.html">ECN</a>
 
-      <a href="articles.html">News <span class="amp">&amp;</span> Reviews</a>
+      <span class="nav__item">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">News <span class="amp">&amp;</span> Reviews <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="articles.html#news-latest">Latest News</a>
+          <a href="articles.html#festivals">Festivals <span class="amp">&amp;</span> Tours</a>
+          <a href="articles.html#all">All Articles</a>
+        </span>
+      </span>
 
       <span class="nav__item">
         <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">Spotlight <span class="nav__caret"></span></button>
@@ -298,72 +300,138 @@
     </nav>
   </div>
   <div class="rule-strong"></div>
-<style>
-  .dirhead { padding: 52px 0 0; }
-  .dirhead h1 { font-family: var(--f-mast); font-weight: 600; font-size: clamp(36px, 5.4vw, 64px); line-height: 1.02; letter-spacing: -.02em; margin: 0 0 14px; }
-  .dirhead h1 em { font-style: italic; color: var(--wine); }
-  .dirhead > p { font-family: var(--f-mast); font-style: italic; font-weight: 400; font-size: 19px; color: var(--ink-mute); margin: 0 0 10px; max-width: 52ch; line-height: 1.45; }
-  .dirsect { padding-top: 44px; }
-  .dirsect__head { display: flex; align-items: baseline; gap: 16px; padding-bottom: 14px; margin-bottom: 6px; border-bottom: 2px solid var(--ink); }
-  .dirsect__head h2 { font-family: var(--f-mast); font-weight: 600; font-size: clamp(22px, 2.6vw, 30px); letter-spacing: -.015em; margin: 0; line-height: 1; }
-  .dirsect__count { margin-left: auto; font-family: var(--f-ui); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft); }
-  .dirlist { list-style: none; margin: 0 auto; padding: 0; max-width: 46rem; }
-  .pager { display: flex; justify-content: center; gap: 8px; padding: 30px 0 6px; }
-  .pager button { min-width: 38px; height: 38px; padding: 0 10px; border: 1px solid var(--rule); border-radius: 999px; background: transparent; font-family: var(--f-ui); font-size: 12px; font-weight: 600; letter-spacing: .06em; color: var(--ink-mute); cursor: pointer; transition: .18s; }
-  .pager button:hover { border-color: var(--wine); color: var(--wine); }
-  .pager button.is-on { background: var(--wine); border-color: var(--wine); color: var(--paper); }
-  .dirlist li { break-inside: avoid; display: flex; align-items: baseline; justify-content: space-between; gap: 18px; padding: 13px 2px; border-bottom: 1px solid var(--rule-soft); }
-  .dirlist .nm { font-family: var(--f-mast); font-weight: 600; font-size: 18px; letter-spacing: -.005em; color: var(--ink); }
-  .dirlist .rl { font-family: var(--f-ui); font-size: 10px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft); white-space: nowrap; }
-</style>
 
-  <header class="dirhead">
+  <header class="head">
     <h1>The <em>Artists</em></h1>
-    <p>Conductors, soloists and ensembles who have appeared in our pages — listed A to Z.</p>
+    <p>Conductors, soloists and players who have shared a stage with us — grouped by section, as an orchestra sits.</p>
+
+    <nav class="jump" aria-label="Jump to section">
+      <a href="#conductors">Conductors <span class="n">1</span></a>
+      <a href="#voice">Voice <span class="n">—</span></a>
+      <a href="#strings">Strings <span class="n">3</span></a>
+      <a href="#piano">Piano <span class="n">1</span></a>
+      <a href="#woodwind">Woodwind <span class="n">—</span></a>
+      <a href="#brass">Brass <span class="n">—</span></a>
+      <a href="#orchestra">Orchestra <span class="n">1</span></a>
+    </nav>
   </header>
 
-  <section class="dirsect" id="artists">
-    <div class="dirsect__head">
-      <h2>Artists</h2>
-      <span class="dirsect__count">21 artists · by specialty</span>
+  <!-- ============ CONDUCTORS ============ -->
+  <section class="sect" id="conductors">
+    <div class="sect__head">
+      <h2>Conductors</h2>
+      <span class="sect__count">1 artist</span>
     </div>
-    <ul class="dirlist" id="artist-list">
-      <li><span class="nm">Adrian Prabava</span><span class="rl">Conductor</span></li>
-      <li><span class="nm">Ángela Valera-Casanova</span><span class="rl">Conductor</span></li>
-      <li><span class="nm">Charles Olivieri-Munroe</span><span class="rl">Conductor</span></li>
-      <li><span class="nm">Fabio Felsberger</span><span class="rl">Conductor</span></li>
-      <li><span class="nm">Hanhun Song</span><span class="rl">Conductor</span></li>
-      <li><span class="nm">Petr Vronský</span><span class="rl">Conductor</span></li>
-      <li><span class="nm">Sophia Khutsishvili</span><span class="rl">Conductor</span></li>
-      <li><span class="nm">Tobias Treitner</span><span class="rl">Conductor</span></li>
-      <li><span class="nm">Charlotte Spruit</span><span class="rl">Violin</span></li>
-      <li><span class="nm">Edwin E.S. Kim</span><span class="rl">Violin</span></li>
-      <li><span class="nm">Kyung Sun Lee</span><span class="rl">Violin</span></li>
-      <li><span class="nm">Liang Wang</span><span class="rl">Violin</span></li>
-      <li><span class="nm">Maxim Vengerov</span><span class="rl">Violin</span></li>
-      <li><span class="nm">Sungmin Cho</span><span class="rl">Violin</span></li>
-      <li><span class="nm">Dongyeol Lee</span><span class="rl">Cello</span></li>
-      <li><span class="nm">Meehae Ryo</span><span class="rl">Cello</span></li>
-      <li><span class="nm">Mirjam Schröder</span><span class="rl">Harp</span></li>
-      <li><span class="nm">Chulhee Yoon</span><span class="rl">Piano</span></li>
-      <li><span class="nm">Soyeon Kang</span><span class="rl">Piano</span></li>
-      <li><span class="nm">Yan Fang</span><span class="rl">Piano</span></li>
-      <li><span class="nm">Martin Felsberger</span><span class="rl">Trombone</span></li>
-    </ul>
-    <nav class="pager" id="artist-pager" aria-label="Artists pages"></nav>
+    <div class="grid">
+      <div class="artist">
+        <div class="artist__frame">
+          <img src="images/conductor-adrian-prabava-9c00e9ea.jpg" alt="Adrian Prabava">
+        </div>
+        <h3 class="artist__name">Adrian Prabava</h3>
+        <p class="artist__role">Conductor</p>
+      </div>
+    </div>
   </section>
 
-  <section class="dirsect" id="ensembles">
-    <div class="dirsect__head">
-      <h2>Orchestra</h2>
-      <span class="dirsect__count">4 orchestras · A–Z</span>
+  <!-- ============ VOICE ============ -->
+  <section class="sect" id="voice">
+    <div class="sect__head">
+      <h2>Voice</h2>
+      <span class="sect__count">—</span>
     </div>
-    <ul class="dirlist">
-      <li><span class="nm">Gunpo Prime Philharmonic Orchestra</span><span class="rl">Orchestra</span></li>
-      <li><span class="nm">North Czech Philharmonic Orchestra</span><span class="rl">Orchestra</span></li>
-      <li><span class="nm">Stuttgart Philharmonic Orchestra</span><span class="rl">Orchestra</span></li>
-      <li><span class="nm">Szolnok Symphony Orchestra</span><span class="rl">Orchestra</span></li>
-    </ul>
+    <div class="grid">
+      <p class="sect__empty">No artists listed yet.</p>
+    </div>
+  </section>
+
+  <!-- ============ STRINGS ============ -->
+  <section class="sect" id="strings">
+    <div class="sect__head">
+      <h2>Strings</h2>
+      <span class="sect__count">3 artists</span>
+    </div>
+    <div class="grid">
+      <div class="artist">
+        <div class="artist__frame">
+          <img src="images/edwin-e-s-kim-fb727b44.jpg" alt="Edwin E.S. Kim">
+        </div>
+        <h3 class="artist__name">Edwin E.S. Kim</h3>
+        <p class="artist__role">Violin</p>
+      </div>
+
+      <div class="artist">
+        <div class="artist__frame">
+          <img src="images/kyung-sun-lee-cf59de51.jpg" alt="Kyung Sun Lee">
+        </div>
+        <h3 class="artist__name">Kyung Sun Lee</h3>
+        <p class="artist__role">Violin</p>
+      </div>
+
+      <div class="artist">
+        <div class="artist__frame">
+          <img src="images/meehae-ryo-ab9ea77d.jpg" alt="Meehae Ryo">
+        </div>
+        <h3 class="artist__name">Meehae Ryo</h3>
+        <p class="artist__role">Cello</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PIANO ============ -->
+  <section class="sect" id="piano">
+    <div class="sect__head">
+      <h2>Piano</h2>
+      <span class="sect__count">1 artist</span>
+    </div>
+    <div class="grid">
+
+      <div class="artist">
+        <div class="artist__frame">
+          <img src="images/soyeon-kang-36e2e937.jpg" alt="Soyeon Kang">
+        </div>
+        <h3 class="artist__name">Soyeon Kang</h3>
+        <p class="artist__role">Piano</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ WOODWIND ============ -->
+  <section class="sect" id="woodwind">
+    <div class="sect__head">
+      <h2>Woodwind</h2>
+      <span class="sect__count">—</span>
+    </div>
+    <div class="grid">
+      <p class="sect__empty">No artists listed yet.</p>
+    </div>
+  </section>
+
+  <!-- ============ BRASS ============ -->
+  <section class="sect" id="brass">
+    <div class="sect__head">
+      <h2>Brass</h2>
+      <span class="sect__count">—</span>
+    </div>
+    <div class="grid">
+      <p class="sect__empty">No artists listed yet.</p>
+    </div>
+  </section>
+
+  <!-- ============ ORCHESTRA ============ -->
+  <section class="sect" id="orchestra">
+    <div class="sect__head">
+      <h2>Orchestra</h2>
+      <span class="sect__count">1 ensemble</span>
+    </div>
+    <div class="grid">
+      <div class="artist">
+        <div class="artist__frame">
+          <img src="images/stuttgart-philharmonic-orchestra-8a98dda5.jpg" alt="Stuttgart Philharmonic Orchestra">
+        </div>
+        <h3 class="artist__name">Stuttgart Philharmonic Orchestra</h3>
+      </div>
+    </div>
   </section>
 
   <footer class="foot">
@@ -384,34 +452,5 @@
   })();
 </script>
 
-
-<script>
-  (function () {
-    var PER = 20;
-    var list = document.getElementById('artist-list');
-    var pager = document.getElementById('artist-pager');
-    if (!list || !pager) return;
-    var items = Array.prototype.slice.call(list.children);
-    var pages = Math.ceil(items.length / PER);
-    function show(p) {
-      items.forEach(function (li, i) {
-        li.style.display = (i >= (p-1)*PER && i < p*PER) ? '' : 'none';
-      });
-      Array.prototype.forEach.call(pager.children, function (b, i) {
-        b.classList.toggle('is-on', i === p-1);
-      });
-    }
-    if (pages > 1) {
-      for (var p = 1; p <= pages; p++) (function (p) {
-        var b = document.createElement('button');
-        b.type = 'button'; b.textContent = p;
-        b.setAttribute('aria-label', 'Page ' + p);
-        b.addEventListener('click', function () { show(p); });
-        pager.appendChild(b);
-      })(p);
-      show(1);
-    }
-  })();
-</script>
 </body>
 </html>

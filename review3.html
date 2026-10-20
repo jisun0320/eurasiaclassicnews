@@ -3,14 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Korean violinist Sungmin Cho shares the stage with Maxim Vengerov and the North Czech Philharmonic at the closing concert of the 61st Beethoven Festival in Teplice.">
+<meta name="description" content="Review — the Stuttgart Philharmonic's landmark Korean debut at the Lotte Concert Hall, with soloists Kyung Sun Lee, Meehae Ryo and Soyeon Kang.">
 <meta name="theme-color" content="#6B1A28">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-<title>Sungmin Cho with Maxim Vengerov, Teplice — Eurasia Classic News</title>
+<title>Review · Sofia Philharmonic, Sofia — Eurasia Classic News</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -141,7 +136,6 @@
   }
   .art-title {
     font-family: var(--f-mast);
-    word-break: keep-all; /* KEEPALL-FIX: KO words don't split mid-word */
     font-weight: 700;
     font-size: clamp(30px, 4vw, 54px);
     line-height: 1.14; letter-spacing: -.012em;
@@ -149,10 +143,8 @@
     text-wrap: pretty;
   }
   .art-title em { font-style: italic; color: var(--wine); font-weight: 600; }
-  .art-kicker__place, .art-kicker__tag, .crumb, .art-byline { word-break: keep-all; }
   .art-dek {
     font-family: var(--f-mast);
-    word-break: keep-all;
     font-weight: 400;
     font-style: italic; font-size: clamp(18px, 1.9vw, 23px);
     line-height: 1.55; color: var(--ink-mute);
@@ -177,18 +169,6 @@
   /* ---------- Lead image ---------- */
   .lead-figure { margin: 0 0 12px; }
   .lead-figure img { width: 100%; height: auto; border-radius: 4px; }
-
-  /* small poster floated at article top-left, text wraps around */
-  .fig-poster {
-    float: left;
-    width: min(44%, 240px);
-    margin: 6px 28px 14px 0;
-  }
-  .fig-poster img { width: 100%; height: auto; border-radius: 3px; box-shadow: 0 1px 4px rgba(23,22,20,.14); }
-  .art-body::after { content: ""; display: block; clear: both; }
-  @media (max-width: 560px) {
-    .fig-poster { width: 48%; margin: 4px 18px 10px 0; }
-  }
   .figcap {
     display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
     padding-top: 12px; border-top: 1px solid var(--rule-soft); margin-top: 12px;
@@ -207,14 +187,7 @@
   }
   .art-body { max-width: var(--measure); }
   .art-body { line-height: 1.68; }
-    .art-body p { margin: 0 0 1.4em; }
-  /* justified body text (desktop + mobile) */
-  .art-body p {
-    text-align: justify;
-    text-justify: inter-word;
-  }
-  .art-body[lang="en"] { hyphens: auto; -webkit-hyphens: auto; }
-  .art-body[lang="ko"] p { word-break: keep-all; overflow-wrap: break-word; }
+  .art-body p { margin: 0 0 1.4em; }
   .art-body p:first-of-type::first-letter {
     font-family: var(--f-display);
     font-variation-settings: "opsz" 144, "wght" 700;
@@ -255,10 +228,14 @@
 
   /* Inline wide figure */
   .fig-wide { margin: 2.8em 0; }
-  .fig-wide img { width: 100%; height: auto; border-radius: 3px; display: block; }
+  .fig-wide img {
+    width: 100%; height: auto;
+    border-radius: 3px; display: block;
+  }
   .fig-wide figcaption {
     font-family: var(--f-ui); font-size: 11px; line-height: 1.55;
-    color: var(--ink-soft); letter-spacing: .03em; padding-top: 11px;
+    color: var(--ink-soft); letter-spacing: .03em;
+    padding-top: 11px;
   }
   .art-body[lang="ko"] .fig-wide figcaption { font-family: var(--f-kr); font-size: 12px; }
 
@@ -443,7 +420,7 @@
 </head>
 <body>
 
-<a class="skip" href="#article">Skip to article</a>
+<a class="skip" href="#article2">Skip to article</a>
 
 <div class="page">
 
@@ -459,7 +436,14 @@
     <nav class="nav" aria-label="Primary">
       <a href="ecn.html">ECN</a>
 
-      <a href="articles.html" class="is-active">News <span class="amp">&amp;</span> Reviews</a>
+      <span class="nav__item is-active">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">News <span class="amp">&amp;</span> Reviews <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="articles.html#news-latest">Latest News</a>
+          <a href="articles.html#festivals">Festivals <span class="amp">&amp;</span> Tours</a>
+          <a href="articles.html#all">All Articles</a>
+        </span>
+      </span>
 
       <span class="nav__item">
         <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">Spotlight <span class="nav__caret"></span></button>
@@ -484,22 +468,22 @@
   <nav class="crumb" aria-label="Breadcrumb">
     <a href="articles.html">Articles</a>
     <span>›</span>
-    <span aria-current="page" data-en="Report · Teplice" data-ko="리포트 · 테플리체">Report · Teplice</span>
+    <span aria-current="page">Review · Sofia</span>
   </nav>
 
-  <header class="art-head" id="article">
+  <header class="art-head" id="article2">
     <div class="art-kicker">
-      <span class="art-kicker__tag" data-en="Festival" data-ko="페스티벌">Festival</span>
+      <span class="art-kicker__tag">Review</span>
       <span class="art-kicker__sep"></span>
-      <span class="art-kicker__place" data-en="Teplice, Czech Republic · Festival Finale" data-ko="체코 테플리체 · 폐막 공연">Teplice, Czech Republic · Festival Finale</span>
+      <span class="art-kicker__place">Sofia · Bulgaria Hall</span>
     </div>
 
-    <h1 class="art-title" data-en="&lt;em&gt;Sungmin Cho&lt;/em&gt; Shares the Stage with Maxim Vengerov at the Beethoven Festival's Closing Concert" data-ko="막심 벵게로프와 나란히 선 &lt;em&gt;조성민&lt;/em&gt;, 체코 베토벤 음악축제 폐막 무대 장식"><em>Sungmin Cho</em> Shares the Stage with Maxim Vengerov at the Beethoven Festival's Closing Concert</h1>
+    <h1 class="art-title" data-en="Edwin E.S. Kim Explores the Depths of &lt;em&gt;Brahms&lt;/em&gt; with the Sofia Philharmonic" data-ko="바이올리니스트 김응수, 소피아 필하모닉과 &lt;em&gt;브람스의 깊이&lt;/em&gt;를 그리다">Edwin E.S. Kim Explores the Depths of <em>Brahms</em> with the Sofia Philharmonic</h1>
 
-    <p class="art-dek" data-en="Young Korean violinist makes a strong impression alongside the North Czech Philharmonic." data-ko="북체코 필하모니와 협연… 유럽 무대에서 존재감 드러낸 젊은 바이올리니스트.">Young Korean violinist makes a strong impression alongside the North Czech Philharmonic.</p>
+    <p class="art-dek" data-en="A Double Concerto and a First Symphony — an evening of focused Brahms in Bulgaria." data-ko="이중협주곡과 교향곡 제1번 — 불가리아에서 펼쳐진 집중된 브람스의 밤.">A Double Concerto and a First Symphony — an evening of focused Brahms in Bulgaria.</p>
 
     <div class="art-meta">
-      <span class="art-byline" data-en="By &lt;strong&gt;Eurasia Classic News&lt;/strong&gt; · Teplice · 25 June 2026" data-ko="글 &lt;strong&gt;Eurasia Classic News&lt;/strong&gt; · 테플리체 · 2026년 6월 25일">By <strong>Eurasia Classic News</strong> · Teplice · 25 June 2026</span>
+      <span class="art-byline">By <strong>Eurasia Classic News</strong> · Sofia · 17 September · 5 min read</span>
       <div class="lang-switch" role="group" aria-label="Article language">
         <button type="button" class="is-on" data-lang="en">EN</button>
         <button type="button" data-lang="ko">한국어</button>
@@ -507,31 +491,83 @@
     </div>
   </header>
 
+  <!-- ============ LEAD IMAGE ============ -->
+  <figure class="lead-figure">
+    <img src="images/sofia-philharmonic-at-bulgaria-hall-3dbf157d.jpg" alt="The Sofia Philharmonic at Bulgaria Hall">
+    <figcaption class="figcap">
+      <span data-en="The Sofia Philharmonic Orchestra under Emil Tabakov at Bulgaria Hall, Sofia." data-ko="에밀 타바코프가 지휘하는 소피아 필하모닉 오케스트라. 불가리아 홀, 소피아.">The Sofia Philharmonic Orchestra under Emil Tabakov at Bulgaria Hall, Sofia.</span>
+      <span class="figcap__credit">Photograph · Eurasia Classic News</span>
+    </figcaption>
+  </figure>
+
   <!-- ============ BODY ============ -->
   <div class="art-wrap">
 
     <!-- English body -->
-    <article class="art-body" id="body-en" lang="en">
-      <figure class="fig-poster">
-        <img src="images/teplice-beethoven-festival-poster-a1b2c3d4.jpg" alt="Poster for the closing concert of the 61st Ludwig van Beethoven Music Festival in Teplice">
+    <article class="art-body" id="body3-en" lang="en">
+      <p><span class="dateline">Sofia —</span> On September 17, the Sofia Philharmonic Orchestra, under the baton of conductor Emil Tabakov, presented an evening dedicated to Johannes Brahms at Bulgaria Hall in Sofia, Bulgaria. The concert featured Korean violinist Edwin E.S. Kim and Venezuelan cellist Gregorio Nieto as soloists, performing one of Brahms's late masterpieces.</p>
+
+      <p>The program consisted of two works: Brahms's <em>Double Concerto for Violin, Cello and Orchestra in A minor</em>, Op. 102, and <em>Symphony No. 1 in C minor</em>, Op. 68. With just a concerto and a symphony, the evening offered a focused exploration of Brahms's musical world.</p>
+
+      <figure class="fig-wide">
+        <img src="images/edwin-kim-and-nieto-with-sofia-philharmonic-d366c898.jpg" alt="Edwin E.S. Kim and Gregorio Nieto performing with the Sofia Philharmonic">
+        <figcaption>Edwin E.S. Kim and Gregorio Nieto in Brahms's Double Concerto, Op. 102.</figcaption>
       </figure>
-      <p>The 61st Ludwig van Beethoven Music Festival came to a close on June 25 at the Concert Hall of the Dům kultury Teplice in the Czech Republic. Founded in 1964 to commemorate Beethoven's stays in Teplice, the festival concluded with a concert featuring the North Czech Philharmonic, conductor Petr Vronský, world-renowned violinist Maxim Vengerov, and rising Korean violinist Sungmin Cho. Sharing the stage with one of the world's leading violinists at one of Europe's long-established music festivals marked another meaningful step in Cho's growing international career.</p>
 
-      <p>Cho first took the spotlight in Tchaikovsky's <em>Valse-Scherzo</em>, Op. 34, displaying rhythmic vitality and effortless technique. He then joined Vengerov in Bach's <em>Concerto for Two Violins in D minor</em>, BWV 1043, where the distinctive musical personalities of two generations came together with natural balance. The slow second movement offered one of the evening's most memorable moments, as Vengerov's seasoned, resonant tone intertwined with Cho's clear and focused sound in an extended musical dialogue. Cho maintained his own phrasing and tonal identity alongside the celebrated violinist, while Vronský and the North Czech Philharmonic provided a poised orchestral foundation. In the latter half of the concert, Vengerov performed Sibelius's <em>Violin Concerto in D minor</em>, Op. 47, bringing the festival to its conclusion.</p>
+      <h2>A <em>dialogue</em> between violin and cello</h2>
 
-      <p>After attending Seoul Arts High School, Cho completed both his bachelor's and master's degrees at The Juilliard School. He made his debut at the Kumho Prodigy Concert at the age of 13 and has since built experience through international competitions and festivals, including a third prize at the 2024 Princess Astrid International Music Competition and appearances at the Verbier Festival. He is currently pursuing an Artist Diploma at the San Francisco Conservatory of Music. For Cho, performing at the closing concert of a European festival with more than six decades of history—and sharing the stage with an artist of Vengerov's stature—represented more than another international engagement. It was a significant milestone in a career that continues to expand beyond Korea, while IMK's international collaborations continue to provide meaningful connections between emerging artists and the global stage.</p>
+      <p>Performing together on stage for the first time, Kim and Nieto brought their distinct tonal qualities and musical personalities into a compelling dialogue, capturing the very essence of the Double Concerto. The violin's clear, lyrical lines intertwined with the cello's rich, resonant tones, creating a relationship in which the two solo instruments complemented and expanded upon each other's musical ideas rather than competing for prominence.</p>
+
+      <figure class="fig-wide">
+        <img src="images/edwin-kim-playing-brahms-sofia-philharmonic-b652e4ea.jpg" alt="Edwin E.S. Kim playing Brahms with the Sofia Philharmonic">
+        <figcaption>Edwin E.S. Kim's clear, lyrical lines at Bulgaria Hall.</figcaption>
+      </figure>
+
+      <p>The orchestra, meanwhile, went beyond the role of accompaniment, joining the soloists in shaping a large-scale, chamber-like musical dialogue that brought the work's distinctive character into sharper focus.</p>
+
+      <h2>From dialogue to <em>triumph</em></h2>
+
+      <p>The second half of the concert featured Brahms's <em>Symphony No. 1 in C minor</em>, Op. 68. Rather than simply presenting two celebrated works by the composer, the program could be understood as a unified musical narrative, progressing from the themes of reconciliation and dialogue in the Double Concerto to the struggle and triumph embodied in the First Symphony. What began as a musical exchange marked by tension and harmony between two solo instruments expanded into a monumental symphonic structure, revealing the emotional depth and profound Romantic spirit characteristic of Brahms's music.</p>
+
+      <div class="pullquote">
+        <p>"Not merely the display of individual virtuosity, but the art of listening, responding, and creating something greater together."</p>
+        <cite>On the essence of the evening</cite>
+      </div>
+
+      <p>The performance was particularly meaningful as it brought Korean violinist Edwin E.S. Kim together with the Sofia Philharmonic, one of Bulgaria's leading orchestras, to present a major work of the concerto repertoire on the European stage. The collaboration between Kim and Nieto, musicians from different artistic backgrounds, alongside Tabakov and the Sofia Philharmonic — both deeply experienced in the music of Brahms — offered a compelling reminder of the essence of music: not merely the display of individual virtuosity, but the art of listening, responding, and creating something greater together.</p>
+
+      <aside class="critic-box">
+        <h3>About this review</h3>
+        <p>Eurasia Classic News reviews are written from attended performances; our correspondent was present at the concert of 17 September at Bulgaria Hall, Sofia. We accept no payment from presenters or artists, and reviews are not shown to their subjects before publication.</p>
+      </aside>
     </article>
 
     <!-- Korean body -->
-    <article class="art-body" id="body-ko" lang="ko" hidden>
-      <figure class="fig-poster">
-        <img src="images/teplice-beethoven-festival-poster-a1b2c3d4.jpg" alt="Poster for the closing concert of the 61st Ludwig van Beethoven Music Festival in Teplice">
+    <article class="art-body" id="body3-ko" lang="ko" hidden>
+      <p>지난 9월 17일 불가리아 소피아의 불가리아 홀에서 지휘자 에밀 타바코프가 이끄는 소피아 필하모닉 오케스트라의 브람스 콘서트가 열렸다. 이날 무대에는 바이올리니스트 김응수와 베네수엘라 출신 첼리스트 그레고리오 니에토가 협연자로 나서 브람스의 후기 걸작을 선보였다.</p>
+
+      <p>공연은 요하네스 브람스의 바이올린과 첼로를 위한 이중협주곡 a단조 Op.102와 교향곡 제1번 c단조 Op.68로 구성됐다. 협주곡과 교향곡 단 두 작품으로 브람스의 음악세계를 집중적으로 조명한 프로그램이었다.</p>
+
+      <figure class="fig-wide">
+        <img src="images/edwin-kim-and-nieto-with-sofia-philharmonic-d366c898.jpg" alt="소피아 필하모닉과 협연하는 김응수와 그레고리오 니에토">
+        <figcaption>브람스 이중협주곡 Op.102를 협연하는 김응수와 그레고리오 니에토.</figcaption>
       </figure>
-      <p>지난 6월 25일 체코 테플리체 문화의집(Dům kultury Teplice) 콘서트홀에서 제61회 루트비히 판 베토벤 음악축제가 막을 내렸다. 1964년 베토벤의 테플리체 체류를 기념해 시작된 이 축제의 폐막 무대에는 북체코 필하모니(Severočeská filharmonie Teplice)와 지휘자 페트르 브론스키(Petr Vronský), 세계적인 바이올리니스트 막심 벵게로프(Maxim Vengerov)가 함께했으며, 한국의 젊은 바이올리니스트 조성민(Sungmin Cho)이 협연자로 나섰다. 세계적인 연주자와 유서 깊은 유럽 음악축제의 폐막 무대에서 나란히 선 이번 공연은, 조성민이 국제무대에서 자신의 음악적 존재감을 한층 넓히는 의미 있는 자리였다.</p>
 
-      <p>조성민은 차이콥스키의 〈왈츠-스케르초 Op.34〉에서 경쾌한 리듬과 유연한 기교를 보여주며 자신의 존재감을 드러냈고, 이어 벵게로프와 함께한 바흐의 두 대의 바이올린을 위한 협주곡 d단조 BWV 1043에서는 서로 다른 세대의 음악적 개성이 자연스럽게 맞물렸다. 특히 느린 2악장에서 벵게로프의 깊고 노련한 음색과 조성민의 맑고 선명한 소리가 긴 호흡으로 교차하며 이날 공연의 인상적인 순간을 만들었다. 조성민 역시 거장과의 협연 속에서 자신의 프레이징과 음색을 잃지 않았고, 북체코 필하모니와 브론스키는 두 솔리스트의 대화를 안정적으로 받쳐주었다. 후반부에는 벵게로프가 시벨리우스 바이올린 협주곡 d단조 Op.47을 연주하며 제61회 축제의 마지막을 장식했다.</p>
+      <p>이날 처음으로 한 무대에서 호흡을 맞춘 김응수와 니에토는 서로 다른 음색과 음악적 성격을 바탕으로 작품의 핵심인 '대화'를 만들어냈다. 바이올린의 선명하고 유려한 선율과 첼로의 깊은 음색이 교차하면서 두 독주악기는 경쟁하기보다 서로의 음악을 받아들이고 확장하는 관계를 형성했다. 특히 오케스트라가 두 독주자를 단순히 반주하는 데 머물지 않고 함께 거대한 실내악적 구조를 만들어가는 것이 이 작품의 매력을 더욱 선명하게 드러내주었다.</p>
 
-      <p>서울예고를 거쳐 줄리아드음악원에서 학사와 석사 과정을 마친 조성민은 13세에 금호영재콘서트로 데뷔했으며, 2024 프린세스 아스트리드 국제음악콩쿠르 3위를 비롯해 국내외 콩쿠르와 베르비에 페스티벌 등 다양한 무대를 통해 경험을 쌓아왔다. 현재는 샌프란시스코 콘서바토리에서 Artist Diploma 과정을 이어가고 있다. 이미 유럽 여러 무대에서 활동 영역을 넓혀가고 있는 그에게 이번 공연은 단순한 해외 협연을 넘어, 세계 정상급 연주자와 한 무대에서 음악을 나눈 의미 있는 이정표가 됐다. 국제 무대를 연결하는 IMK의 협력 프로젝트가 젊은 연주자의 실질적인 커리어 확장으로 이어지고 있다는 점에서, 조성민의 다음 행보 역시 주목할 만하다.</p>
+      <figure class="fig-wide">
+        <img src="images/edwin-kim-playing-brahms-sofia-philharmonic-b652e4ea.jpg" alt="소피아 필하모닉과 브람스를 연주하는 김응수">
+        <figcaption>불가리아 홀에서 선명하고 유려한 선율을 그려낸 김응수.</figcaption>
+      </figure>
+
+      <p>공연 후반부에는 브람스의 교향곡 제1번 c단조 Op.68이 이어졌다. 이날 프로그램은 단순히 유명한 브람스 작품 두 곡을 배치한 공연이라기보다, '화해와 대화'의 이중협주곡에서 '고뇌와 극복'의 교향곡 제1번으로 이어지는 하나의 서사로 바라볼 수 있었다. 두 독주악기의 긴장과 화합으로 시작한 음악은 후반부 거대한 교향적 구조로 확장되며 브람스 특유의 무게감 있는 낭만주의 세계를 완성했다.</p>
+
+      <figure class="fig-wide">
+        <img src="images/edwin-kim-and-gregorio-nieto-sofia-philharmonic-37dcec62.jpg" alt="공연을 마친 김응수와 그레고리오 니에토">
+        <figcaption>공연을 마치고 관객에게 인사하는 김응수와 그레고리오 니에토.</figcaption>
+      </figure>
+
+      <p>특히 이번 공연은 한국의 바이올리니스트 김응수가 불가리아를 대표하는 오케스트라 소피아 필하모닉과 만나 유럽 무대에서 브람스의 대표적인 협주 레퍼토리를 선보였다는 점에서도 의미가 있다. 서로 다른 음악적 배경을 가진 김응수와 니에토, 그리고 브람스 작품에 깊은 경험을 가진 타바코프와 소피아 필하모닉의 만남은 독주자의 기교보다 서로 듣고 응답하는 음악의 본질을 다시 보여준 무대였다.</p>
     </article>
 
     <!-- Sidebar -->
@@ -539,27 +575,23 @@
       <div class="prog">
         <h3 data-en="The Programme" data-ko="프로그램">The Programme</h3>
         <dl>
-          <dt data-en="Festival" data-ko="축제">Festival</dt>
-          <dd>61st Ludwig van Beethoven Music Festival <em>(est. 1964)</em></dd>
-
           <dt data-en="Orchestra" data-ko="오케스트라">Orchestra</dt>
-          <dd>North Czech Philharmonic Teplice</dd>
+          <dd>Sofia Philharmonic Orchestra</dd>
 
           <dt data-en="Conductor" data-ko="지휘">Conductor</dt>
-          <dd>Petr Vronský</dd>
+          <dd>Emil Tabakov</dd>
 
           <dt data-en="Soloists" data-ko="협연">Soloists</dt>
-          <dd>Maxim Vengerov, <em>violin</em> · Sungmin Cho, <em>violin</em></dd>
+          <dd>Edwin E.S. Kim, <em>violin</em><br>Gregorio Nieto, <em>cello</em></dd>
 
           <dt data-en="Venue" data-ko="장소">Venue</dt>
-          <dd>Dům kultury Teplice · 25 June 2026</dd>
+          <dd data-en="Bulgaria Hall, Sofia · 17 September" data-ko="불가리아 홀, 소피아 · 9월 17일">Bulgaria Hall, Sofia · 17 September</dd>
 
           <dt data-en="Works" data-ko="연주곡">Works</dt>
           <dd>
             <ul class="prog__works">
-              <li>Tchaikovsky — Valse-Scherzo<span class="op">Op. 34</span></li>
-              <li>Bach — Concerto for Two Violins in D minor<span class="op">BWV 1043</span></li>
-              <li>Sibelius — Violin Concerto in D minor<span class="op">Op. 47</span></li>
+              <li>Brahms — Double Concerto in A minor<span class="op">Op. 102</span></li>
+              <li>Brahms — Symphony No. 1 in C minor<span class="op">Op. 68</span></li>
             </ul>
           </dd>
         </dl>
@@ -570,23 +602,16 @@
 
   <!-- ============ RELATED ============ -->
   <section class="related" aria-label="More reviews">
-    <h2 data-en="More from &lt;em&gt;Reviews&lt;/em&gt;" data-ko="다른 &lt;em&gt;기사&lt;/em&gt;">More from <em>Reviews</em></h2>
+    <h2>More from <em>Reviews</em></h2>
     <div class="related__grid">
       <article class="related__item">
-        <span class="related__tag">Eisenstadt</span>
-        <h3><a href="review4.html">Young Conductors Take the Podium at Haydn Hall: IMK <span class="amp">&amp;</span> mdW's <em>Classical Bridge</em></a></h3>
+        <span class="related__tag">Daejeon</span>
+        <h3><a href="review.html">Why the Stuttgart Philharmonic Chose <em>Edwin E.S. Kim</em> for Its Korean Debut</a></h3>
       </article>
-
       <article class="related__item">
-        <span class="related__tag">Prague</span>
-        <h3><a href="review6.html">Cellist <em>Dongyeol Lee</em> Makes European Debut at Prague's Smetana Hall</a></h3>
+        <span class="related__tag">Seoul</span>
+        <h3><a href="review2.html">When Germany Met Korea: Stuttgart Philharmonic's <em>Landmark Korean Debut</em></a></h3>
       </article>
-
-      <article class="related__item">
-        <span class="related__tag">Gunpo</span>
-        <h3><a href="review5.html">From the Resonance of Tradition to Tchaikovsky: Gunpo Prime Philharmonic's <em>Boheoja Resounds</em></a></h3>
-      </article>
-
     </div>
   </section>
 
@@ -599,22 +624,27 @@
 <script>
   (function () {
     var buttons = document.querySelectorAll('.lang-switch button');
-    var bodyEn  = document.getElementById('body-en');
-    var bodyKo  = document.getElementById('body-ko');
+    var bodyEn  = document.getElementById('body3-en');
+    var bodyKo  = document.getElementById('body3-ko');
     var html    = document.documentElement;
 
     function setLang(lang) {
       var isKo = lang === 'ko';
+
       bodyEn.hidden = isKo;
       bodyKo.hidden = !isKo;
       html.lang = lang;
+
+      // swap any element that carries both strings
       document.querySelectorAll('[data-en][data-ko]').forEach(function (el) {
         el.innerHTML = isKo ? el.dataset.ko : el.dataset.en;
       });
+
       buttons.forEach(function (b) {
         b.classList.toggle('is-on', b.dataset.lang === lang);
       });
     }
+
     buttons.forEach(function (b) {
       b.addEventListener('click', function () { setLang(b.dataset.lang); });
     });
