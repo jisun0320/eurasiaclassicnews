@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Review — the Stuttgart Philharmonic's landmark Korean debut at the Lotte Concert Hall, with soloists Kyung Sun Lee, Meehae Ryo and Soyeon Kang.">
+<meta name="theme-color" content="#6B1A28">
+<title>Report · Athens State Orchestra, Amsterdam — Eurasia Classic News</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Source+Serif+4:opsz,wght@8..60,300..700&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:      #F1ECE1;
+    --paper-warm: #E8E1D2;
+    --ink:        #171614;
+    --ink-mute:   #4A4741;
+    --ink-soft:   #75706A;
+    --wine:       #6B1A28;
+    --brass:      #A87F3C;
+    --rule:       #C7BFAD;
+    --rule-soft:  #E1D9C6;
+
+    --f-display: "Fraunces", "Times New Roman", serif;
+    --f-body:    "Source Serif 4", Georgia, serif;
+    --f-kr:      "Noto Serif KR", "Source Serif 4", serif;
+    --f-ui:      "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --f-mast:    "Playfair Display", "Times New Roman", serif;
+
+    --gutter-x: clamp(20px, 4vw, 56px);
+    --page-max: 1240px;
+    --measure: 40rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 17px;
+    line-height: 1.6;
+    font-feature-settings: "kern","onum","liga";
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--wine); }
+  a:focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
+  button { font: inherit; cursor: pointer; }
+  ::selection { background: var(--wine); color: var(--paper); }
+
+  .page { max-width: var(--page-max); margin: 0 auto; padding: 0 var(--gutter-x); }
+
+  /* ---------- Header ---------- */
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; padding: 14px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    font-family: var(--f-ui); font-size: 12px; letter-spacing: .06em; color: var(--ink-mute);
+    flex-wrap: wrap;
+  }
+  .topbar__left { display: flex; gap: 20px; flex-wrap: wrap; }
+  .brandbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 0; gap: 24px; flex-wrap: wrap;
+  }
+  .brandbar__mark {
+    display: inline-flex; align-items: center; gap: 14px;
+    color: var(--ink);
+  }
+  .brandbar__mark-icon {
+    width: 50px; height: 40px; flex: none; display: inline-flex;
+  }
+  .brandbar__mark-icon svg { width: 100%; height: 100%; display: block; }
+  .brandbar__mark-text {
+    font-family: var(--f-mast);
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-left: 0.13em;
+  }
+  .brandbar__mark:hover { color: var(--wine); }
+  .nav { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 4px; }
+  .nav > a, .nav__top {
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase; font-weight: 500; padding: 4px 11px;
+    position: relative; color: var(--ink); background: none; border: 0;
+  }
+  .nav a.is-active, .nav__item.is-active > .nav__top { color: var(--wine); font-weight: 600; }
+  .nav__item { position: relative; }
+  .nav__top { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+  .nav__caret { width: 7px; height: 7px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg) translate(-2px,-2px); }
+  .nav__menu {
+    position: absolute; top: 100%; left: 6px; z-index: 30;
+    min-width: 170px; padding: 8px 0;
+    background: var(--paper); border: 1px solid var(--rule);
+    box-shadow: 0 8px 24px rgba(23,22,20,.10);
+    display: none;
+  }
+  .nav__item:hover .nav__menu, .nav__item:focus-within .nav__menu { display: block; }
+  .nav__menu a {
+    display: block; padding: 9px 18px;
+    font-family: var(--f-ui); font-size: 10.5px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--ink-mute);
+  }
+  .nav__menu a:hover { background: var(--paper-warm); color: var(--wine); }
+  .rule-strong { height: 1px; background: var(--ink); }
+
+  /* ---------- Article header ---------- */
+  .crumb {
+    display: flex; align-items: center; gap: 10px;
+    padding: 26px 0 0;
+    font-family: var(--f-ui); font-size: 11px;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .crumb a { border-bottom: 1px solid var(--rule); padding-bottom: 2px; color: var(--ink-mute); }
+  .crumb a:hover { color: var(--wine); border-color: var(--wine); }
+  .crumb span[aria-current] { color: var(--wine); font-weight: 600; }
+  .art-head { padding: 30px 0 26px; max-width: 64rem; }
+  .art-kicker {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 26px; flex-wrap: wrap;
+  }
+  .art-kicker__tag {
+    font-family: var(--f-ui); font-size: 11px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--wine);
+  }
+  .art-kicker__sep { width: 22px; height: 1px; background: var(--rule); }
+  .art-kicker__place {
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .art-title {
+    font-family: var(--f-mast);
+    font-weight: 700;
+    font-size: clamp(30px, 4vw, 54px);
+    line-height: 1.14; letter-spacing: -.012em;
+    margin: 0 0 20px;
+    text-wrap: pretty;
+  }
+  .art-title em { font-style: italic; color: var(--wine); font-weight: 600; }
+  .art-dek {
+    font-family: var(--f-mast);
+    font-weight: 400;
+    font-style: italic; font-size: clamp(18px, 1.9vw, 23px);
+    line-height: 1.55; color: var(--ink-mute);
+    margin: 0 0 20px; max-width: 56ch;
+  }
+  .art-meta {
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+    padding-top: 16px; border-top: 1px solid var(--rule);
+  }
+  .art-byline {
+    font-family: var(--f-ui); font-size: 12px; letter-spacing: .1em; color: var(--ink-mute);
+  }
+  .art-byline strong { color: var(--ink); font-weight: 600; }
+  .lang-switch { margin-left: auto; display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; }
+  .lang-switch button {
+    background: transparent; border: 0; padding: 6px 16px;
+    font-family: var(--f-ui); font-size: 11px; font-weight: 600;
+    letter-spacing: .16em; color: var(--ink-soft); transition: .2s;
+  }
+  .lang-switch button.is-on { background: var(--wine); color: var(--paper); }
+
+  /* ---------- Lead image ---------- */
+  .lead-figure { margin: 0 0 12px; }
+  .lead-figure img { width: 100%; height: auto; border-radius: 4px; }
+  .figcap {
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    padding-top: 12px; border-top: 1px solid var(--rule-soft); margin-top: 12px;
+    font-family: var(--f-ui); font-size: 11px; line-height: 1.5;
+    color: var(--ink-soft); letter-spacing: .04em;
+  }
+  .figcap__credit { text-transform: uppercase; letter-spacing: .18em; white-space: nowrap; }
+
+  /* ---------- Body layout ---------- */
+  .art-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 17rem);
+    gap: clamp(32px, 6vw, 80px);
+    padding: 56px 0 0;
+    align-items: start;
+  }
+  .art-body { max-width: var(--measure); }
+  .art-body { line-height: 1.68; }
+  .art-body p { margin: 0 0 1.4em; }
+  .art-body p:first-of-type::first-letter {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 144, "wght" 700;
+    float: left; font-size: 4.6em; line-height: .82;
+    padding: .06em .1em 0 0; color: var(--wine);
+  }
+  .art-body h2 {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 48, "wght" 600;
+    font-size: 26px; line-height: 1.2; letter-spacing: -.015em;
+    margin: 2.4em 0 .8em;
+  }
+  .art-body h2 em { font-style: italic; color: var(--wine); }
+
+  /* Korean body tuning */
+  .art-body[lang="ko"] { font-family: var(--f-kr); font-size: 16.5px; line-height: 1.85; word-break: keep-all; }
+  .art-body[lang="ko"] h2 { font-family: var(--f-kr); font-weight: 600; }
+  .art-body[lang="ko"] p:first-of-type::first-letter { font-size: 1em; float: none; padding: 0; color: inherit; }
+
+  /* Pull quote */
+  .pullquote {
+    margin: 2.6em 0;
+    padding: 0 0 0 24px;
+    border-left: 2px solid var(--wine);
+  }
+  .pullquote p {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 48, "wght" 400;
+    font-style: italic; font-size: clamp(20px, 2.3vw, 27px);
+    line-height: 1.32; letter-spacing: -.01em;
+    margin: 0 0 .55em; color: var(--ink);
+  }
+  .pullquote cite {
+    font-family: var(--f-ui); font-style: normal; font-size: 11px;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .art-body[lang="ko"] .pullquote p { font-family: var(--f-kr); font-style: normal; font-weight: 500; line-height: 1.5; }
+
+  /* Inline wide figure */
+  .fig-wide { margin: 2.8em 0; }
+  .fig-wide img {
+    width: 100%; height: auto;
+    border-radius: 3px; display: block;
+  }
+  .fig-wide figcaption {
+    font-family: var(--f-ui); font-size: 11px; line-height: 1.55;
+    color: var(--ink-soft); letter-spacing: .03em;
+    padding-top: 11px;
+  }
+  .art-body[lang="ko"] .fig-wide figcaption { font-family: var(--f-kr); font-size: 12px; }
+
+  /* Inline figure pair */
+  .fig-pair {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+    margin: 2.8em 0;
+  }
+  .fig-pair figure { margin: 0; }
+  .fig-pair img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3 / 4; border-radius: 3px; }
+  .fig-pair figcaption {
+    font-family: var(--f-ui); font-size: 10.5px; line-height: 1.5;
+    color: var(--ink-soft); letter-spacing: .04em; padding-top: 10px;
+  }
+
+  /* ---------- Sidebar: programme ---------- */
+  .art-aside { position: sticky; top: 24px; }
+  .prog {
+    background: var(--paper-warm);
+    padding: 26px 24px;
+    border-top: 2px solid var(--wine);
+  }
+  .prog h3 {
+    font-family: var(--f-ui); font-size: 10.5px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--wine);
+    margin: 0 0 20px;
+  }
+  .prog dl { margin: 0; }
+  .prog dt {
+    font-family: var(--f-ui); font-size: 9.5px; font-weight: 600;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft);
+    margin-bottom: 5px;
+  }
+  .prog dd {
+    margin: 0 0 18px; font-family: var(--f-body); font-size: 14.5px;
+    line-height: 1.42; color: var(--ink);
+  }
+  .prog dd:last-child { margin-bottom: 0; }
+  .prog dd em { font-style: italic; color: var(--wine); }
+  .prog__works { list-style: none; margin: 0; padding: 0; }
+  .prog__works li {
+    padding: 11px 0; border-bottom: 1px solid var(--rule);
+    font-size: 14px; line-height: 1.4;
+  }
+  .prog__works li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .prog__works .op {
+    display: block; font-family: var(--f-ui); font-size: 9.5px;
+    letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft);
+    margin-top: 3px;
+  }
+
+  /* ---------- Footer ---------- */
+  .art-foot {
+    margin-top: 72px; padding: 32px 0 64px;
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    font-family: var(--f-ui); font-size: 11px; letter-spacing: .12em;
+    color: var(--ink-soft);
+  }
+  .art-foot a { border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+
+  /* ---------- Skip link ---------- */
+  .skip {
+    position: absolute; left: -9999px; top: 0; z-index: 200;
+    background: var(--wine); color: var(--paper);
+    padding: 10px 20px; font-family: var(--f-ui); font-size: 12px;
+    letter-spacing: .1em;
+  }
+  .skip:focus { left: 0; }
+
+  /* ---------- Dateline ---------- */
+  .dateline {
+    font-family: var(--f-ui); font-weight: 700; font-size: .78em;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--ink);
+  }
+
+  /* ---------- Critic / ethics box ---------- */
+  .critic-box {
+    margin: 3em 0 0;
+    padding: 22px 24px;
+    background: var(--paper-warm);
+    border-left: 2px solid var(--brass);
+  }
+  .critic-box h3 {
+    font-family: var(--f-ui); font-size: 10px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--ink-mute);
+    margin: 0 0 10px;
+  }
+  .critic-box p {
+    margin: 0; font-family: var(--f-ui); font-size: 12.5px;
+    line-height: 1.65; color: var(--ink-mute); letter-spacing: .01em;
+  }
+
+  /* ---------- Rating legend ---------- */
+
+  /* ---------- Related reviews ---------- */
+  .related {
+    margin-top: 80px;
+    padding-top: 36px;
+    border-top: 2px solid var(--ink);
+  }
+  .related > h2 {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 48, "wght" 500;
+    font-size: 26px; letter-spacing: -.015em; margin: 0 0 26px;
+  }
+  .related > h2 em { font-style: italic; color: var(--wine); }
+  .related__grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  }
+  .related__grid--one { grid-template-columns: 1fr; }
+  .related__item {
+    padding: 4px 28px 8px;
+    border-left: 1px solid var(--rule-soft);
+  }
+  .related__item:first-child { padding-left: 0; border-left: 0; }
+  .related__tag {
+    display: block;
+    font-family: var(--f-ui); font-size: 10px; font-weight: 700;
+    letter-spacing: .22em; text-transform: uppercase; color: var(--wine);
+    margin-bottom: 8px;
+  }
+  .related__item h3 {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 36, "wght" 500;
+    font-size: 17.5px; line-height: 1.25; letter-spacing: -.005em;
+    margin: 0 0 8px;
+  }
+  .related__item h3 em { font-style: italic; color: var(--wine); }
+  .related__item
+
+  /* ---------- Print ---------- */
+  @media print {
+    .skip, .topbar, .brandbar, .rule-strong, .lang-switch, .related, .art-foot { display: none !important; }
+    body { background: #fff; color: #000; font-size: 11pt; }
+    .page { max-width: none; padding: 0; }
+    .art-wrap { display: block; }
+    .art-aside { position: static; page-break-inside: avoid; margin-top: 24pt; }
+    .art-body p:first-of-type::first-letter { font-size: 1em; float: none; padding: 0; color: inherit; }
+    .lead-figure img, .fig-pair img { max-height: 70mm; width: auto; }
+    a { color: inherit; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .related__grid { grid-template-columns: 1fr; }
+    .related__item { padding: 16px 0; border-left: 0; border-bottom: 1px solid var(--rule-soft); }
+    .related__item:last-child { border-bottom: 0; }
+    .art-wrap { grid-template-columns: 1fr; gap: 48px; }
+    .art-aside { position: static; max-width: 34rem; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .art-head { padding: 36px 0 28px; }
+    .art-body p:first-of-type::first-letter { font-size: 3.6em; }
+    .fig-pair { grid-template-columns: 1fr; gap: 24px; }
+    .lang-switch { margin-left: 0; }
+    .nav a, .nav__top { padding: 4px 8px; font-size: 10.5px; letter-spacing: .06em; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: .001ms !important; }
+  }
+
+  /* ampersand — Playfair's is decorative; use the roman one from the text serif */
+  .amp {
+    font-family: var(--f-body);
+    font-style: normal;
+    font-weight: inherit;
+    font-size: 0.95em;
+    letter-spacing: 0;
+    padding: 0 0.02em;
+  }
+  /* in the sans UI (nav, topbar, labels) keep the sans ampersand */
+  .nav .amp, .topbar .amp, .brandbar .amp,
+  .row__tag .amp, .most-read__tag .amp,
+  .nsect__ko .amp, .psect__ko .amp, .sect__ko .amp,
+  .figcap .amp, .foot .amp, .art-byline .amp, .row__byline .amp {
+    font-family: var(--f-ui);
+    font-size: 1em;
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#article2">Skip to article</a>
+
+<div class="page">
+
+  <div class="topbar">
+    <div class="topbar__left">
+      <span id="today">Monday · 13 July 2026</span>
+    </div>
+    <div><a href="#">Newsletter</a></div>
+  </div>
+
+  <div class="brandbar">
+    <a href="index.html" class="brandbar__mark"><span class="brandbar__mark-icon"><svg viewBox="235 258 780 622" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="39" stroke-linecap="butt" stroke-linejoin="miter"><path d="M 487 294 L 262 294 L 262 665 L 455 665"/><path d="M 262 473 L 466 473"/><path d="M 692 504 A 184 184 0 1 0 746 812"/></g><path fill="currentColor" stroke="none" d="M 692 276 L 732 276 L 967 623 L 967 276 L 1007 276 L 1007 682 L 960 682 L 732 346 L 732 682 L 692 682 Z"/></svg></span><span class="brandbar__mark-text">Eurasia Classic News</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="ecn.html">ECN</a>
+
+      <span class="nav__item is-active">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">News <span class="amp">&amp;</span> Reviews <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="articles.html#news-latest">Latest News</a>
+          <a href="articles.html#festivals">Festivals <span class="amp">&amp;</span> Tours</a>
+          <a href="articles.html#all">All Articles</a>
+        </span>
+      </span>
+
+      <span class="nav__item">
+        <button class="nav__top" type="button" aria-haspopup="true" aria-expanded="false">Spotlight <span class="nav__caret"></span></button>
+        <span class="nav__menu">
+          <a href="index.html#interviews">Interviews</a>
+          <a href="spotlight.html#cover">Cover Story</a>
+          <a href="spotlight.html#focus">Artist Focus</a>
+        </span>
+      </span>
+
+      <a href="get-featured.html">Get Featured</a>
+      <a href="video.html">Video</a>
+      <a href="artists.html">Artists</a>
+      <a href="whats-on.html">What's On</a>
+
+      <a href="more.html">More</a>
+    </nav>
+  </div>
+  <div class="rule-strong"></div>
+
+  <!-- ============ ARTICLE HEADER ============ -->
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="articles.html">Articles</a>
+    <span>›</span>
+    <span aria-current="page">Report · Amsterdam</span>
+  </nav>
+
+  <header class="art-head" id="article2">
+    <div class="art-kicker">
+      <span class="art-kicker__tag">Report</span>
+      <span class="art-kicker__sep"></span>
+      <span class="art-kicker__place">Amsterdam · Royal Concertgebouw</span>
+    </div>
+
+    <h1 class="art-title" data-en="Athens State Orchestra Completes a Three-City European Tour — Marking Its &lt;em&gt;Concertgebouw Debut&lt;/em&gt;" data-ko="아테네 국립 오케스트라, 유럽 3개 도시 공연 성료 — &lt;em&gt;콘세르트헤바우 첫 진출&lt;/em&gt;">Athens State Orchestra Completes a Three-City European Tour — Marking Its <em>Concertgebouw Debut</em></h1>
+
+    <p class="art-dek" data-en="In collaboration with IMK, Greece's oldest orchestra brought Beethoven, Saint-Saëns and Shostakovich to Athens and the Netherlands." data-ko="IMK와의 협력으로, 그리스에서 가장 오랜 역사의 오케스트라가 베토벤·생상스·쇼스타코비치를 들고 아테네와 네덜란드를 찾았다.">In collaboration with IMK, Greece's oldest orchestra brought Beethoven, Saint-Saëns and Shostakovich to Athens and the Netherlands.</p>
+
+    <div class="art-meta">
+      <span class="art-byline">By <strong>Eurasia Classic News</strong> · Amsterdam · 8–11 October · 5 min read</span>
+      <div class="lang-switch" role="group" aria-label="Article language">
+        <button type="button" class="is-on" data-lang="en">EN</button>
+        <button type="button" data-lang="ko">한국어</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ LEAD IMAGE ============ -->
+  <figure class="lead-figure">
+    <img src="images/athens-state-orchestra-at-the-concertgebouw-f72b325b.jpg" alt="The Athens State Orchestra at the Royal Concertgebouw in Amsterdam">
+    <figcaption class="figcap">
+      <span data-en="The Athens State Orchestra at the Royal Concertgebouw in Amsterdam — the orchestra's first appearance at the hall." data-ko="암스테르담 로열 콘세르트헤바우 무대에 오른 아테네 국립 오케스트라. 이 악단의 첫 콘세르트헤바우 공연이다.">The Athens State Orchestra at the Royal Concertgebouw in Amsterdam — the orchestra's first appearance at the hall.</span>
+      <span class="figcap__credit">Photograph · Eurasia Classic News</span>
+    </figcaption>
+  </figure>
+
+  <!-- ============ BODY ============ -->
+  <div class="art-wrap">
+
+    <!-- English body -->
+    <article class="art-body" id="body9-en" lang="en">
+      <p><span class="dateline">Amsterdam —</span> The Athens State Orchestra, Greece's oldest symphony orchestra, successfully concluded a three-city concert series from October 8 to 11, 2026, spanning Athens, Greece, and Amsterdam and Sas van Gent in the Netherlands. Supported by its collaboration with IMK, an international concert agency and cultural exchange organization, the series gave the orchestra an opportunity to showcase its artistic excellence and strengthen its international presence on prominent European stages.</p>
+
+      <p>As one of Greece's leading symphony orchestras, the Athens State Orchestra has long contributed to the development of classical music in its home country and to international cultural exchange. The series was led by conductor Lukas Karytinos, the orchestra's Artistic Director since 2020. Having previously served as Music Director and Artistic Director of the Greek National Opera, Karytinos has built an extensive international career across Europe and beyond, drawing on his close artistic collaboration with the orchestra throughout the tour.</p>
+
+      <figure class="fig-wide">
+        <img src="images/athens-state-orchestra-karytinos-conunova-1acdd90e.jpg" alt="Lukas Karytinos conducting the Athens State Orchestra with violinist Alexandra Conunova">
+        <figcaption>Lukas Karytinos with violinist Alexandra Conunova.</figcaption>
+      </figure>
+
+      <h2>Three cities, one <em>tour</em></h2>
+
+      <p>The series began on October 8 with the opening concert of the orchestra's 2026–2027 season at the Megaron Athens Concert Hall. The orchestra then travelled to the Netherlands, performing at the Main Hall of the Royal Concertgebouw in Amsterdam on October 10, followed by a concert at the Industrieel Museum Zeeland in Sas van Gent on October 11. Of particular significance was the Amsterdam performance, which marked the Athens State Orchestra's first appearance at the prestigious Concertgebouw. Renowned worldwide for its exceptional acoustics and distinguished musical heritage, the venue provided a landmark stage for introducing Greece's symphonic tradition to an international audience.</p>
+
+      <figure class="fig-wide">
+        <img src="images/athens-state-orchestra-concertgebouw-stage-bac5dba9.jpg" alt="The Athens State Orchestra on the Concertgebouw stage">
+        <figcaption>On the Concertgebouw stage — a landmark first for a Greek symphony orchestra.</figcaption>
+      </figure>
+
+      <p>The programme featured Beethoven's <em>Violin Concerto in D major</em>, Op. 61, Saint-Saëns' <em>Cello Concerto No. 1 in A minor</em>, Op. 33, and Shostakovich's <em>Symphony No. 9 in E-flat major</em>, Op. 70. Violinist Alexandra Conunova and cellist Hannah Kim appeared as soloists. Under Karytinos' direction, the orchestra demonstrated its expressive range through works representing contrasting musical periods and styles.</p>
+
+      <div class="pullquote">
+        <p>The Amsterdam performance was met with a standing ovation — and an encore of Skalkottas's "Epirotikos," a statement of national identity on an international stage.</p>
+        <cite>On the Concertgebouw debut</cite>
+      </div>
+
+      <p>Local media particularly praised the orchestra's ensemble playing and Karytinos' refined interpretation of Shostakovich's Ninth. The Amsterdam performance was met with a standing ovation, and the orchestra presented "Epirotikos" from <em>Greek Dances</em> by Greek composer Nikos Skalkottas as an encore, highlighting its national musical heritage and artistic identity.</p>
+
+      <p>The three-city series not only demonstrated the artistic achievements of the Athens State Orchestra but also underscored the importance of international concert networks in fostering cross-border musical collaboration. In particular, the orchestra's landmark Concertgebouw appearance, made possible through cooperation with IMK, highlighted the potential for continued cultural exchange within the European classical music community — and opened new possibilities for the expansion of international performance networks.</p>
+
+      <aside class="critic-box">
+        <h3>About this report</h3>
+        <p>Eurasia Classic News reports are compiled from attended performances and primary accounts; this tour ran 8–11 October 2026 across Athens, Amsterdam and Sas van Gent. We accept no payment from presenters or artists.</p>
+      </aside>
+    </article>
+
+    <!-- Korean body -->
+    <article class="art-body" id="body9-ko" lang="ko" hidden>
+      <p>그리스에서 가장 오랜 역사를 지닌 아테네 국립 오케스트라가 지난 10월 8일부터 11일까지 그리스 아테네와 네덜란드 암스테르담, 사스 판 헨트를 잇는 3개 도시 공연 일정을 성공적으로 마무리했다. 이번 공연은 국제 음악·문화 교류 기관 IMK와의 협력을 바탕으로 유럽 주요 음악 무대에서 오케스트라의 예술적 역량과 국제적 존재감을 알리는 계기가 됐다.</p>
+
+      <p>아테네 국립 오케스트라는 그리스의 대표적인 교향악단으로, 오랜 연주 전통을 바탕으로 자국의 클래식 음악 발전과 국제 교류에 기여해 왔다. 이번 공연은 2020년부터 오케스트라의 예술감독을 맡고 있는 지휘자 루카스 카리티노스가 이끌었다. 그리스 국립오페라 음악감독과 예술감독을 역임한 그는 유럽을 비롯한 세계 여러 무대에서 활동하며 풍부한 지휘 경험을 쌓아온 음악가로, 이번 일정에서 오케스트라와의 긴밀한 호흡을 바탕으로 다양한 시대의 작품을 아우르는 음악적 역량을 선보였다.</p>
+
+      <figure class="fig-wide">
+        <img src="images/athens-state-orchestra-karytinos-conunova-1acdd90e.jpg" alt="아테네 국립 오케스트라를 지휘하는 루카스 카리티노스와 바이올리니스트 알렉산드라 코누노바">
+        <figcaption>지휘자 루카스 카리티노스와 바이올리니스트 알렉산드라 코누노바.</figcaption>
+      </figure>
+
+      <p>이번 일정은 10월 8일 아테네 메가론 콘서트홀에서 열린 2026–2027 시즌 개막공연으로 시작됐다. 이후 네덜란드로 무대를 옮겨 10월 10일 암스테르담 로열 콘세르트헤바우 메인홀, 11일 테르노이젠의 사스 판 헨트 제일란트 산업박물관에서 공연을 이어갔다. 특히 이번 투어의 중심이 된 암스테르담 콘세르트헤바우 공연은 아테네 국립 오케스트라의 역사상 첫 진출이라는 점에서 의미가 크다. 세계적인 명성과 독보적인 음향으로 잘 알려진 콘세르트헤바우에서의 데뷔는 그리스의 교향악 전통을 국제 무대에 소개하는 상징적인 순간이었다.</p>
+
+      <figure class="fig-wide">
+        <img src="images/athens-state-orchestra-concertgebouw-stage-bac5dba9.jpg" alt="콘세르트헤바우 무대의 아테네 국립 오케스트라">
+        <figcaption>콘세르트헤바우 무대에 오른 아테네 국립 오케스트라 — 그리스 교향악단으로서는 역사적인 첫 무대.</figcaption>
+      </figure>
+
+      <p>이번 공연에서는 베토벤의 「바이올린 협주곡 D장조 Op.61」, 생상스의 「첼로 협주곡 제1번 a단조 Op.33」, 쇼스타코비치의 「교향곡 제9번 E♭장조 Op.70」이 연주됐다. 바이올리니스트 알렉산드라 코누노바와 첼리스트 김해나가 협연자로 참여했으며, 카리티노스의 지휘 아래 오케스트라는 시대와 양식이 서로 다른 작품들을 통해 폭넓은 음악적 표현력을 선보였다.</p>
+
+      <div class="pullquote">
+        <p>암스테르담 공연에서는 관객들의 기립박수가 이어졌고, 오케스트라는 스칼코타스의 '에피로스 춤곡'을 앙코르로 연주하며 자국의 음악적 정체성을 전했다.</p>
+        <cite>콘세르트헤바우 데뷔에 부쳐</cite>
+      </div>
+
+      <p>현지 언론은 특히 쇼스타코비치 교향곡 제9번에서 드러난 오케스트라의 앙상블과 카리티노스의 섬세한 해석을 높이 평가했다. 암스테르담 공연에서는 관객들의 기립박수가 이어졌으며, 오케스트라는 그리스 작곡가 니코스 스칼코타스의 《그리스 무곡》 중 '에피로스 춤곡'을 앙코르로 연주하며 자국의 음악적 정체성을 전했다.</p>
+
+      <p>이번 3개 도시 공연은 아테네 국립 오케스트라의 음악적 성과와 더불어 국제 공연기획 네트워크의 역할을 확인한 무대였다. 특히 IMK와의 협력을 통해 성사된 역사적인 콘세르트헤바우 공연은 유럽 음악계의 지속적인 교류와 협력 가능성을 보여주며, 향후 국제 공연 네트워크의 확장에 대한 기대를 높였다.</p>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="art-aside">
+      <div class="prog">
+        <h3 data-en="The Programme" data-ko="프로그램">The Programme</h3>
+        <dl>
+          <dt data-en="Orchestra" data-ko="오케스트라">Orchestra</dt>
+          <dd>Athens State Orchestra</dd>
+
+          <dt data-en="Conductor" data-ko="지휘">Conductor</dt>
+          <dd>Lukas Karytinos</dd>
+
+          <dt data-en="Soloists" data-ko="협연">Soloists</dt>
+          <dd>Alexandra Conunova, <em>violin</em><br>Hannah Kim, <em>cello</em></dd>
+
+          <dt data-en="Venues" data-ko="장소">Venues</dt>
+          <dd data-en="Megaron, Athens · 8 Oct&lt;br&gt;Concertgebouw, Amsterdam · 10 Oct&lt;br&gt;Sas van Gent · 11 Oct" data-ko="메가론, 아테네 · 10월 8일&lt;br&gt;콘세르트헤바우, 암스테르담 · 10월 10일&lt;br&gt;사스 판 헨트 · 10월 11일">Megaron, Athens · 8 Oct<br>Concertgebouw, Amsterdam · 10 Oct<br>Sas van Gent · 11 Oct</dd>
+
+          <dt data-en="Works" data-ko="연주곡">Works</dt>
+          <dd>
+            <ul class="prog__works">
+              <li>Beethoven — Violin Concerto in D<span class="op">Op. 61</span></li>
+              <li>Saint-Saëns — Cello Concerto No. 1<span class="op">Op. 33</span></li>
+              <li>Shostakovich — Symphony No. 9<span class="op">Op. 70</span></li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ============ RELATED ============ -->
+  <section class="related" aria-label="More reviews">
+    <h2>More from <em>Reviews</em></h2>
+    <div class="related__grid">
+      <article class="related__item">
+        <span class="related__tag">Sofia</span>
+        <h3><a href="review3.html">Edwin E.S. Kim Explores the Depths of <em>Brahms</em> with the Sofia Philharmonic</a></h3>
+      </article>
+      <article class="related__item">
+        <span class="related__tag">Prague</span>
+        <h3><a href="review6.html">Cellist <em>Dongyeol Lee</em> Makes European Debut</a></h3>
+      </article>
+    </div>
+  </section>
+
+  <footer class="art-foot">
+    <span>© 2026 Eurasia Classic News · <a href="mailto:eurasiaclassicnews@gmail.com">eurasiaclassicnews@gmail.com</a></span>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.lang-switch button');
+    var bodyEn  = document.getElementById('body9-en');
+    var bodyKo  = document.getElementById('body9-ko');
+    var html    = document.documentElement;
+
+    function setLang(lang) {
+      var isKo = lang === 'ko';
+
+      bodyEn.hidden = isKo;
+      bodyKo.hidden = !isKo;
+      html.lang = lang;
+
+      // swap any element that carries both strings
+      document.querySelectorAll('[data-en][data-ko]').forEach(function (el) {
+        el.innerHTML = isKo ? el.dataset.ko : el.dataset.en;
+      });
+
+      buttons.forEach(function (b) {
+        b.classList.toggle('is-on', b.dataset.lang === lang);
+      });
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.dataset.lang); });
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    var el = document.getElementById('today');
+    if (!el) return;
+    var d = new Date();
+    var day   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()];
+    var month = ['January','February','March','April','May','June',
+                 'July','August','September','October','November','December'][d.getMonth()];
+    el.textContent = day + ' \u00B7 ' + d.getDate() + ' ' + month + ' ' + d.getFullYear();
+  })();
+</script>
+
+</body>
+</html>
