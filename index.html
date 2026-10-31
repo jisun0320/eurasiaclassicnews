@@ -854,12 +854,15 @@
   }
   .hero-v2__image .carousel__slide img { object-position: center center; }
   .carousel__caption {
-    position: absolute; left: 0; right: 0; bottom: 0;
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; justify-content: flex-end;
     padding: 46px 22px 20px;
-    background: linear-gradient(to top, rgba(23,22,20,0.82) 0%, rgba(23,22,20,0.45) 55%, rgba(23,22,20,0) 100%);
-    color: #F1ECE1;
+    background: linear-gradient(to top, rgba(23,22,20,0.84) 0%, rgba(23,22,20,0.5) 24%, rgba(23,22,20,0) 50%);
+    color: #F1ECE1; text-decoration: none;
     pointer-events: none;
   }
+  .carousel__slide.is-on .carousel__caption { pointer-events: auto; }
+  .carousel__slide.is-on .carousel__caption:hover .cc-title { text-decoration: underline; text-underline-offset: 3px; }
   .carousel__caption .cc-kicker {
     font-family: var(--f-ui); font-size: 10px; font-weight: 600;
     letter-spacing: 0.2em; text-transform: uppercase;
@@ -1472,7 +1475,7 @@
           <div class="carousel__track">
             <div class="carousel__slide is-on">
               <img src="images/athens-state-orchestra-at-the-concertgebouw-f72b325b.jpg" alt="The Athens State Orchestra at the Royal Concertgebouw in Amsterdam">
-              <a class="carousel__caption" href="review9.html" style="pointer-events:auto">
+              <a class="carousel__caption" href="review9.html">
                 <span class="cc-kicker">Report · Amsterdam</span>
                 <p class="cc-title">Athens State Orchestra Marks Its <em>Concertgebouw Debut</em></p>
                 <span class="cc-meta">Royal Concertgebouw · Beethoven · Shostakovich 9</span>
@@ -1480,7 +1483,7 @@
             </div>
             <div class="carousel__slide">
               <img src="images/edwin-kim-and-nieto-with-sofia-philharmonic-d366c898.jpg" alt="Edwin E.S. Kim and Gregorio Nieto with the Sofia Philharmonic at Bulgaria Hall">
-              <a class="carousel__caption" href="review3.html" style="pointer-events:auto">
+              <a class="carousel__caption" href="review3.html">
                 <span class="cc-kicker">Review · Sofia</span>
                 <p class="cc-title">Edwin E.S. Kim Explores the Depths of <em>Brahms</em></p>
                 <span class="cc-meta">Bulgaria Hall · Double Concerto, Op. 102</span>
@@ -1488,7 +1491,7 @@
             </div>
             <div class="carousel__slide">
               <img src="images/imk-trio-kaist-stage-e1b6d4f8.jpg" alt="The IMK Trio performing at the KAIST Art Museum, Daejeon">
-              <a class="carousel__caption" href="review7.html" style="pointer-events:auto">
+              <a class="carousel__caption" href="review7.html">
                 <span class="cc-kicker">Festival · Daejeon</span>
                 <p class="cc-title"><em>IMK Trio</em> Brings the Daejeon Festival to KAIST</p>
                 <span class="cc-meta">KAIST Art Museum · Mendelssohn <span class="amp">&amp;</span> Dvořák</span>
@@ -1496,7 +1499,7 @@
             </div>
             <div class="carousel__slide">
               <img src="images/smetana-hall-dongyeol-lee-cover-f7a2b9c4.jpg" alt="Cellist Dongyeol Lee at Prague's Smetana Hall">
-              <a class="carousel__caption" href="review6.html" style="pointer-events:auto">
+              <a class="carousel__caption" href="review6.html">
                 <span class="cc-kicker">Report · Prague</span>
                 <p class="cc-title">Cellist <em>Dongyeol Lee</em> Makes European Debut</p>
                 <span class="cc-meta">Smetana Hall · Dvořák Cello Concerto, Op. 104</span>

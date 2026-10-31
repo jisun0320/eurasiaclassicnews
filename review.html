@@ -413,6 +413,11 @@
     font-size: 1em;
   }
 </style>
+<style>
+  /* Justify body text, keep both edges straight; prevent long words from overflowing */
+  .art-body p { text-align: justify; text-justify: inter-word; -webkit-hyphens: auto; hyphens: auto; overflow-wrap: break-word; }
+  .art-body[lang="ko"] p { -webkit-hyphens: none; hyphens: none; }
+</style>
 </head>
 <body>
 
